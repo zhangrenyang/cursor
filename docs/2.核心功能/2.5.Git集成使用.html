@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git 集成使用 cursor</title>
+    <meta name="description" content="Git 是一个分布式版本控制系统，它可以跟踪文件的变化，协调多人协作开发。Cursor 内置了 Git 支持，让你可以直接在编辑器中进行版本控制操作。">
+    <link rel="stylesheet" type="text/css" href="../css/main.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/tocbot.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/media.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/copy.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/demo-preview.css?v=1.34.1">
+    <link rel="icon" href="../cursor.webp" type="image/x-icon">
+    <script src="../js/copy.js?v=1.34.1"></script>
+    <script src="../js/dark-mode.js?v=1.34.1"></script>
+    <script src="../js/markdown-style.js?v=1.34.1"></script>
+  </head>
+  <body id="idoctotop"><a href="#idoctotop" class="gototop">top</a>
+    <header class="header">
+      <article class="inner warpper"><a class="logo" href="../index.html"><img alt="cursor logo" src="../cursor.webp">
+<span class="title">cursor</span></a>
+        <div class="content">
+          <ul class="menu">
+            <li><a href="../index.html" target="" class="">Home</a></li>
+            <li><a href="../about.html" target="" class="">About</a></li>
+          </ul><a href="https://github.com/zhangrenyang/cursor" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg></a>
+          <dark-mode permanent=""></dark-mode>
+        </div>
+      </article>
+    </header>
+    <div class="warpper-content warpper">
+      <markdown-style theme-auto-switch-disabled="">
+        <h1 id="git-集成使用"><a aria-hidden="true" tabindex="-1" href="#git-集成使用" class="anchor"><span class="icon icon-link"></span></a>Git 集成使用</h1>
+        <h2 id="git-基础概念"><a aria-hidden="true" tabindex="-1" href="#git-基础概念" class="anchor"><span class="icon icon-link"></span></a>Git 基础概念</h2>
+        <h3 id="1-什么是-git"><a aria-hidden="true" tabindex="-1" href="#1-什么是-git" class="anchor"><span class="icon icon-link"></span></a>1. 什么是 Git？</h3>
+        <p>Git 是一个分布式版本控制系统，它可以跟踪文件的变化，协调多人协作开发。Cursor 内置了 Git 支持，让你可以直接在编辑器中进行版本控制操作。</p>
+        <h3 id="2-主要概念"><a aria-hidden="true" tabindex="-1" href="#2-主要概念" class="anchor"><span class="icon icon-link"></span></a>2. 主要概念</h3>
+        <ul>
+          <li><strong>仓库（Repository）</strong>：存储项目所有版本信息的地方</li>
+          <li><strong>提交（Commit）</strong>：保存文件修改的快照</li>
+          <li><strong>分支（Branch）</strong>：独立的开发线</li>
+          <li><strong>远程（Remote）</strong>：托管在服务器上的仓库副本</li>
+        </ul>
+        <h2 id="基本操作"><a aria-hidden="true" tabindex="-1" href="#基本操作" class="anchor"><span class="icon icon-link"></span></a>基本操作</h2>
+        <h3 id="1-初始化仓库"><a aria-hidden="true" tabindex="-1" href="#1-初始化仓库" class="anchor"><span class="icon icon-link"></span></a>1. 初始化仓库</h3>
+        <ul>
+          <li>
+            <p><strong>新建仓库</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 在项目文件夹中初始化</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> init
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 或者通过 Cursor 界面操作：</span>
+</span><span class="code-line line-number" line="5"><span class="token comment"># 右键项目文件夹 -> Git -> Initialize Repository</span>
+</span></code><input type="hidden" value="# 在项目文件夹中初始化
+git init
+
+# 或者通过 Cursor 界面操作：
+# 右键项目文件夹 -> Git -> Initialize Repository
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>克隆仓库</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 克隆远程仓库</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> clone <span class="token operator">&#x3C;</span>仓库地址<span class="token operator">></span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 或使用 Cursor：</span>
+</span><span class="code-line line-number" line="5"><span class="token comment"># File -> Clone Repository</span>
+</span></code><input type="hidden" value="# 克隆远程仓库
+git clone <仓库地址>
+
+# 或使用 Cursor：
+# File -> Clone Repository
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-日常操作"><a aria-hidden="true" tabindex="-1" href="#2-日常操作" class="anchor"><span class="icon icon-link"></span></a>2. 日常操作</h3>
+        <ul>
+          <li>
+            <p><strong>文件状态</strong>：</p>
+            <ul>
+              <li>未跟踪（Untracked）：新文件</li>
+              <li>已修改（Modified）：改动未暂存</li>
+              <li>已暂存（Staged）：等待提交</li>
+              <li>已提交（Committed）：已保存到仓库</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>常用命令</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 查看状态</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> status
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 添加文件到暂存区</span>
+</span><span class="code-line line-number" line="5"><span class="token function">git</span> <span class="token function">add</span> <span class="token operator">&#x3C;</span>文件名<span class="token operator">></span>
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token comment"># 提交更改</span>
+</span><span class="code-line line-number" line="8"><span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"提交说明"</span>
+</span><span class="code-line line-number" line="9">
+</span><span class="code-line line-number" line="10"><span class="token comment"># 推送到远程</span>
+</span><span class="code-line line-number" line="11"><span class="token function">git</span> push
+</span></code><input type="hidden" value="# 查看状态
+git status
+
+# 添加文件到暂存区
+git add <文件名>
+
+# 提交更改
+git commit -m &#x22;提交说明&#x22;
+
+# 推送到远程
+git push
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="cursor-中的-git-功能"><a aria-hidden="true" tabindex="-1" href="#cursor-中的-git-功能" class="anchor"><span class="icon icon-link"></span></a>Cursor 中的 Git 功能</h2>
+        <h3 id="1-源代码管理器"><a aria-hidden="true" tabindex="-1" href="#1-源代码管理器" class="anchor"><span class="icon icon-link"></span></a>1. 源代码管理器</h3>
+        <ul>
+          <li>
+            <p><strong>访问方式</strong>：</p>
+            <ul>
+              <li>点击左侧源代码管理图标</li>
+              <li>快捷键 <code>Ctrl+Shift+G</code></li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>主要功能</strong>：</p>
+            <ul>
+              <li>查看更改文件列表</li>
+              <li>比较文件差异</li>
+              <li>暂存/取消暂存</li>
+              <li>提交更改</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-集成功能"><a aria-hidden="true" tabindex="-1" href="#2-集成功能" class="anchor"><span class="icon icon-link"></span></a>2. 集成功能</h3>
+        <ul>
+          <li>
+            <p><strong>状态显示</strong>：</p>
+            <ul>
+              <li>文件树中的颜色标记</li>
+              <li>编辑器行号槽的更改标记</li>
+              <li>状态栏的分支信息</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>快捷操作</strong>：</p>
+            <ul>
+              <li>右键菜单中的 Git 操作</li>
+              <li>命令面板中的 Git 命令</li>
+              <li>内置终端的 Git 支持</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="分支管理"><a aria-hidden="true" tabindex="-1" href="#分支管理" class="anchor"><span class="icon icon-link"></span></a>分支管理</h2>
+        <h3 id="1-分支操作"><a aria-hidden="true" tabindex="-1" href="#1-分支操作" class="anchor"><span class="icon icon-link"></span></a>1. 分支操作</h3>
+        <ul>
+          <li>
+            <p><strong>创建分支</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 创建并切换到新分支</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> feature/new-feature
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 或在 Cursor 中：</span>
+</span><span class="code-line line-number" line="5"><span class="token comment"># 点击状态栏分支名 -> Create New Branch</span>
+</span></code><input type="hidden" value="# 创建并切换到新分支
+git checkout -b feature/new-feature
+
+# 或在 Cursor 中：
+# 点击状态栏分支名 -> Create New Branch
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>切换分支</strong>：</p>
+            <ul>
+              <li>使用命令：<code>git checkout &#x3C;分支名></code></li>
+              <li>通过状态栏分支菜单</li>
+              <li>在源代码管理器中选择</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-合并操作"><a aria-hidden="true" tabindex="-1" href="#2-合并操作" class="anchor"><span class="icon icon-link"></span></a>2. 合并操作</h3>
+        <ul>
+          <li>
+            <p><strong>合并分支</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 合并其他分支到当前分支</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> merge feature/new-feature
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 在 Cursor 中：</span>
+</span><span class="code-line line-number" line="5"><span class="token comment"># 源代码管理器 -> More Actions -> Merge Branch</span>
+</span></code><input type="hidden" value="# 合并其他分支到当前分支
+git merge feature/new-feature
+
+# 在 Cursor 中：
+# 源代码管理器 -> More Actions -> Merge Branch
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>解决冲突</strong>：</p>
+            <ul>
+              <li>使用内置的冲突解决工具</li>
+              <li>选择保留的更改</li>
+              <li>标记冲突为已解决</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="高级功能"><a aria-hidden="true" tabindex="-1" href="#高级功能" class="anchor"><span class="icon icon-link"></span></a>高级功能</h2>
+        <h3 id="1-历史记录"><a aria-hidden="true" tabindex="-1" href="#1-历史记录" class="anchor"><span class="icon icon-link"></span></a>1. 历史记录</h3>
+        <ul>
+          <li>
+            <p><strong>查看历史</strong>：</p>
+            <ul>
+              <li>图形化提交历史</li>
+              <li>文件历史记录</li>
+              <li>行级别的历史追踪</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>比较功能</strong>：</p>
+            <ul>
+              <li>文件比较</li>
+              <li>分支比较</li>
+              <li>提交比较</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-远程操作"><a aria-hidden="true" tabindex="-1" href="#2-远程操作" class="anchor"><span class="icon icon-link"></span></a>2. 远程操作</h3>
+        <ul>
+          <li>
+            <p><strong>远程管理</strong>：</p>
+            <ul>
+              <li>添加/删除远程仓库</li>
+              <li>拉取/推送更改</li>
+              <li>管理远程分支</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>同步操作</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 拉取更新</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> pull
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 推送更改</span>
+</span><span class="code-line line-number" line="5"><span class="token function">git</span> push origin <span class="token operator">&#x3C;</span>分支名<span class="token operator">></span>
+</span></code><input type="hidden" value="# 拉取更新
+git pull
+
+# 推送更改
+git push origin <分支名>
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="最佳实践"><a aria-hidden="true" tabindex="-1" href="#最佳实践" class="anchor"><span class="icon icon-link"></span></a>最佳实践</h2>
+        <h3 id="1-工作流程"><a aria-hidden="true" tabindex="-1" href="#1-工作流程" class="anchor"><span class="icon icon-link"></span></a>1. 工作流程</h3>
+        <ol>
+          <li>
+            <p><strong>日常开发</strong>：</p>
+            <ul>
+              <li>定期拉取更新</li>
+              <li>小步提交</li>
+              <li>编写清晰的提交信息</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>分支策略</strong>：</p>
+            <ul>
+              <li>主分支保持稳定</li>
+              <li>功能开发使用特性分支</li>
+              <li>及时合并和清理分支</li>
+            </ul>
+          </li>
+        </ol>
+        <h3 id="2-提交规范"><a aria-hidden="true" tabindex="-1" href="#2-提交规范" class="anchor"><span class="icon icon-link"></span></a>2. 提交规范</h3>
+        <ul>
+          <li>
+            <p><strong>提交信息格式</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">type: 简短描述
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">详细说明（可选）
+</span></code><input type="hidden" value="type: 简短描述
+
+详细说明（可选）
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>常用类型</strong>：</p>
+            <ul>
+              <li>feat: 新功能</li>
+              <li>fix: 修复bug</li>
+              <li>docs: 文档更新</li>
+              <li>style: 代码格式</li>
+              <li>refactor: 重构</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="常见问题解决"><a aria-hidden="true" tabindex="-1" href="#常见问题解决" class="anchor"><span class="icon icon-link"></span></a>常见问题解决</h2>
+        <h3 id="1-提交问题"><a aria-hidden="true" tabindex="-1" href="#1-提交问题" class="anchor"><span class="icon icon-link"></span></a>1. 提交问题</h3>
+        <ul>
+          <li>
+            <p><strong>提交失败</strong>：</p>
+            <ul>
+              <li>检查文件状态</li>
+              <li>确认用户配置</li>
+              <li>验证远程连接</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>撤销操作</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 撤销未暂存的更改</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> checkout -- <span class="token operator">&#x3C;</span>文件名<span class="token operator">></span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 撤销提交</span>
+</span><span class="code-line line-number" line="5"><span class="token function">git</span> reset <span class="token parameter variable">--soft</span> HEAD^
+</span></code><input type="hidden" value="# 撤销未暂存的更改
+git checkout -- <文件名>
+
+# 撤销提交
+git reset --soft HEAD^
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-同步问题"><a aria-hidden="true" tabindex="-1" href="#2-同步问题" class="anchor"><span class="icon icon-link"></span></a>2. 同步问题</h3>
+        <ul>
+          <li>
+            <p><strong>推送冲突</strong>：</p>
+            <ol>
+              <li>先拉取最新代码</li>
+              <li>解决冲突</li>
+              <li>重新推送</li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>分支混乱</strong>：</p>
+            <ul>
+              <li>检查分支状态</li>
+              <li>使用 <code>git log</code> 查看历史</li>
+              <li>必要时重建分支</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="小结"><a aria-hidden="true" tabindex="-1" href="#小结" class="anchor"><span class="icon icon-link"></span></a>小结</h2>
+        <p>Cursor 的 Git 集成让版本控制变得简单高效。建议：</p>
+        <ol>
+          <li>熟练掌握基本操作</li>
+          <li>养成良好的提交习惯</li>
+          <li>遵循团队工作流程</li>
+          <li>善用图形化界面</li>
+        </ol>
+        <p>记住，好的版本控制习惯能让团队协作更顺畅，代码管理更规范。</p>
+        <section class="article-footer"><a href="https://github.com/zhangrenyang/cursor/blob/master/src\2.核心功能\2.5.Git集成使用.md" class="edit-button" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+<span>Edit this page on GitHub</span>
+</a><span class="atime">2025/02/01</span></section>
+      </markdown-style>
+      <nav class="tocs">
+        <aside class="inner toc">
+          <ol class="tocs-list">
+            <li><a href="#git-基础概念" class="tocs-link">Git 基础概念</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-什么是-git" class="tocs-link">1. 什么是 Git？</a></li>
+                <li><a href="#2-主要概念" class="tocs-link">2. 主要概念</a></li>
+              </ol>
+            </li>
+            <li><a href="#基本操作" class="tocs-link">基本操作</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-初始化仓库" class="tocs-link">1. 初始化仓库</a></li>
+                <li><a href="#2-日常操作" class="tocs-link">2. 日常操作</a></li>
+              </ol>
+            </li>
+            <li><a href="#cursor-中的-git-功能" class="tocs-link">Cursor 中的 Git 功能</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-源代码管理器" class="tocs-link">1. 源代码管理器</a></li>
+                <li><a href="#2-集成功能" class="tocs-link">2. 集成功能</a></li>
+              </ol>
+            </li>
+            <li><a href="#分支管理" class="tocs-link">分支管理</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-分支操作" class="tocs-link">1. 分支操作</a></li>
+                <li><a href="#2-合并操作" class="tocs-link">2. 合并操作</a></li>
+              </ol>
+            </li>
+            <li><a href="#高级功能" class="tocs-link">高级功能</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-历史记录" class="tocs-link">1. 历史记录</a></li>
+                <li><a href="#2-远程操作" class="tocs-link">2. 远程操作</a></li>
+              </ol>
+            </li>
+            <li><a href="#最佳实践" class="tocs-link">最佳实践</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-工作流程" class="tocs-link">1. 工作流程</a></li>
+                <li><a href="#2-提交规范" class="tocs-link">2. 提交规范</a></li>
+              </ol>
+            </li>
+            <li><a href="#常见问题解决" class="tocs-link">常见问题解决</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-提交问题" class="tocs-link">1. 提交问题</a></li>
+                <li><a href="#2-同步问题" class="tocs-link">2. 同步问题</a></li>
+              </ol>
+            </li>
+            <li><a href="#小结" class="tocs-link">小结</a></li>
+          </ol>
+        </aside>
+      </nav>
+    </div>
+    <script src="../js/demo-preview.js?v=1.34.1"></script>
+    <div class="footer warpper">Released under the MIT License. Copyright © 2022 Kenny Wong<br>Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a></div>
+    <script src="../js/tocbot.js?v=1.34.1"></script>
+  </body>
+</html>

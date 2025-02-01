@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见问题解决 cursor</title>
+    <meta name="description" content="问题解决是开发过程中的重要环节。建议：">
+    <link rel="stylesheet" type="text/css" href="../css/main.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/tocbot.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/media.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/copy.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/demo-preview.css?v=1.34.1">
+    <link rel="icon" href="../cursor.webp" type="image/x-icon">
+    <script src="../js/copy.js?v=1.34.1"></script>
+    <script src="../js/dark-mode.js?v=1.34.1"></script>
+    <script src="../js/markdown-style.js?v=1.34.1"></script>
+  </head>
+  <body id="idoctotop"><a href="#idoctotop" class="gototop">top</a>
+    <header class="header">
+      <article class="inner warpper"><a class="logo" href="../index.html"><img alt="cursor logo" src="../cursor.webp">
+<span class="title">cursor</span></a>
+        <div class="content">
+          <ul class="menu">
+            <li><a href="../index.html" target="" class="">Home</a></li>
+            <li><a href="../about.html" target="" class="">About</a></li>
+          </ul><a href="https://github.com/zhangrenyang/cursor" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg></a>
+          <dark-mode permanent=""></dark-mode>
+        </div>
+      </article>
+    </header>
+    <div class="warpper-content warpper">
+      <markdown-style theme-auto-switch-disabled="">
+        <h1 id="常见问题解决"><a aria-hidden="true" tabindex="-1" href="#常见问题解决" class="anchor"><span class="icon icon-link"></span></a>常见问题解决</h1>
+        <h2 id="基础问题"><a aria-hidden="true" tabindex="-1" href="#基础问题" class="anchor"><span class="icon icon-link"></span></a>基础问题</h2>
+        <h3 id="1-环境配置问题"><a aria-hidden="true" tabindex="-1" href="#1-环境配置问题" class="anchor"><span class="icon icon-link"></span></a>1. 环境配置问题</h3>
+        <ul>
+          <li>
+            <p><strong>依赖安装失败</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 问题：npm install 失败</span>
+</span><span class="code-line line-number" line="2"><span class="token comment"># 解决方案：</span>
+</span><span class="code-line line-number" line="3"><span class="token number">1</span>. 清除缓存
+</span><span class="code-line line-number" line="4"><span class="token function">npm</span> cache clean <span class="token parameter variable">--force</span>
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6"><span class="token number">2</span>. 使用镜像源
+</span><span class="code-line line-number" line="7"><span class="token function">npm</span> config <span class="token builtin class-name">set</span> registry https://registry.npmmirror.com
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9"><span class="token number">3</span>. 删除 node_modules 重新安装
+</span><span class="code-line line-number" line="10"><span class="token function">rm</span> <span class="token parameter variable">-rf</span> node_modules
+</span><span class="code-line line-number" line="11"><span class="token function">npm</span> <span class="token function">install</span>
+</span></code><input type="hidden" value="# 问题：npm install 失败
+# 解决方案：
+1. 清除缓存
+npm cache clean --force
+
+2. 使用镜像源
+npm config set registry https://registry.npmmirror.com
+
+3. 删除 node_modules 重新安装
+rm -rf node_modules
+npm install
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>版本冲突</strong>：</p>
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 问题：依赖版本冲突</span>
+</span><span class="code-line line-number" line="2"><span class="token comment">// 解决方案：锁定版本</span>
+</span><span class="code-line line-number" line="3"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="5">    <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">"^17.0.2"</span><span class="token punctuation">,</span>  <span class="token comment">// 改为具体版本</span>
+</span><span class="code-line line-number" line="6">    <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">"17.0.2"</span>
+</span><span class="code-line line-number" line="7">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="8"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 问题：依赖版本冲突
+// 解决方案：锁定版本
+{
+  &#x22;dependencies&#x22;: {
+    &#x22;react&#x22;: &#x22;^17.0.2&#x22;,  // 改为具体版本
+    &#x22;react&#x22;: &#x22;17.0.2&#x22;
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-编辑器问题"><a aria-hidden="true" tabindex="-1" href="#2-编辑器问题" class="anchor"><span class="icon icon-link"></span></a>2. 编辑器问题</h3>
+        <ul>
+          <li>
+            <p><strong>性能问题</strong>：</p>
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 优化设置</span>
+</span><span class="code-line line-number" line="2"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token property">"editor.minimap.enabled"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">  <span class="token property">"files.watcherExclude"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="5">    <span class="token property">"**/node_modules/**"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="6">    <span class="token property">"**/dist/**"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+</span><span class="code-line line-number" line="7">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="8"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 优化设置
+{
+  &#x22;editor.minimap.enabled&#x22;: false,
+  &#x22;files.watcherExclude&#x22;: {
+    &#x22;**/node_modules/**&#x22;: true,
+    &#x22;**/dist/**&#x22;: true
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>插件冲突</strong>：</p>
+            <ol>
+              <li>禁用可疑插件</li>
+              <li>清除插件缓存</li>
+              <li>重新安装插件</li>
+            </ol>
+          </li>
+        </ul>
+        <h2 id="开发问题"><a aria-hidden="true" tabindex="-1" href="#开发问题" class="anchor"><span class="icon icon-link"></span></a>开发问题</h2>
+        <h3 id="1-代码问题"><a aria-hidden="true" tabindex="-1" href="#1-代码问题" class="anchor"><span class="icon icon-link"></span></a>1. 代码问题</h3>
+        <ul>
+          <li>
+            <p><strong>代码格式化</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 问题：格式化不生效</span>
+</span><span class="code-line line-number" line="2"><span class="token comment">// 解决方案：</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment">// 1. 检查配置文件</span>
+</span><span class="code-line line-number" line="5"><span class="token comment">// .prettierrc</span>
+</span><span class="code-line line-number" line="6"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="7">  <span class="token string-property property">"semi"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="8">  <span class="token string-property property">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="9">  <span class="token string-property property">"tabWidth"</span><span class="token operator">:</span> <span class="token number">2</span>
+</span><span class="code-line line-number" line="10"><span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="11">
+</span><span class="code-line line-number" line="12"><span class="token comment">// 2. 设置默认格式化工具</span>
+</span><span class="code-line line-number" line="13"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="14">  <span class="token string-property property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"esbenp.prettier-vscode"</span>
+</span><span class="code-line line-number" line="15"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 问题：格式化不生效
+// 解决方案：
+
+// 1. 检查配置文件
+// .prettierrc
+{
+  &#x22;semi&#x22;: true,
+  &#x22;singleQuote&#x22;: true,
+  &#x22;tabWidth&#x22;: 2
+}
+
+// 2. 设置默认格式化工具
+{
+  &#x22;editor.defaultFormatter&#x22;: &#x22;esbenp.prettier-vscode&#x22;
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>智能提示</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 问题：TypeScript 提示失效</span>
+</span><span class="code-line line-number" line="2"><span class="token comment">// 解决方案：</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment">// 1. 检查 tsconfig.json</span>
+</span><span class="code-line line-number" line="5"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="6">  <span class="token string-property property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="7">    <span class="token string-property property">"allowJs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="8">    <span class="token string-property property">"checkJs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="9">    <span class="token string-property property">"jsx"</span><span class="token operator">:</span> <span class="token string">"react"</span>
+</span><span class="code-line line-number" line="10">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="11"><span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13"><span class="token comment">// 2. 重启 TS 服务器</span>
+</span><span class="code-line line-number" line="14">命令面板 <span class="token operator">-</span><span class="token operator">></span> <span class="token maybe-class-name">TypeScript</span><span class="token operator">:</span> <span class="token maybe-class-name">Restart</span> <span class="token constant">TS</span> <span class="token maybe-class-name">Server</span>
+</span></code><input type="hidden" value="// 问题：TypeScript 提示失效
+// 解决方案：
+
+// 1. 检查 tsconfig.json
+{
+  &#x22;compilerOptions&#x22;: {
+    &#x22;allowJs&#x22;: true,
+    &#x22;checkJs&#x22;: true,
+    &#x22;jsx&#x22;: &#x22;react&#x22;
+  }
+}
+
+// 2. 重启 TS 服务器
+命令面板 -> TypeScript: Restart TS Server
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-git-问题"><a aria-hidden="true" tabindex="-1" href="#2-git-问题" class="anchor"><span class="icon icon-link"></span></a>2. Git 问题</h3>
+        <ul>
+          <li>
+            <p><strong>提交冲突</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 问题：合并冲突</span>
+</span><span class="code-line line-number" line="2"><span class="token comment"># 解决方案：</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 1. 更新本地分支</span>
+</span><span class="code-line line-number" line="5"><span class="token function">git</span> fetch origin
+</span><span class="code-line line-number" line="6"><span class="token function">git</span> rebase origin/main
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8"><span class="token comment"># 2. 解决冲突后</span>
+</span><span class="code-line line-number" line="9"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+</span><span class="code-line line-number" line="10"><span class="token function">git</span> rebase <span class="token parameter variable">--continue</span>
+</span><span class="code-line line-number" line="11">
+</span><span class="code-line line-number" line="12"><span class="token comment"># 3. 如果情况复杂，可以中止rebase</span>
+</span><span class="code-line line-number" line="13"><span class="token function">git</span> rebase <span class="token parameter variable">--abort</span>
+</span></code><input type="hidden" value="# 问题：合并冲突
+# 解决方案：
+
+# 1. 更新本地分支
+git fetch origin
+git rebase origin/main
+
+# 2. 解决冲突后
+git add .
+git rebase --continue
+
+# 3. 如果情况复杂，可以中止rebase
+git rebase --abort
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>提交错误</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 问题：提交到错误分支</span>
+</span><span class="code-line line-number" line="2"><span class="token comment"># 解决方案：</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 1. 创建新分支保存更改</span>
+</span><span class="code-line line-number" line="5"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> correct-branch
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token comment"># 2. 重置原分支</span>
+</span><span class="code-line line-number" line="8"><span class="token function">git</span> checkout wrong-branch
+</span><span class="code-line line-number" line="9"><span class="token function">git</span> reset <span class="token parameter variable">--hard</span> origin/wrong-branch
+</span></code><input type="hidden" value="# 问题：提交到错误分支
+# 解决方案：
+
+# 1. 创建新分支保存更改
+git checkout -b correct-branch
+
+# 2. 重置原分支
+git checkout wrong-branch
+git reset --hard origin/wrong-branch
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="ai-相关问题"><a aria-hidden="true" tabindex="-1" href="#ai-相关问题" class="anchor"><span class="icon icon-link"></span></a>AI 相关问题</h2>
+        <h3 id="1-提示词问题"><a aria-hidden="true" tabindex="-1" href="#1-提示词问题" class="anchor"><span class="icon icon-link"></span></a>1. 提示词问题</h3>
+        <ul>
+          <li>
+            <p><strong>生成质量差</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">// 优化提示词模板：
+</span><span class="code-line line-number" line="2">作为[角色]，请[任务描述]
+</span><span class="code-line line-number" line="3">要求：
+</span><span class="code-line line-number" line="4">1. [具体要求1]
+</span><span class="code-line line-number" line="5">2. [具体要求2]
+</span><span class="code-line line-number" line="6">输出格式：
+</span><span class="code-line line-number" line="7">[期望的输出格式]
+</span></code><input type="hidden" value="// 优化提示词模板：
+作为[角色]，请[任务描述]
+要求：
+1. [具体要求1]
+2. [具体要求2]
+输出格式：
+[期望的输出格式]
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>上下文丢失</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">// 添加必要上下文：
+</span><span class="code-line line-number" line="2">项目背景：[项目描述]
+</span><span class="code-line line-number" line="3">使用技术：[技术栈]
+</span><span class="code-line line-number" line="4">当前问题：[具体问题]
+</span><span class="code-line line-number" line="5">已尝试：[已尝试的解决方案]
+</span><span class="code-line line-number" line="6">期望结果：[期望达到的效果]
+</span></code><input type="hidden" value="// 添加必要上下文：
+项目背景：[项目描述]
+使用技术：[技术栈]
+当前问题：[具体问题]
+已尝试：[已尝试的解决方案]
+期望结果：[期望达到的效果]
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-响应问题"><a aria-hidden="true" tabindex="-1" href="#2-响应问题" class="anchor"><span class="icon icon-link"></span></a>2. 响应问题</h3>
+        <ul>
+          <li>
+            <p><strong>响应缓慢</strong>：</p>
+            <ol>
+              <li>简化提问内容</li>
+              <li>分步骤提问</li>
+              <li>使用缓存结果</li>
+              <li>优化网络连接</li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>结果不准确</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">// 优化提问策略：
+</span><span class="code-line line-number" line="2">1. 提供具体示例
+</span><span class="code-line line-number" line="3">2. 说明使用场景
+</span><span class="code-line line-number" line="4">3. 指定输出格式
+</span><span class="code-line line-number" line="5">4. 要求代码注释
+</span></code><input type="hidden" value="// 优化提问策略：
+1. 提供具体示例
+2. 说明使用场景
+3. 指定输出格式
+4. 要求代码注释
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="性能问题"><a aria-hidden="true" tabindex="-1" href="#性能问题" class="anchor"><span class="icon icon-link"></span></a>性能问题</h2>
+        <h3 id="1-编辑器性能"><a aria-hidden="true" tabindex="-1" href="#1-编辑器性能" class="anchor"><span class="icon icon-link"></span></a>1. 编辑器性能</h3>
+        <ul>
+          <li>
+            <p><strong>启动慢</strong>：</p>
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 优化配置</span>
+</span><span class="code-line line-number" line="2"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token property">"workbench.startupEditor"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">  <span class="token property">"workbench.enableExperiments"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="5">  <span class="token property">"extensions.autoUpdate"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+</span><span class="code-line line-number" line="6"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 优化配置
+{
+  &#x22;workbench.startupEditor&#x22;: &#x22;none&#x22;,
+  &#x22;workbench.enableExperiments&#x22;: false,
+  &#x22;extensions.autoUpdate&#x22;: false
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>运行卡顿</strong>：</p>
+            <ol>
+              <li>关闭不必要的插件</li>
+              <li>清理工作区缓存</li>
+              <li>优化文件监视配置</li>
+              <li>减少打开的文件数量</li>
+            </ol>
+          </li>
+        </ul>
+        <h3 id="2-项目性能"><a aria-hidden="true" tabindex="-1" href="#2-项目性能" class="anchor"><span class="icon icon-link"></span></a>2. 项目性能</h3>
+        <ul>
+          <li>
+            <p><strong>构建慢</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// webpack 优化配置</span>
+</span><span class="code-line line-number" line="2">module<span class="token punctuation">.</span><span class="token property-access">exports</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token literal-property property">cache</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">  <span class="token literal-property property">optimization</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="5">    <span class="token literal-property property">moduleIds</span><span class="token operator">:</span> <span class="token string">'deterministic'</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="6">    <span class="token literal-property property">splitChunks</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="7">      <span class="token literal-property property">chunks</span><span class="token operator">:</span> <span class="token string">'all'</span>
+</span><span class="code-line line-number" line="8">    <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="9">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="10"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// webpack 优化配置
+module.exports = {
+  cache: true,
+  optimization: {
+    moduleIds: &#x27;deterministic&#x27;,
+    splitChunks: {
+      chunks: &#x27;all&#x27;
+    }
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>运行慢</strong>：</p>
+            <ol>
+              <li>优化依赖引入</li>
+              <li>使用性能分析工具</li>
+              <li>实施代码分割</li>
+              <li>优化资源加载</li>
+            </ol>
+          </li>
+        </ul>
+        <h2 id="团队协作问题"><a aria-hidden="true" tabindex="-1" href="#团队协作问题" class="anchor"><span class="icon icon-link"></span></a>团队协作问题</h2>
+        <h3 id="1-代码冲突"><a aria-hidden="true" tabindex="-1" href="#1-代码冲突" class="anchor"><span class="icon icon-link"></span></a>1. 代码冲突</h3>
+        <ul>
+          <li>
+            <p><strong>预防措施</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 1. 经常同步代码</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> pull <span class="token parameter variable">--rebase</span> origin main
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 2. 合理拆分任务</span>
+</span><span class="code-line line-number" line="5"><span class="token comment"># 3. 遵循代码规范</span>
+</span><span class="code-line line-number" line="6"><span class="token comment"># 4. 做好任务分工</span>
+</span></code><input type="hidden" value="# 1. 经常同步代码
+git pull --rebase origin main
+
+# 2. 合理拆分任务
+# 3. 遵循代码规范
+# 4. 做好任务分工
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>解决流程</strong>：</p>
+            <ol>
+              <li>与相关同事沟通</li>
+              <li>确认保留的代码</li>
+              <li>解决冲突</li>
+              <li>测试功能</li>
+              <li>提交更改</li>
+            </ol>
+          </li>
+        </ul>
+        <h3 id="2-沟通问题"><a aria-hidden="true" tabindex="-1" href="#2-沟通问题" class="anchor"><span class="icon icon-link"></span></a>2. 沟通问题</h3>
+        <ul>
+          <li>
+            <p><strong>问题反馈</strong>：</p>
+            <pre class="language-markdown"><code class="language-markdown code-highlight"><span class="code-line line-number" line="1">问题报告模板：
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3"><span class="token title important"><span class="token punctuation">##</span> 问题描述</span>
+</span><span class="code-line line-number" line="4">[清晰描述问题]
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6"><span class="token title important"><span class="token punctuation">##</span> 复现步骤</span>
+</span><span class="code-line line-number" line="7"><span class="token list punctuation">1.</span> [步骤1]
+</span><span class="code-line line-number" line="8"><span class="token list punctuation">2.</span> [步骤2]
+</span><span class="code-line line-number" line="9">
+</span><span class="code-line line-number" line="10"><span class="token title important"><span class="token punctuation">##</span> 期望结果</span>
+</span><span class="code-line line-number" line="11">[期望看到的结果]
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13"><span class="token title important"><span class="token punctuation">##</span> 实际结果</span>
+</span><span class="code-line line-number" line="14">[实际发生的情况]
+</span></code><input type="hidden" value="问题报告模板：
+
+## 问题描述
+[清晰描述问题]
+
+## 复现步骤
+1. [步骤1]
+2. [步骤2]
+
+## 期望结果
+[期望看到的结果]
+
+## 实际结果
+[实际发生的情况]
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>解决方案</strong>：</p>
+            <ol>
+              <li>建立沟通机制</li>
+              <li>使用任务追踪</li>
+              <li>定期同步进度</li>
+              <li>及时反馈问题</li>
+            </ol>
+          </li>
+        </ul>
+        <h2 id="小结"><a aria-hidden="true" tabindex="-1" href="#小结" class="anchor"><span class="icon icon-link"></span></a>小结</h2>
+        <p>问题解决是开发过程中的重要环节。建议：</p>
+        <ol>
+          <li>系统化记录常见问题</li>
+          <li>建立问题解决流程</li>
+          <li>注重经验总结分享</li>
+          <li>持续优化解决方案</li>
+        </ol>
+        <p>记住，遇到问题时保持冷静，按步骤分析和解决，同时做好记录以供团队参考。</p>
+        <section class="article-footer"><a href="https://github.com/zhangrenyang/cursor/blob/master/src\5.最佳实践\5.3.常见问题解决.md" class="edit-button" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+<span>Edit this page on GitHub</span>
+</a><span class="atime">2025/02/01</span></section>
+      </markdown-style>
+      <nav class="tocs">
+        <aside class="inner toc">
+          <ol class="tocs-list">
+            <li><a href="#基础问题" class="tocs-link">基础问题</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-环境配置问题" class="tocs-link">1. 环境配置问题</a></li>
+                <li><a href="#2-编辑器问题" class="tocs-link">2. 编辑器问题</a></li>
+              </ol>
+            </li>
+            <li><a href="#开发问题" class="tocs-link">开发问题</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-代码问题" class="tocs-link">1. 代码问题</a></li>
+                <li><a href="#2-git-问题" class="tocs-link">2. Git 问题</a></li>
+              </ol>
+            </li>
+            <li><a href="#ai-相关问题" class="tocs-link">AI 相关问题</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-提示词问题" class="tocs-link">1. 提示词问题</a></li>
+                <li><a href="#2-响应问题" class="tocs-link">2. 响应问题</a></li>
+              </ol>
+            </li>
+            <li><a href="#性能问题" class="tocs-link">性能问题</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-编辑器性能" class="tocs-link">1. 编辑器性能</a></li>
+                <li><a href="#2-项目性能" class="tocs-link">2. 项目性能</a></li>
+              </ol>
+            </li>
+            <li><a href="#团队协作问题" class="tocs-link">团队协作问题</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-代码冲突" class="tocs-link">1. 代码冲突</a></li>
+                <li><a href="#2-沟通问题" class="tocs-link">2. 沟通问题</a></li>
+              </ol>
+            </li>
+            <li><a href="#小结" class="tocs-link">小结</a></li>
+          </ol>
+        </aside>
+      </nav>
+    </div>
+    <script src="../js/demo-preview.js?v=1.34.1"></script>
+    <div class="footer warpper">Released under the MIT License. Copyright © 2022 Kenny Wong<br>Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a></div>
+    <script src="../js/tocbot.js?v=1.34.1"></script>
+  </body>
+</html>

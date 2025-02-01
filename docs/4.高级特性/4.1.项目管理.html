@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目管理 cursor</title>
+    <meta name="description" content="项目管理是 Cursor 提供的一套完整工具，帮助开发者组织和管理代码项目。它包括工作区管理、任务运行、依赖管理等功能，让项目开发更有条理。">
+    <link rel="stylesheet" type="text/css" href="../css/main.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/tocbot.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/media.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/copy.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/demo-preview.css?v=1.34.1">
+    <link rel="icon" href="../cursor.webp" type="image/x-icon">
+    <script src="../js/copy.js?v=1.34.1"></script>
+    <script src="../js/dark-mode.js?v=1.34.1"></script>
+    <script src="../js/markdown-style.js?v=1.34.1"></script>
+  </head>
+  <body id="idoctotop"><a href="#idoctotop" class="gototop">top</a>
+    <header class="header">
+      <article class="inner warpper"><a class="logo" href="../index.html"><img alt="cursor logo" src="../cursor.webp">
+<span class="title">cursor</span></a>
+        <div class="content">
+          <ul class="menu">
+            <li><a href="../index.html" target="" class="">Home</a></li>
+            <li><a href="../about.html" target="" class="">About</a></li>
+          </ul><a href="https://github.com/zhangrenyang/cursor" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg></a>
+          <dark-mode permanent=""></dark-mode>
+        </div>
+      </article>
+    </header>
+    <div class="warpper-content warpper">
+      <markdown-style theme-auto-switch-disabled="">
+        <h1 id="项目管理"><a aria-hidden="true" tabindex="-1" href="#项目管理" class="anchor"><span class="icon icon-link"></span></a>项目管理</h1>
+        <h2 id="功能概述"><a aria-hidden="true" tabindex="-1" href="#功能概述" class="anchor"><span class="icon icon-link"></span></a>功能概述</h2>
+        <h3 id="1-什么是项目管理"><a aria-hidden="true" tabindex="-1" href="#1-什么是项目管理" class="anchor"><span class="icon icon-link"></span></a>1. 什么是项目管理？</h3>
+        <p>项目管理是 Cursor 提供的一套完整工具，帮助开发者组织和管理代码项目。它包括工作区管理、任务运行、依赖管理等功能，让项目开发更有条理。</p>
+        <h3 id="2-主要功能"><a aria-hidden="true" tabindex="-1" href="#2-主要功能" class="anchor"><span class="icon icon-link"></span></a>2. 主要功能</h3>
+        <ul>
+          <li><strong>工作区管理</strong>：组织项目文件</li>
+          <li><strong>任务自动化</strong>：运行开发任务</li>
+          <li><strong>依赖管理</strong>：处理项目依赖</li>
+          <li><strong>配置管理</strong>：管理项目设置</li>
+        </ul>
+        <h2 id="工作区管理"><a aria-hidden="true" tabindex="-1" href="#工作区管理" class="anchor"><span class="icon icon-link"></span></a>工作区管理</h2>
+        <h3 id="1-基本操作"><a aria-hidden="true" tabindex="-1" href="#1-基本操作" class="anchor"><span class="icon icon-link"></span></a>1. 基本操作</h3>
+        <ul>
+          <li>
+            <p><strong>创建项目</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 新建项目</span>
+</span><span class="code-line line-number" line="2">File -<span class="token operator">></span> New Project
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 打开项目</span>
+</span><span class="code-line line-number" line="5">File -<span class="token operator">></span> Open Folder
+</span></code><input type="hidden" value="# 新建项目
+File -> New Project
+
+# 打开项目
+File -> Open Folder
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>文件组织</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">project/
+</span><span class="code-line line-number" line="2">├── src/          # 源代码
+</span><span class="code-line line-number" line="3">├── tests/        # 测试文件
+</span><span class="code-line line-number" line="4">├── docs/         # 文档
+</span><span class="code-line line-number" line="5">└── config/       # 配置文件
+</span></code><input type="hidden" value="project/
+├── src/          # 源代码
+├── tests/        # 测试文件
+├── docs/         # 文档
+└── config/       # 配置文件
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-工作区配置"><a aria-hidden="true" tabindex="-1" href="#2-工作区配置" class="anchor"><span class="icon icon-link"></span></a>2. 工作区配置</h3>
+        <ul>
+          <li><strong>设置文件</strong>：
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"my-project"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="3">  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">  <span class="token property">"settings"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="5">    <span class="token property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="6">    <span class="token property">"files.exclude"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="7">      <span class="token property">"node_modules"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+</span><span class="code-line line-number" line="8">    <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="9">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="10"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;name&#x22;: &#x22;my-project&#x22;,
+  &#x22;version&#x22;: &#x22;1.0.0&#x22;,
+  &#x22;settings&#x22;: {
+    &#x22;editor.formatOnSave&#x22;: true,
+    &#x22;files.exclude&#x22;: {
+      &#x22;node_modules&#x22;: true
+    }
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="任务管理"><a aria-hidden="true" tabindex="-1" href="#任务管理" class="anchor"><span class="icon icon-link"></span></a>任务管理</h2>
+        <h3 id="1-任务配置"><a aria-hidden="true" tabindex="-1" href="#1-任务配置" class="anchor"><span class="icon icon-link"></span></a>1. 任务配置</h3>
+        <ul>
+          <li>
+            <p><strong>定义任务</strong>：</p>
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"npm run dev"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"npm run build"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="5">    <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"npm run test"</span>
+</span><span class="code-line line-number" line="6">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="7"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;tasks&#x22;: {
+    &#x22;dev&#x22;: &#x22;npm run dev&#x22;,
+    &#x22;build&#x22;: &#x22;npm run build&#x22;,
+    &#x22;test&#x22;: &#x22;npm run test&#x22;
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>快捷运行</strong>：</p>
+            <ul>
+              <li>使用命令面板</li>
+              <li>快捷键绑定</li>
+              <li>状态栏按钮</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-自动化任务"><a aria-hidden="true" tabindex="-1" href="#2-自动化任务" class="anchor"><span class="icon icon-link"></span></a>2. 自动化任务</h3>
+        <ul>
+          <li>
+            <p><strong>监视任务</strong>：</p>
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"watch"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">    <span class="token property">"src"</span><span class="token operator">:</span> <span class="token string">"npm run build"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">    <span class="token property">"tests"</span><span class="token operator">:</span> <span class="token string">"npm run test"</span>
+</span><span class="code-line line-number" line="5">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="6"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;watch&#x22;: {
+    &#x22;src&#x22;: &#x22;npm run build&#x22;,
+    &#x22;tests&#x22;: &#x22;npm run test&#x22;
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>复合任务</strong>：</p>
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">    <span class="token property">"prepare"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+</span><span class="code-line line-number" line="4">      <span class="token string">"npm install"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="5">      <span class="token string">"npm run build"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="6">      <span class="token string">"npm run test"</span>
+</span><span class="code-line line-number" line="7">    <span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="8">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="9"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;tasks&#x22;: {
+    &#x22;prepare&#x22;: [
+      &#x22;npm install&#x22;,
+      &#x22;npm run build&#x22;,
+      &#x22;npm run test&#x22;
+    ]
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="依赖管理"><a aria-hidden="true" tabindex="-1" href="#依赖管理" class="anchor"><span class="icon icon-link"></span></a>依赖管理</h2>
+        <h3 id="1-包管理"><a aria-hidden="true" tabindex="-1" href="#1-包管理" class="anchor"><span class="icon icon-link"></span></a>1. 包管理</h3>
+        <ul>
+          <li>
+            <p><strong>安装依赖</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># NPM 包管理</span>
+</span><span class="code-line line-number" line="2"><span class="token function">npm</span> <span class="token function">install</span> package-name
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 或使用界面操作：</span>
+</span><span class="code-line line-number" line="5">右键 package.json -<span class="token operator">></span> Add Dependency
+</span></code><input type="hidden" value="# NPM 包管理
+npm install package-name
+
+# 或使用界面操作：
+右键 package.json -> Add Dependency
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>更新依赖</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 检查更新</span>
+</span><span class="code-line line-number" line="2"><span class="token function">npm</span> outdated
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 更新包</span>
+</span><span class="code-line line-number" line="5"><span class="token function">npm</span> update
+</span></code><input type="hidden" value="# 检查更新
+npm outdated
+
+# 更新包
+npm update
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-版本控制"><a aria-hidden="true" tabindex="-1" href="#2-版本控制" class="anchor"><span class="icon icon-link"></span></a>2. 版本控制</h3>
+        <ul>
+          <li>
+            <p><strong>锁定版本</strong>：</p>
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">    <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">"^17.0.2"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">    <span class="token property">"typescript"</span><span class="token operator">:</span> <span class="token string">"~4.5.4"</span>
+</span><span class="code-line line-number" line="5">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="6"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;dependencies&#x22;: {
+    &#x22;react&#x22;: &#x22;^17.0.2&#x22;,
+    &#x22;typescript&#x22;: &#x22;~4.5.4&#x22;
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>依赖分析</strong>：</p>
+            <ul>
+              <li>检查依赖树</li>
+              <li>解决版本冲突</li>
+              <li>优化依赖结构</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="项目配置"><a aria-hidden="true" tabindex="-1" href="#项目配置" class="anchor"><span class="icon icon-link"></span></a>项目配置</h2>
+        <h3 id="1-编辑器配置"><a aria-hidden="true" tabindex="-1" href="#1-编辑器配置" class="anchor"><span class="icon icon-link"></span></a>1. 编辑器配置</h3>
+        <ul>
+          <li>
+            <p><strong>工作区设置</strong>：</p>
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="3">  <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">  <span class="token property">"files.encoding"</span><span class="token operator">:</span> <span class="token string">"utf8"</span>
+</span><span class="code-line line-number" line="5"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;editor.formatOnSave&#x22;: true,
+  &#x22;editor.tabSize&#x22;: 2,
+  &#x22;files.encoding&#x22;: &#x22;utf8&#x22;
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>项目规范</strong>：</p>
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"prettier"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">    <span class="token property">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">    <span class="token property">"printWidth"</span><span class="token operator">:</span> <span class="token number">80</span>
+</span><span class="code-line line-number" line="5">  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="6">  <span class="token property">"eslint"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="7">    <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"standard"</span><span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="8">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="9"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;prettier&#x22;: {
+    &#x22;singleQuote&#x22;: true,
+    &#x22;printWidth&#x22;: 80
+  },
+  &#x22;eslint&#x22;: {
+    &#x22;extends&#x22;: [&#x22;standard&#x22;]
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-构建配置"><a aria-hidden="true" tabindex="-1" href="#2-构建配置" class="anchor"><span class="icon icon-link"></span></a>2. 构建配置</h3>
+        <ul>
+          <li>
+            <p><strong>环境变量</strong>：</p>
+            <pre><code class="language-env code-highlight"><span class="code-line line-number" line="1">NODE_ENV=development
+</span><span class="code-line line-number" line="2">API_URL=http://localhost:3000
+</span><span class="code-line line-number" line="3">DEBUG=true
+</span></code><input type="hidden" value="NODE_ENV=development
+API_URL=http://localhost:3000
+DEBUG=true
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>构建选项</strong>：</p>
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"build"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">    <span class="token property">"outDir"</span><span class="token operator">:</span> <span class="token string">"dist"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">    <span class="token property">"sourcemap"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="5">    <span class="token property">"minify"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+</span><span class="code-line line-number" line="6">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="7"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;build&#x22;: {
+    &#x22;outDir&#x22;: &#x22;dist&#x22;,
+    &#x22;sourcemap&#x22;: true,
+    &#x22;minify&#x22;: true
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="团队协作"><a aria-hidden="true" tabindex="-1" href="#团队协作" class="anchor"><span class="icon icon-link"></span></a>团队协作</h2>
+        <h3 id="1-共享配置"><a aria-hidden="true" tabindex="-1" href="#1-共享配置" class="anchor"><span class="icon icon-link"></span></a>1. 共享配置</h3>
+        <ul>
+          <li>
+            <p><strong>配置文件</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">.editorconfig
+</span><span class="code-line line-number" line="2">.prettierrc
+</span><span class="code-line line-number" line="3">.eslintrc
+</span><span class="code-line line-number" line="4">tsconfig.json
+</span></code><input type="hidden" value=".editorconfig
+.prettierrc
+.eslintrc
+tsconfig.json
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>工作区共享</strong>：</p>
+            <ul>
+              <li>统一编码规范</li>
+              <li>共享任务配置</li>
+              <li>同步项目设置</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-协作规范"><a aria-hidden="true" tabindex="-1" href="#2-协作规范" class="anchor"><span class="icon icon-link"></span></a>2. 协作规范</h3>
+        <ul>
+          <li>
+            <p><strong>提交规范</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">feat: 新功能
+</span><span class="code-line line-number" line="2">fix: 修复bug
+</span><span class="code-line line-number" line="3">docs: 文档更新
+</span><span class="code-line line-number" line="4">style: 代码格式
+</span><span class="code-line line-number" line="5">refactor: 重构
+</span></code><input type="hidden" value="feat: 新功能
+fix: 修复bug
+docs: 文档更新
+style: 代码格式
+refactor: 重构
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>分支管理</strong>：</p>
+            <ul>
+              <li>主分支保护</li>
+              <li>开发分支规范</li>
+              <li>合并请求流程</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="最佳实践"><a aria-hidden="true" tabindex="-1" href="#最佳实践" class="anchor"><span class="icon icon-link"></span></a>最佳实践</h2>
+        <h3 id="1-项目结构"><a aria-hidden="true" tabindex="-1" href="#1-项目结构" class="anchor"><span class="icon icon-link"></span></a>1. 项目结构</h3>
+        <pre><code class="code-highlight"><span class="code-line line-number" line="1">project/
+</span><span class="code-line line-number" line="2">├── src/              # 源代码
+</span><span class="code-line line-number" line="3">│   ├── components/   # 组件
+</span><span class="code-line line-number" line="4">│   ├── utils/        # 工具函数
+</span><span class="code-line line-number" line="5">│   └── types/        # 类型定义
+</span><span class="code-line line-number" line="6">├── tests/            # 测试文件
+</span><span class="code-line line-number" line="7">├── docs/             # 文档
+</span><span class="code-line line-number" line="8">├── scripts/          # 脚本
+</span><span class="code-line line-number" line="9">└── config/           # 配置文件
+</span></code><input type="hidden" value="project/
+├── src/              # 源代码
+│   ├── components/   # 组件
+│   ├── utils/        # 工具函数
+│   └── types/        # 类型定义
+├── tests/            # 测试文件
+├── docs/             # 文档
+├── scripts/          # 脚本
+└── config/           # 配置文件
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h3 id="2-工作流程"><a aria-hidden="true" tabindex="-1" href="#2-工作流程" class="anchor"><span class="icon icon-link"></span></a>2. 工作流程</h3>
+        <ol>
+          <li>
+            <p><strong>开发流程</strong>：</p>
+            <ul>
+              <li>拉取最新代码</li>
+              <li>创建功能分支</li>
+              <li>本地开发测试</li>
+              <li>提交代码审查</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>发布流程</strong>：</p>
+            <ul>
+              <li>版本号更新</li>
+              <li>运行测试套件</li>
+              <li>构建发布包</li>
+              <li>部署新版本</li>
+            </ul>
+          </li>
+        </ol>
+        <h2 id="常见问题"><a aria-hidden="true" tabindex="-1" href="#常见问题" class="anchor"><span class="icon icon-link"></span></a>常见问题</h2>
+        <h3 id="1-配置问题"><a aria-hidden="true" tabindex="-1" href="#1-配置问题" class="anchor"><span class="icon icon-link"></span></a>1. 配置问题</h3>
+        <ul>
+          <li>
+            <p><strong>问题</strong>：</p>
+            <ul>
+              <li>配置不生效</li>
+              <li>设置冲突</li>
+              <li>依赖报错</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>解决方案</strong>：</p>
+            <ol>
+              <li>检查配置文件格式</li>
+              <li>清除缓存重新加载</li>
+              <li>检查配置优先级</li>
+            </ol>
+          </li>
+        </ul>
+        <h3 id="2-性能问题"><a aria-hidden="true" tabindex="-1" href="#2-性能问题" class="anchor"><span class="icon icon-link"></span></a>2. 性能问题</h3>
+        <ul>
+          <li>
+            <p><strong>表现</strong>：</p>
+            <ul>
+              <li>加载缓慢</li>
+              <li>内存占用高</li>
+              <li>响应延迟</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>优化方法</strong>：</p>
+            <ol>
+              <li>精简依赖</li>
+              <li>优化构建配置</li>
+              <li>启用缓存机制</li>
+            </ol>
+          </li>
+        </ul>
+        <h2 id="小结"><a aria-hidden="true" tabindex="-1" href="#小结" class="anchor"><span class="icon icon-link"></span></a>小结</h2>
+        <p>项目管理是提高开发效率的关键。建议：</p>
+        <ol>
+          <li>建立清晰的项目结构</li>
+          <li>规范化配置管理</li>
+          <li>自动化重复任务</li>
+          <li>重视团队协作</li>
+        </ol>
+        <p>记住，好的项目管理能让开发更高效，维护更轻松。</p>
+        <section class="article-footer"><a href="https://github.com/zhangrenyang/cursor/blob/master/src\4.高级特性\4.1.项目管理.md" class="edit-button" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+<span>Edit this page on GitHub</span>
+</a><span class="atime">2025/02/01</span></section>
+      </markdown-style>
+      <nav class="tocs">
+        <aside class="inner toc">
+          <ol class="tocs-list">
+            <li><a href="#功能概述" class="tocs-link">功能概述</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-什么是项目管理" class="tocs-link">1. 什么是项目管理？</a></li>
+                <li><a href="#2-主要功能" class="tocs-link">2. 主要功能</a></li>
+              </ol>
+            </li>
+            <li><a href="#工作区管理" class="tocs-link">工作区管理</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-基本操作" class="tocs-link">1. 基本操作</a></li>
+                <li><a href="#2-工作区配置" class="tocs-link">2. 工作区配置</a></li>
+              </ol>
+            </li>
+            <li><a href="#任务管理" class="tocs-link">任务管理</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-任务配置" class="tocs-link">1. 任务配置</a></li>
+                <li><a href="#2-自动化任务" class="tocs-link">2. 自动化任务</a></li>
+              </ol>
+            </li>
+            <li><a href="#依赖管理" class="tocs-link">依赖管理</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-包管理" class="tocs-link">1. 包管理</a></li>
+                <li><a href="#2-版本控制" class="tocs-link">2. 版本控制</a></li>
+              </ol>
+            </li>
+            <li><a href="#项目配置" class="tocs-link">项目配置</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-编辑器配置" class="tocs-link">1. 编辑器配置</a></li>
+                <li><a href="#2-构建配置" class="tocs-link">2. 构建配置</a></li>
+              </ol>
+            </li>
+            <li><a href="#团队协作" class="tocs-link">团队协作</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-共享配置" class="tocs-link">1. 共享配置</a></li>
+                <li><a href="#2-协作规范" class="tocs-link">2. 协作规范</a></li>
+              </ol>
+            </li>
+            <li><a href="#最佳实践" class="tocs-link">最佳实践</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-项目结构" class="tocs-link">1. 项目结构</a></li>
+                <li><a href="#2-工作流程" class="tocs-link">2. 工作流程</a></li>
+              </ol>
+            </li>
+            <li><a href="#常见问题" class="tocs-link">常见问题</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-配置问题" class="tocs-link">1. 配置问题</a></li>
+                <li><a href="#2-性能问题" class="tocs-link">2. 性能问题</a></li>
+              </ol>
+            </li>
+            <li><a href="#小结" class="tocs-link">小结</a></li>
+          </ol>
+        </aside>
+      </nav>
+    </div>
+    <script src="../js/demo-preview.js?v=1.34.1"></script>
+    <div class="footer warpper">Released under the MIT License. Copyright © 2022 Kenny Wong<br>Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a></div>
+    <script src="../js/tocbot.js?v=1.34.1"></script>
+  </body>
+</html>

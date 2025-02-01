@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>界面布局介绍 cursor</title>
+    <meta name="description" content="Cursor 的界面布局采用现代化的设计理念，主要分为以下几个区域：">
+    <link rel="stylesheet" type="text/css" href="../css/main.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/tocbot.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/media.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/copy.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/demo-preview.css?v=1.34.1">
+    <link rel="icon" href="../cursor.webp" type="image/x-icon">
+    <script src="../js/copy.js?v=1.34.1"></script>
+    <script src="../js/dark-mode.js?v=1.34.1"></script>
+    <script src="../js/markdown-style.js?v=1.34.1"></script>
+  </head>
+  <body id="idoctotop"><a href="#idoctotop" class="gototop">top</a>
+    <header class="header">
+      <article class="inner warpper"><a class="logo" href="../index.html"><img alt="cursor logo" src="../cursor.webp">
+<span class="title">cursor</span></a>
+        <div class="content">
+          <ul class="menu">
+            <li><a href="../index.html" target="" class="">Home</a></li>
+            <li><a href="../about.html" target="" class="">About</a></li>
+          </ul><a href="https://github.com/zhangrenyang/cursor" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg></a>
+          <dark-mode permanent=""></dark-mode>
+        </div>
+      </article>
+    </header>
+    <div class="warpper-content warpper">
+      <markdown-style theme-auto-switch-disabled="">
+        <h1 id="界面布局介绍"><a aria-hidden="true" tabindex="-1" href="#界面布局介绍" class="anchor"><span class="icon icon-link"></span></a>界面布局介绍</h1>
+        <h2 id="整体布局"><a aria-hidden="true" tabindex="-1" href="#整体布局" class="anchor"><span class="icon icon-link"></span></a>整体布局</h2>
+        <p>Cursor 的界面布局采用现代化的设计理念，主要分为以下几个区域：</p>
+        <h3 id="1-顶部菜单栏"><a aria-hidden="true" tabindex="-1" href="#1-顶部菜单栏" class="anchor"><span class="icon icon-link"></span></a>1. 顶部菜单栏</h3>
+        <p>位于界面最上方，包含以下功能：</p>
+        <ul>
+          <li><strong>文件菜单</strong>：新建、打开、保存等基本操作</li>
+          <li><strong>编辑菜单</strong>：复制、粘贴、查找替换等编辑功能</li>
+          <li><strong>视图菜单</strong>：调整界面显示和布局</li>
+          <li><strong>AI 菜单</strong>：访问 AI 相关功能</li>
+          <li><strong>帮助菜单</strong>：查看文档和获取支持</li>
+        </ul>
+        <h3 id="2-侧边栏左侧"><a aria-hidden="true" tabindex="-1" href="#2-侧边栏左侧" class="anchor"><span class="icon icon-link"></span></a>2. 侧边栏（左侧）</h3>
+        <p>可通过 <code>Ctrl+B</code> 快速切换显示/隐藏，包含：</p>
+        <ul>
+          <li><strong>文件资源管理器</strong>：浏览和管理项目文件</li>
+          <li><strong>搜索面板</strong>：全局搜索文件内容</li>
+          <li><strong>Git 面板</strong>：管理代码版本</li>
+          <li><strong>插件市场</strong>：浏览和安装扩展功能</li>
+        </ul>
+        <h3 id="3-编辑区中央"><a aria-hidden="true" tabindex="-1" href="#3-编辑区中央" class="anchor"><span class="icon icon-link"></span></a>3. 编辑区（中央）</h3>
+        <p>主要的代码编辑区域，特点：</p>
+        <ul>
+          <li><strong>多标签页</strong>：支持同时打开多个文件</li>
+          <li><strong>分屏功能</strong>：可水平或垂直分割编辑区</li>
+          <li><strong>小地图</strong>：右侧代码缩略图，快速定位</li>
+          <li><strong>行号显示</strong>：方便代码定位和引用</li>
+        </ul>
+        <h3 id="4-面板区底部"><a aria-hidden="true" tabindex="-1" href="#4-面板区底部" class="anchor"><span class="icon icon-link"></span></a>4. 面板区（底部）</h3>
+        <p>通过 <code>Ctrl+J</code> 切换显示/隐藏，包含：</p>
+        <ul>
+          <li><strong>集成终端</strong>：执行命令行操作</li>
+          <li><strong>问题面板</strong>：显示代码问题和警告</li>
+          <li><strong>输出面板</strong>：显示各类输出信息</li>
+          <li><strong>调试控制台</strong>：调试时查看变量和输出</li>
+        </ul>
+        <h3 id="5-ai-助手面板右侧"><a aria-hidden="true" tabindex="-1" href="#5-ai-助手面板右侧" class="anchor"><span class="icon icon-link"></span></a>5. AI 助手面板（右侧）</h3>
+        <p>可通过 <code>Ctrl+Shift+A</code> 快速访问：</p>
+        <ul>
+          <li><strong>代码建议</strong>：实时提供编码建议</li>
+          <li><strong>代码解释</strong>：解释选中的代码片段</li>
+          <li><strong>问答对话</strong>：与 AI 进行编程相关对话</li>
+          <li><strong>代码生成</strong>：根据描述生成代码</li>
+        </ul>
+        <h2 id="自定义布局"><a aria-hidden="true" tabindex="-1" href="#自定义布局" class="anchor"><span class="icon icon-link"></span></a>自定义布局</h2>
+        <h3 id="1-面板大小调整"><a aria-hidden="true" tabindex="-1" href="#1-面板大小调整" class="anchor"><span class="icon icon-link"></span></a>1. 面板大小调整</h3>
+        <ul>
+          <li>拖动面板边缘调整大小</li>
+          <li>双击面板标题栏最大化</li>
+          <li>点击面板右上角按钮关闭</li>
+        </ul>
+        <h3 id="2-视图布局"><a aria-hidden="true" tabindex="-1" href="#2-视图布局" class="anchor"><span class="icon icon-link"></span></a>2. 视图布局</h3>
+        <ul>
+          <li><strong>Zen 模式</strong>：<code>Ctrl+K Z</code> 启用专注模式</li>
+          <li><strong>全屏模式</strong>：<code>F11</code> 切换全屏显示</li>
+          <li><strong>面板位置</strong>：可拖动调整各面板位置</li>
+        </ul>
+        <h3 id="3-主题定制"><a aria-hidden="true" tabindex="-1" href="#3-主题定制" class="anchor"><span class="icon icon-link"></span></a>3. 主题定制</h3>
+        <ul>
+          <li><strong>颜色主题</strong>：支持浅色/深色主题切换</li>
+          <li><strong>图标主题</strong>：可更换文件图标风格</li>
+          <li><strong>字体设置</strong>：自定义字体和大小</li>
+        </ul>
+        <h2 id="布局使用技巧"><a aria-hidden="true" tabindex="-1" href="#布局使用技巧" class="anchor"><span class="icon icon-link"></span></a>布局使用技巧</h2>
+        <ol>
+          <li>
+            <p><strong>高效工作区配置</strong>：</p>
+            <ul>
+              <li>左侧放置常用文件</li>
+              <li>右侧保持 AI 助手可见</li>
+              <li>底部适时显示终端</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>多屏幕协同</strong>：</p>
+            <ul>
+              <li>主屏编写代码</li>
+              <li>副屏查看文档或预览</li>
+              <li>合理分配面板位置</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>快捷操作</strong>：</p>
+            <ul>
+              <li>使用快捷键快速切换面板</li>
+              <li>善用分屏提高效率</li>
+              <li>灵活运用 AI 助手</li>
+            </ul>
+          </li>
+        </ol>
+        <h2 id="布局最佳实践"><a aria-hidden="true" tabindex="-1" href="#布局最佳实践" class="anchor"><span class="icon icon-link"></span></a>布局最佳实践</h2>
+        <ol>
+          <li>
+            <p><strong>保持整洁</strong>：</p>
+            <ul>
+              <li>及时关闭不用的标签页</li>
+              <li>隐藏暂时不用的面板</li>
+              <li>保持工作区域清爽</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>合理分配空间</strong>：</p>
+            <ul>
+              <li>编辑区域保持足够大</li>
+              <li>AI 面板保持适当宽度</li>
+              <li>终端高度根据需要调整</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>个性化配置</strong>：</p>
+            <ul>
+              <li>根据项目需求调整布局</li>
+              <li>创建不同场景的布局配置</li>
+              <li>定期优化使用体验</li>
+            </ul>
+          </li>
+        </ol>
+        <h2 id="小结"><a aria-hidden="true" tabindex="-1" href="#小结" class="anchor"><span class="icon icon-link"></span></a>小结</h2>
+        <p>良好的界面布局能显著提升开发效率。建议新用户先熟悉默认布局，随后根据个人习惯逐步调整，找到最适合自己的布局方式。记住，最好的布局是最适合您工作流程的布局。</p>
+        <section class="article-footer"><a href="https://github.com/zhangrenyang/cursor/blob/master/src\1.基础入门\1.3.界面布局介绍.md" class="edit-button" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+<span>Edit this page on GitHub</span>
+</a><span class="atime">2025/02/01</span></section>
+      </markdown-style>
+      <nav class="tocs">
+        <aside class="inner toc">
+          <ol class="tocs-list">
+            <li><a href="#整体布局" class="tocs-link">整体布局</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-顶部菜单栏" class="tocs-link">1. 顶部菜单栏</a></li>
+                <li><a href="#2-侧边栏左侧" class="tocs-link">2. 侧边栏（左侧）</a></li>
+                <li><a href="#3-编辑区中央" class="tocs-link">3. 编辑区（中央）</a></li>
+                <li><a href="#4-面板区底部" class="tocs-link">4. 面板区（底部）</a></li>
+                <li><a href="#5-ai-助手面板右侧" class="tocs-link">5. AI 助手面板（右侧）</a></li>
+              </ol>
+            </li>
+            <li><a href="#自定义布局" class="tocs-link">自定义布局</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-面板大小调整" class="tocs-link">1. 面板大小调整</a></li>
+                <li><a href="#2-视图布局" class="tocs-link">2. 视图布局</a></li>
+                <li><a href="#3-主题定制" class="tocs-link">3. 主题定制</a></li>
+              </ol>
+            </li>
+            <li><a href="#布局使用技巧" class="tocs-link">布局使用技巧</a></li>
+            <li><a href="#布局最佳实践" class="tocs-link">布局最佳实践</a></li>
+            <li><a href="#小结" class="tocs-link">小结</a></li>
+          </ol>
+        </aside>
+      </nav>
+    </div>
+    <script src="../js/demo-preview.js?v=1.34.1"></script>
+    <div class="footer warpper">Released under the MIT License. Copyright © 2022 Kenny Wong<br>Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a></div>
+    <script src="../js/tocbot.js?v=1.34.1"></script>
+  </body>
+</html>

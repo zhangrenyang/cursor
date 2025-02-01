@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开发工作流程 cursor</title>
+    <meta name="description" content="开发工作流是一套规范化的开发过程，包括代码编写、测试、提交、审查等环节。良好的工作流程可以提高开发效率，保证代码质量，促进团队协作。">
+    <link rel="stylesheet" type="text/css" href="../css/main.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/tocbot.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/media.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/copy.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/demo-preview.css?v=1.34.1">
+    <link rel="icon" href="../cursor.webp" type="image/x-icon">
+    <script src="../js/copy.js?v=1.34.1"></script>
+    <script src="../js/dark-mode.js?v=1.34.1"></script>
+    <script src="../js/markdown-style.js?v=1.34.1"></script>
+  </head>
+  <body id="idoctotop"><a href="#idoctotop" class="gototop">top</a>
+    <header class="header">
+      <article class="inner warpper"><a class="logo" href="../index.html"><img alt="cursor logo" src="../cursor.webp">
+<span class="title">cursor</span></a>
+        <div class="content">
+          <ul class="menu">
+            <li><a href="../index.html" target="" class="">Home</a></li>
+            <li><a href="../about.html" target="" class="">About</a></li>
+          </ul><a href="https://github.com/zhangrenyang/cursor" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg></a>
+          <dark-mode permanent=""></dark-mode>
+        </div>
+      </article>
+    </header>
+    <div class="warpper-content warpper">
+      <markdown-style theme-auto-switch-disabled="">
+        <h1 id="开发工作流程"><a aria-hidden="true" tabindex="-1" href="#开发工作流程" class="anchor"><span class="icon icon-link"></span></a>开发工作流程</h1>
+        <h2 id="工作流概述"><a aria-hidden="true" tabindex="-1" href="#工作流概述" class="anchor"><span class="icon icon-link"></span></a>工作流概述</h2>
+        <h3 id="1-什么是开发工作流"><a aria-hidden="true" tabindex="-1" href="#1-什么是开发工作流" class="anchor"><span class="icon icon-link"></span></a>1. 什么是开发工作流？</h3>
+        <p>开发工作流是一套规范化的开发过程，包括代码编写、测试、提交、审查等环节。良好的工作流程可以提高开发效率，保证代码质量，促进团队协作。</p>
+        <h3 id="2-主要环节"><a aria-hidden="true" tabindex="-1" href="#2-主要环节" class="anchor"><span class="icon icon-link"></span></a>2. 主要环节</h3>
+        <ul>
+          <li><strong>需求分析</strong>：理解项目需求</li>
+          <li><strong>任务分解</strong>：拆分开发任务</li>
+          <li><strong>编码实现</strong>：编写具体代码</li>
+          <li><strong>测试验证</strong>：确保代码质量</li>
+          <li><strong>代码审查</strong>：团队代码评审</li>
+          <li><strong>部署上线</strong>：发布到生产环境</li>
+        </ul>
+        <h2 id="日常开发流程"><a aria-hidden="true" tabindex="-1" href="#日常开发流程" class="anchor"><span class="icon icon-link"></span></a>日常开发流程</h2>
+        <h3 id="1-准备工作"><a aria-hidden="true" tabindex="-1" href="#1-准备工作" class="anchor"><span class="icon icon-link"></span></a>1. 准备工作</h3>
+        <ul>
+          <li>
+            <p><strong>环境配置</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 1. 克隆项目</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> clone <span class="token punctuation">[</span>项目地址<span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 2. 安装依赖</span>
+</span><span class="code-line line-number" line="5"><span class="token function">npm</span> <span class="token function">install</span>
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token comment"># 3. 配置开发环境</span>
+</span><span class="code-line line-number" line="8"><span class="token function">cp</span> .env.example .env
+</span></code><input type="hidden" value="# 1. 克隆项目
+git clone [项目地址]
+
+# 2. 安装依赖
+npm install
+
+# 3. 配置开发环境
+cp .env.example .env
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>分支管理</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 创建功能分支</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> feature/user-login
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 或创建修复分支</span>
+</span><span class="code-line line-number" line="5"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> fix/login-issue
+</span></code><input type="hidden" value="# 创建功能分支
+git checkout -b feature/user-login
+
+# 或创建修复分支
+git checkout -b fix/login-issue
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-编码规范"><a aria-hidden="true" tabindex="-1" href="#2-编码规范" class="anchor"><span class="icon icon-link"></span></a>2. 编码规范</h3>
+        <ul>
+          <li>
+            <p><strong>代码风格</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 好的实践</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">function</span> <span class="token function">calculateTotal</span><span class="token punctuation">(</span><span class="token parameter">items</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token keyword control-flow">return</span> items<span class="token punctuation">.</span><span class="token method function property-access">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">total<span class="token punctuation">,</span> item</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> total <span class="token operator">+</span> item<span class="token punctuation">.</span><span class="token property-access">price</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="4"><span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6"><span class="token comment">// 避免的写法</span>
+</span><span class="code-line line-number" line="7"><span class="token keyword">function</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="8">  <span class="token keyword">var</span> t <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="9">  <span class="token keyword control-flow">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&#x3C;</span> x<span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> t <span class="token operator">+=</span> x<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">p</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="10">  <span class="token keyword control-flow">return</span> t<span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="11"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 好的实践
+function calculateTotal(items) {
+  return items.reduce((total, item) => total + item.price, 0);
+}
+
+// 避免的写法
+function calc(x) {
+  var t = 0;
+  for(var i = 0; i < x.length; i++) t += x[i].p;
+  return t;
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>注释规范</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token doc-comment comment">/**
+</span></span><span class="code-line line-number" line="2"><span class="token doc-comment comment"> * 计算订单总金额
+</span></span><span class="code-line line-number" line="3"><span class="token doc-comment comment"> * <span class="token keyword">@param</span> <span class="token class-name"><span class="token punctuation">{</span>Array<span class="token punctuation">}</span></span> <span class="token parameter">items</span> - 订单项列表
+</span></span><span class="code-line line-number" line="4"><span class="token doc-comment comment"> * <span class="token keyword">@returns</span> <span class="token class-name"><span class="token punctuation">{</span>number<span class="token punctuation">}</span></span> 总金额
+</span></span><span class="code-line line-number" line="5"><span class="token doc-comment comment"> */</span>
+</span><span class="code-line line-number" line="6"><span class="token keyword">function</span> <span class="token function">calculateOrderTotal</span><span class="token punctuation">(</span><span class="token parameter">items</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="7">  <span class="token comment">// 代码实现</span>
+</span><span class="code-line line-number" line="8"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="/**
+ * 计算订单总金额
+ * @param {Array} items - 订单项列表
+ * @returns {number} 总金额
+ */
+function calculateOrderTotal(items) {
+  // 代码实现
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="版本控制"><a aria-hidden="true" tabindex="-1" href="#版本控制" class="anchor"><span class="icon icon-link"></span></a>版本控制</h2>
+        <h3 id="1-提交规范"><a aria-hidden="true" tabindex="-1" href="#1-提交规范" class="anchor"><span class="icon icon-link"></span></a>1. 提交规范</h3>
+        <ul>
+          <li>
+            <p><strong>提交信息</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">feat: 添加用户登录功能
+</span><span class="code-line line-number" line="2">^    ^
+</span><span class="code-line line-number" line="3">|    |
+</span><span class="code-line line-number" line="4">|    +-> 简要描述
+</span><span class="code-line line-number" line="5">+-> 类型: feat/fix/docs/style/refactor
+</span></code><input type="hidden" value="feat: 添加用户登录功能
+^    ^
+|    |
+|    +-> 简要描述
++-> 类型: feat/fix/docs/style/refactor
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>提交步骤</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 1. 检查变更</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> status
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 2. 暂存文件</span>
+</span><span class="code-line line-number" line="5"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token comment"># 3. 提交代码</span>
+</span><span class="code-line line-number" line="8"><span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"feat: 添加用户登录功能"</span>
+</span><span class="code-line line-number" line="9">
+</span><span class="code-line line-number" line="10"><span class="token comment"># 4. 推送到远程</span>
+</span><span class="code-line line-number" line="11"><span class="token function">git</span> push origin feature/user-login
+</span></code><input type="hidden" value="# 1. 检查变更
+git status
+
+# 2. 暂存文件
+git add .
+
+# 3. 提交代码
+git commit -m &#x22;feat: 添加用户登录功能&#x22;
+
+# 4. 推送到远程
+git push origin feature/user-login
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-分支策略"><a aria-hidden="true" tabindex="-1" href="#2-分支策略" class="anchor"><span class="icon icon-link"></span></a>2. 分支策略</h3>
+        <ul>
+          <li>
+            <p><strong>分支类型</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">main      - 主分支，稳定版本
+</span><span class="code-line line-number" line="2">develop   - 开发分支，最新代码
+</span><span class="code-line line-number" line="3">feature/* - 功能分支
+</span><span class="code-line line-number" line="4">fix/*     - 修复分支
+</span><span class="code-line line-number" line="5">release/* - 发布分支
+</span></code><input type="hidden" value="main      - 主分支，稳定版本
+develop   - 开发分支，最新代码
+feature/* - 功能分支
+fix/*     - 修复分支
+release/* - 发布分支
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>合并流程</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 1. 更新本地分支</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> pull origin develop
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 2. 解决冲突</span>
+</span><span class="code-line line-number" line="5"><span class="token comment"># 3. 提交合并请求</span>
+</span><span class="code-line line-number" line="6"><span class="token comment"># 4. 代码审查</span>
+</span><span class="code-line line-number" line="7"><span class="token comment"># 5. 合并到目标分支</span>
+</span></code><input type="hidden" value="# 1. 更新本地分支
+git pull origin develop
+
+# 2. 解决冲突
+# 3. 提交合并请求
+# 4. 代码审查
+# 5. 合并到目标分支
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="代码审查"><a aria-hidden="true" tabindex="-1" href="#代码审查" class="anchor"><span class="icon icon-link"></span></a>代码审查</h2>
+        <h3 id="1-审查要点"><a aria-hidden="true" tabindex="-1" href="#1-审查要点" class="anchor"><span class="icon icon-link"></span></a>1. 审查要点</h3>
+        <ul>
+          <li>
+            <p><strong>代码质量</strong>：</p>
+            <ul>
+              <li>代码规范性</li>
+              <li>实现逻辑</li>
+              <li>性能问题</li>
+              <li>安全隐患</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>文档完整性</strong>：</p>
+            <ul>
+              <li>注释完整性</li>
+              <li>API 文档</li>
+              <li>更新日志</li>
+              <li>使用说明</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-审查流程"><a aria-hidden="true" tabindex="-1" href="#2-审查流程" class="anchor"><span class="icon icon-link"></span></a>2. 审查流程</h3>
+        <ol>
+          <li>
+            <p><strong>提交审查</strong>：</p>
+            <ul>
+              <li>创建合并请求</li>
+              <li>填写变更说明</li>
+              <li>指定审查人员</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>处理反馈</strong>：</p>
+            <ul>
+              <li>及时响应评论</li>
+              <li>修改问题代码</li>
+              <li>更新提交记录</li>
+            </ul>
+          </li>
+        </ol>
+        <h2 id="测试验证"><a aria-hidden="true" tabindex="-1" href="#测试验证" class="anchor"><span class="icon icon-link"></span></a>测试验证</h2>
+        <h3 id="1-单元测试"><a aria-hidden="true" tabindex="-1" href="#1-单元测试" class="anchor"><span class="icon icon-link"></span></a>1. 单元测试</h3>
+        <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 测试示例</span>
+</span><span class="code-line line-number" line="2"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'用户登录'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'正确的用户名和密码应该登录成功'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">,</span> <span class="token string">'pass'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="5">    <span class="token function">expect</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token property-access">success</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">toBe</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="6">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8">  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'错误的密码应该登录失败'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="9">    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">,</span> <span class="token string">'wrong'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="10">    <span class="token function">expect</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token property-access">success</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">toBe</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="11">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="12"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 测试示例
+describe(&#x27;用户登录&#x27;, () => {
+  test(&#x27;正确的用户名和密码应该登录成功&#x27;, async () => {
+    const result = await login(&#x27;user&#x27;, &#x27;pass&#x27;);
+    expect(result.success).toBe(true);
+  });
+
+  test(&#x27;错误的密码应该登录失败&#x27;, async () => {
+    const result = await login(&#x27;user&#x27;, &#x27;wrong&#x27;);
+    expect(result.success).toBe(false);
+  });
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h3 id="2-功能测试"><a aria-hidden="true" tabindex="-1" href="#2-功能测试" class="anchor"><span class="icon icon-link"></span></a>2. 功能测试</h3>
+        <ul>
+          <li>
+            <p><strong>测试清单</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">1. 正常流程测试
+</span><span class="code-line line-number" line="2">2. 边界条件测试
+</span><span class="code-line line-number" line="3">3. 错误处理测试
+</span><span class="code-line line-number" line="4">4. 性能测试
+</span></code><input type="hidden" value="1. 正常流程测试
+2. 边界条件测试
+3. 错误处理测试
+4. 性能测试
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>测试环境</strong>：</p>
+            <ul>
+              <li>开发环境</li>
+              <li>测试环境</li>
+              <li>预发布环境</li>
+              <li>生产环境</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="部署发布"><a aria-hidden="true" tabindex="-1" href="#部署发布" class="anchor"><span class="icon icon-link"></span></a>部署发布</h2>
+        <h3 id="1-发布准备"><a aria-hidden="true" tabindex="-1" href="#1-发布准备" class="anchor"><span class="icon icon-link"></span></a>1. 发布准备</h3>
+        <ul>
+          <li>
+            <p><strong>版本管理</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 更新版本号</span>
+</span><span class="code-line line-number" line="2"><span class="token function">npm</span> version patch/minor/major
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 生成更新日志</span>
+</span><span class="code-line line-number" line="5"><span class="token function">npm</span> run changelog
+</span></code><input type="hidden" value="# 更新版本号
+npm version patch/minor/major
+
+# 生成更新日志
+npm run changelog
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>预发布检查</strong>：</p>
+            <ol>
+              <li>运行测试套件</li>
+              <li>检查依赖更新</li>
+              <li>审查配置文件</li>
+              <li>备份关键数据</li>
+            </ol>
+          </li>
+        </ul>
+        <h3 id="2-部署流程"><a aria-hidden="true" tabindex="-1" href="#2-部署流程" class="anchor"><span class="icon icon-link"></span></a>2. 部署流程</h3>
+        <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 1. 合并到发布分支</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> checkout release/v1.0.0
+</span><span class="code-line line-number" line="3"><span class="token function">git</span> merge develop
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5"><span class="token comment"># 2. 运行构建</span>
+</span><span class="code-line line-number" line="6"><span class="token function">npm</span> run build
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8"><span class="token comment"># 3. 部署到服务器</span>
+</span><span class="code-line line-number" line="9"><span class="token function">npm</span> run deploy
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11"><span class="token comment"># 4. 监控系统状态</span>
+</span><span class="code-line line-number" line="12"><span class="token function">npm</span> run monitor
+</span></code><input type="hidden" value="# 1. 合并到发布分支
+git checkout release/v1.0.0
+git merge develop
+
+# 2. 运行构建
+npm run build
+
+# 3. 部署到服务器
+npm run deploy
+
+# 4. 监控系统状态
+npm run monitor
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h2 id="最佳实践"><a aria-hidden="true" tabindex="-1" href="#最佳实践" class="anchor"><span class="icon icon-link"></span></a>最佳实践</h2>
+        <h3 id="1-效率提升"><a aria-hidden="true" tabindex="-1" href="#1-效率提升" class="anchor"><span class="icon icon-link"></span></a>1. 效率提升</h3>
+        <ul>
+          <li>
+            <p><strong>自动化工具</strong>：</p>
+            <ul>
+              <li>代码生成器</li>
+              <li>自动化测试</li>
+              <li>持续集成/部署</li>
+              <li>代码检查工具</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>快捷操作</strong>：</p>
+            <ul>
+              <li>使用代码片段</li>
+              <li>熟记快捷键</li>
+              <li>使用命令别名</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-团队协作"><a aria-hidden="true" tabindex="-1" href="#2-团队协作" class="anchor"><span class="icon icon-link"></span></a>2. 团队协作</h3>
+        <ul>
+          <li>
+            <p><strong>沟通机制</strong>：</p>
+            <ul>
+              <li>日常站会</li>
+              <li>代码评审会</li>
+              <li>技术分享会</li>
+              <li>文档维护</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>知识共享</strong>：</p>
+            <ul>
+              <li>技术文档</li>
+              <li>最佳实践</li>
+              <li>常见问题</li>
+              <li>解决方案</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="小结"><a aria-hidden="true" tabindex="-1" href="#小结" class="anchor"><span class="icon icon-link"></span></a>小结</h2>
+        <p>良好的开发工作流程至关重要。建议：</p>
+        <ol>
+          <li>遵循团队规范</li>
+          <li>保持良好习惯</li>
+          <li>重视代码质量</li>
+          <li>注重团队协作</li>
+        </ol>
+        <p>记住，工作流程是为了提高效率，而不是增加负担。根据团队实际情况，适度调整和优化流程。</p>
+        <section class="article-footer"><a href="https://github.com/zhangrenyang/cursor/blob/master/src\5.最佳实践\5.1.开发工作流程.md" class="edit-button" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+<span>Edit this page on GitHub</span>
+</a><span class="atime">2025/02/01</span></section>
+      </markdown-style>
+      <nav class="tocs">
+        <aside class="inner toc">
+          <ol class="tocs-list">
+            <li><a href="#工作流概述" class="tocs-link">工作流概述</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-什么是开发工作流" class="tocs-link">1. 什么是开发工作流？</a></li>
+                <li><a href="#2-主要环节" class="tocs-link">2. 主要环节</a></li>
+              </ol>
+            </li>
+            <li><a href="#日常开发流程" class="tocs-link">日常开发流程</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-准备工作" class="tocs-link">1. 准备工作</a></li>
+                <li><a href="#2-编码规范" class="tocs-link">2. 编码规范</a></li>
+              </ol>
+            </li>
+            <li><a href="#版本控制" class="tocs-link">版本控制</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-提交规范" class="tocs-link">1. 提交规范</a></li>
+                <li><a href="#2-分支策略" class="tocs-link">2. 分支策略</a></li>
+              </ol>
+            </li>
+            <li><a href="#代码审查" class="tocs-link">代码审查</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-审查要点" class="tocs-link">1. 审查要点</a></li>
+                <li><a href="#2-审查流程" class="tocs-link">2. 审查流程</a></li>
+              </ol>
+            </li>
+            <li><a href="#测试验证" class="tocs-link">测试验证</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-单元测试" class="tocs-link">1. 单元测试</a></li>
+                <li><a href="#2-功能测试" class="tocs-link">2. 功能测试</a></li>
+              </ol>
+            </li>
+            <li><a href="#部署发布" class="tocs-link">部署发布</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-发布准备" class="tocs-link">1. 发布准备</a></li>
+                <li><a href="#2-部署流程" class="tocs-link">2. 部署流程</a></li>
+              </ol>
+            </li>
+            <li><a href="#最佳实践" class="tocs-link">最佳实践</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-效率提升" class="tocs-link">1. 效率提升</a></li>
+                <li><a href="#2-团队协作" class="tocs-link">2. 团队协作</a></li>
+              </ol>
+            </li>
+            <li><a href="#小结" class="tocs-link">小结</a></li>
+          </ol>
+        </aside>
+      </nav>
+    </div>
+    <script src="../js/demo-preview.js?v=1.34.1"></script>
+    <div class="footer warpper">Released under the MIT License. Copyright © 2022 Kenny Wong<br>Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a></div>
+    <script src="../js/tocbot.js?v=1.34.1"></script>
+  </body>
+</html>

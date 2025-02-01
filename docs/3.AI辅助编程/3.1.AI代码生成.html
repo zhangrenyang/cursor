@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 代码生成 cursor</title>
+    <meta name="description" content="AI 代码生成是 Cursor 的核心功能之一，它能根据自然语言描述或注释自动生成相应的代码。这个功能可以大大提高编程效率，减少重复工作。">
+    <link rel="stylesheet" type="text/css" href="../css/main.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/tocbot.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/media.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/copy.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/demo-preview.css?v=1.34.1">
+    <link rel="icon" href="../cursor.webp" type="image/x-icon">
+    <script src="../js/copy.js?v=1.34.1"></script>
+    <script src="../js/dark-mode.js?v=1.34.1"></script>
+    <script src="../js/markdown-style.js?v=1.34.1"></script>
+  </head>
+  <body id="idoctotop"><a href="#idoctotop" class="gototop">top</a>
+    <header class="header">
+      <article class="inner warpper"><a class="logo" href="../index.html"><img alt="cursor logo" src="../cursor.webp">
+<span class="title">cursor</span></a>
+        <div class="content">
+          <ul class="menu">
+            <li><a href="../index.html" target="" class="">Home</a></li>
+            <li><a href="../about.html" target="" class="">About</a></li>
+          </ul><a href="https://github.com/zhangrenyang/cursor" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg></a>
+          <dark-mode permanent=""></dark-mode>
+        </div>
+      </article>
+    </header>
+    <div class="warpper-content warpper">
+      <markdown-style theme-auto-switch-disabled="">
+        <h1 id="ai-代码生成"><a aria-hidden="true" tabindex="-1" href="#ai-代码生成" class="anchor"><span class="icon icon-link"></span></a>AI 代码生成</h1>
+        <h2 id="功能介绍"><a aria-hidden="true" tabindex="-1" href="#功能介绍" class="anchor"><span class="icon icon-link"></span></a>功能介绍</h2>
+        <h3 id="1-什么是-ai-代码生成"><a aria-hidden="true" tabindex="-1" href="#1-什么是-ai-代码生成" class="anchor"><span class="icon icon-link"></span></a>1. 什么是 AI 代码生成？</h3>
+        <p>AI 代码生成是 Cursor 的核心功能之一，它能根据自然语言描述或注释自动生成相应的代码。这个功能可以大大提高编程效率，减少重复工作。</p>
+        <h3 id="2-工作原理"><a aria-hidden="true" tabindex="-1" href="#2-工作原理" class="anchor"><span class="icon icon-link"></span></a>2. 工作原理</h3>
+        <ul>
+          <li><strong>自然语言处理</strong>：理解开发者的意图</li>
+          <li><strong>上下文分析</strong>：考虑当前代码环境</li>
+          <li><strong>智能补全</strong>：生成符合规范的代码</li>
+          <li><strong>实时优化</strong>：根据反馈调整输出</li>
+        </ul>
+        <h2 id="基本使用"><a aria-hidden="true" tabindex="-1" href="#基本使用" class="anchor"><span class="icon icon-link"></span></a>基本使用</h2>
+        <h3 id="1-触发方式"><a aria-hidden="true" tabindex="-1" href="#1-触发方式" class="anchor"><span class="icon icon-link"></span></a>1. 触发方式</h3>
+        <ul>
+          <li>
+            <p><strong>命令方式</strong>：</p>
+            <ul>
+              <li>使用 <code>/</code> 命令</li>
+              <li>快捷键 <code>Ctrl+Shift+I</code></li>
+              <li>右键菜单中选择</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>注释方式</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 生成一个计算两个数之和的函数</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token comment">// AI 将自动补全函数体</span>
+</span><span class="code-line line-number" line="4"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 生成一个计算两个数之和的函数
+function add(a, b) {
+  // AI 将自动补全函数体
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-使用场景"><a aria-hidden="true" tabindex="-1" href="#2-使用场景" class="anchor"><span class="icon icon-link"></span></a>2. 使用场景</h3>
+        <ul>
+          <li>
+            <p><strong>函数生成</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 示例：生成一个数组排序函数</span>
+</span><span class="code-line line-number" line="2"><span class="token comment">// 输入提示：生成一个对数组进行快速排序的函数</span>
+</span><span class="code-line line-number" line="3"><span class="token keyword">function</span> <span class="token function">quickSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">  <span class="token comment">// AI 将生成完整的快速排序实现</span>
+</span><span class="code-line line-number" line="5"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 示例：生成一个数组排序函数
+// 输入提示：生成一个对数组进行快速排序的函数
+function quickSort(arr) {
+  // AI 将生成完整的快速排序实现
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>类定义</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 示例：生成一个用户类</span>
+</span><span class="code-line line-number" line="2"><span class="token comment">// 输入提示：创建一个带有用户基本信息的类</span>
+</span><span class="code-line line-number" line="3"><span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">  <span class="token comment">// AI 将生成属性和方法</span>
+</span><span class="code-line line-number" line="5"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 示例：生成一个用户类
+// 输入提示：创建一个带有用户基本信息的类
+class User {
+  // AI 将生成属性和方法
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="高级特性"><a aria-hidden="true" tabindex="-1" href="#高级特性" class="anchor"><span class="icon icon-link"></span></a>高级特性</h2>
+        <h3 id="1-智能上下文"><a aria-hidden="true" tabindex="-1" href="#1-智能上下文" class="anchor"><span class="icon icon-link"></span></a>1. 智能上下文</h3>
+        <ul>
+          <li>
+            <p><strong>代码分析</strong>：</p>
+            <ul>
+              <li>理解现有代码结构</li>
+              <li>保持命名一致性</li>
+              <li>遵循项目规范</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>类型推断</strong>：</p>
+            <ul>
+              <li>自动识别变量类型</li>
+              <li>生成类型注解</li>
+              <li>保持类型安全</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-交互式生成"><a aria-hidden="true" tabindex="-1" href="#2-交互式生成" class="anchor"><span class="icon icon-link"></span></a>2. 交互式生成</h3>
+        <ul>
+          <li>
+            <p><strong>代码建议</strong>：</p>
+            <ul>
+              <li>多个实现方案</li>
+              <li>性能优化建议</li>
+              <li>最佳实践推荐</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>实时调整</strong>：</p>
+            <ul>
+              <li>根据反馈修改</li>
+              <li>优化生成结果</li>
+              <li>自定义代码风格</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="使用技巧"><a aria-hidden="true" tabindex="-1" href="#使用技巧" class="anchor"><span class="icon icon-link"></span></a>使用技巧</h2>
+        <h3 id="1-提示词技巧"><a aria-hidden="true" tabindex="-1" href="#1-提示词技巧" class="anchor"><span class="icon icon-link"></span></a>1. 提示词技巧</h3>
+        <ul>
+          <li>
+            <p><strong>清晰描述</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 好的提示：</span>
+</span><span class="code-line line-number" line="2"><span class="token comment">// 生成一个函数，接收用户名和年龄，验证用户年龄是否大于18岁</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment">// 不好的提示：</span>
+</span><span class="code-line line-number" line="5"><span class="token comment">// 写个验证函数</span>
+</span></code><input type="hidden" value="// 好的提示：
+// 生成一个函数，接收用户名和年龄，验证用户年龄是否大于18岁
+
+// 不好的提示：
+// 写个验证函数
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>提供上下文</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 好的提示：</span>
+</span><span class="code-line line-number" line="2"><span class="token comment">// 基于现有的 User 类，添加一个验证邮箱格式的方法</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment">// 不好的提示：</span>
+</span><span class="code-line line-number" line="5"><span class="token comment">// 添加邮箱验证</span>
+</span></code><input type="hidden" value="// 好的提示：
+// 基于现有的 User 类，添加一个验证邮箱格式的方法
+
+// 不好的提示：
+// 添加邮箱验证
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-优化建议"><a aria-hidden="true" tabindex="-1" href="#2-优化建议" class="anchor"><span class="icon icon-link"></span></a>2. 优化建议</h3>
+        <ol>
+          <li>
+            <p><strong>代码结构</strong>：</p>
+            <ul>
+              <li>保持函数单一职责</li>
+              <li>适当添加注释</li>
+              <li>使用有意义的命名</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>性能考虑</strong>：</p>
+            <ul>
+              <li>选择合适的算法</li>
+              <li>优化数据结构</li>
+              <li>考虑边界情况</li>
+            </ul>
+          </li>
+        </ol>
+        <h2 id="最佳实践"><a aria-hidden="true" tabindex="-1" href="#最佳实践" class="anchor"><span class="icon icon-link"></span></a>最佳实践</h2>
+        <h3 id="1-开发流程"><a aria-hidden="true" tabindex="-1" href="#1-开发流程" class="anchor"><span class="icon icon-link"></span></a>1. 开发流程</h3>
+        <ol>
+          <li>
+            <p><strong>需求分析</strong>：</p>
+            <ul>
+              <li>明确功能要求</li>
+              <li>确定输入输出</li>
+              <li>考虑边界条件</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>代码生成</strong>：</p>
+            <ul>
+              <li>编写清晰提示</li>
+              <li>审查生成代码</li>
+              <li>必要时手动调整</li>
+            </ul>
+          </li>
+        </ol>
+        <h3 id="2-代码审查"><a aria-hidden="true" tabindex="-1" href="#2-代码审查" class="anchor"><span class="icon icon-link"></span></a>2. 代码审查</h3>
+        <ul>
+          <li>
+            <p><strong>检查要点</strong>：</p>
+            <ul>
+              <li>代码正确性</li>
+              <li>性能表现</li>
+              <li>可维护性</li>
+              <li>安全性考虑</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>常见问题</strong>：</p>
+            <ul>
+              <li>逻辑错误</li>
+              <li>命名不规范</li>
+              <li>重复代码</li>
+              <li>安全漏洞</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="实用示例"><a aria-hidden="true" tabindex="-1" href="#实用示例" class="anchor"><span class="icon icon-link"></span></a>实用示例</h2>
+        <h3 id="1-数据处理"><a aria-hidden="true" tabindex="-1" href="#1-数据处理" class="anchor"><span class="icon icon-link"></span></a>1. 数据处理</h3>
+        <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 生成一个处理用户数据的函数</span>
+</span><span class="code-line line-number" line="2"><span class="token comment">// 输入：用户数组，包含姓名、年龄、邮箱</span>
+</span><span class="code-line line-number" line="3"><span class="token comment">// 输出：过滤出年龄大于18且邮箱有效的用户</span>
+</span><span class="code-line line-number" line="4"><span class="token keyword">function</span> <span class="token function">processUsers</span><span class="token punctuation">(</span><span class="token parameter">users</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="5">  <span class="token comment">// AI 生成的代码</span>
+</span><span class="code-line line-number" line="6">  <span class="token keyword control-flow">return</span> users<span class="token punctuation">.</span><span class="token method function property-access">filter</span><span class="token punctuation">(</span><span class="token parameter">user</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="7">    <span class="token keyword">const</span> isAdult <span class="token operator">=</span> user<span class="token punctuation">.</span><span class="token property-access">age</span> <span class="token operator">>=</span> <span class="token number">18</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="8">    <span class="token keyword">const</span> isValidEmail <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex"><span class="token anchor function">^</span><span class="token char-class"><span class="token char-class-punctuation punctuation">[</span><span class="token char-class-negation operator">^</span><span class="token char-set class-name">\s</span>@<span class="token char-class-punctuation punctuation">]</span></span><span class="token quantifier number">+</span>@<span class="token char-class"><span class="token char-class-punctuation punctuation">[</span><span class="token char-class-negation operator">^</span><span class="token char-set class-name">\s</span>@<span class="token char-class-punctuation punctuation">]</span></span><span class="token quantifier number">+</span><span class="token special-escape escape">\.</span><span class="token char-class"><span class="token char-class-punctuation punctuation">[</span><span class="token char-class-negation operator">^</span><span class="token char-set class-name">\s</span>@<span class="token char-class-punctuation punctuation">]</span></span><span class="token quantifier number">+</span><span class="token anchor function">$</span></span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token method function property-access">test</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token property-access">email</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="9">    <span class="token keyword control-flow">return</span> isAdult <span class="token operator">&#x26;&#x26;</span> isValidEmail<span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="10">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="11"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 生成一个处理用户数据的函数
+// 输入：用户数组，包含姓名、年龄、邮箱
+// 输出：过滤出年龄大于18且邮箱有效的用户
+function processUsers(users) {
+  // AI 生成的代码
+  return users.filter(user => {
+    const isAdult = user.age >= 18;
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user.email);
+    return isAdult &#x26;&#x26; isValidEmail;
+  });
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h3 id="2-api-接口"><a aria-hidden="true" tabindex="-1" href="#2-api-接口" class="anchor"><span class="icon icon-link"></span></a>2. API 接口</h3>
+        <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 生成一个 RESTful API 接口处理函数</span>
+</span><span class="code-line line-number" line="2"><span class="token comment">// 处理用户注册请求</span>
+</span><span class="code-line line-number" line="3"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">handleUserRegistration</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">  <span class="token comment">// AI 生成的代码</span>
+</span><span class="code-line line-number" line="5">  <span class="token keyword control-flow">try</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="6">    <span class="token keyword">const</span> <span class="token punctuation">{</span> username<span class="token punctuation">,</span> email<span class="token punctuation">,</span> password <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="7">    <span class="token comment">// 数据验证和处理逻辑</span>
+</span><span class="code-line line-number" line="8">    <span class="token comment">// 返回响应</span>
+</span><span class="code-line line-number" line="9">  <span class="token punctuation">}</span> <span class="token keyword control-flow">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="10">    <span class="token comment">// 错误处理</span>
+</span><span class="code-line line-number" line="11">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="12"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 生成一个 RESTful API 接口处理函数
+// 处理用户注册请求
+async function handleUserRegistration(req, res) {
+  // AI 生成的代码
+  try {
+    const { username, email, password } = req.body;
+    // 数据验证和处理逻辑
+    // 返回响应
+  } catch (error) {
+    // 错误处理
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h2 id="常见问题"><a aria-hidden="true" tabindex="-1" href="#常见问题" class="anchor"><span class="icon icon-link"></span></a>常见问题</h2>
+        <h3 id="1-生成质量"><a aria-hidden="true" tabindex="-1" href="#1-生成质量" class="anchor"><span class="icon icon-link"></span></a>1. 生成质量</h3>
+        <ul>
+          <li><strong>问题</strong>：生成的代码质量不高</li>
+          <li><strong>解决方案</strong>：
+            <ul>
+              <li>提供更详细的描述</li>
+              <li>指定具体的要求</li>
+              <li>多次迭代优化</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-集成问题"><a aria-hidden="true" tabindex="-1" href="#2-集成问题" class="anchor"><span class="icon icon-link"></span></a>2. 集成问题</h3>
+        <ul>
+          <li><strong>问题</strong>：生成的代码与现有代码不协调</li>
+          <li><strong>解决方案</strong>：
+            <ul>
+              <li>提供完整上下文</li>
+              <li>说明代码规范</li>
+              <li>手动调整集成</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="小结"><a aria-hidden="true" tabindex="-1" href="#小结" class="anchor"><span class="icon icon-link"></span></a>小结</h2>
+        <p>AI 代码生成是提高开发效率的有力工具。建议：</p>
+        <ol>
+          <li>学会编写有效的提示词</li>
+          <li>理解并审查生成的代码</li>
+          <li>结合实际需求进行调整</li>
+          <li>持续积累使用经验</li>
+        </ol>
+        <p>记住，AI 是助手而非替代品，关键是要善用它提高开发效率，同时保持对代码质量的把控。</p>
+        <section class="article-footer"><a href="https://github.com/zhangrenyang/cursor/blob/master/src\3.AI辅助编程\3.1.AI代码生成.md" class="edit-button" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+<span>Edit this page on GitHub</span>
+</a><span class="atime">2025/02/01</span></section>
+      </markdown-style>
+      <nav class="tocs">
+        <aside class="inner toc">
+          <ol class="tocs-list">
+            <li><a href="#功能介绍" class="tocs-link">功能介绍</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-什么是-ai-代码生成" class="tocs-link">1. 什么是 AI 代码生成？</a></li>
+                <li><a href="#2-工作原理" class="tocs-link">2. 工作原理</a></li>
+              </ol>
+            </li>
+            <li><a href="#基本使用" class="tocs-link">基本使用</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-触发方式" class="tocs-link">1. 触发方式</a></li>
+                <li><a href="#2-使用场景" class="tocs-link">2. 使用场景</a></li>
+              </ol>
+            </li>
+            <li><a href="#高级特性" class="tocs-link">高级特性</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-智能上下文" class="tocs-link">1. 智能上下文</a></li>
+                <li><a href="#2-交互式生成" class="tocs-link">2. 交互式生成</a></li>
+              </ol>
+            </li>
+            <li><a href="#使用技巧" class="tocs-link">使用技巧</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-提示词技巧" class="tocs-link">1. 提示词技巧</a></li>
+                <li><a href="#2-优化建议" class="tocs-link">2. 优化建议</a></li>
+              </ol>
+            </li>
+            <li><a href="#最佳实践" class="tocs-link">最佳实践</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-开发流程" class="tocs-link">1. 开发流程</a></li>
+                <li><a href="#2-代码审查" class="tocs-link">2. 代码审查</a></li>
+              </ol>
+            </li>
+            <li><a href="#实用示例" class="tocs-link">实用示例</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-数据处理" class="tocs-link">1. 数据处理</a></li>
+                <li><a href="#2-api-接口" class="tocs-link">2. API 接口</a></li>
+              </ol>
+            </li>
+            <li><a href="#常见问题" class="tocs-link">常见问题</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-生成质量" class="tocs-link">1. 生成质量</a></li>
+                <li><a href="#2-集成问题" class="tocs-link">2. 集成问题</a></li>
+              </ol>
+            </li>
+            <li><a href="#小结" class="tocs-link">小结</a></li>
+          </ol>
+        </aside>
+      </nav>
+    </div>
+    <script src="../js/demo-preview.js?v=1.34.1"></script>
+    <div class="footer warpper">Released under the MIT License. Copyright © 2022 Kenny Wong<br>Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a></div>
+    <script src="../js/tocbot.js?v=1.34.1"></script>
+  </body>
+</html>

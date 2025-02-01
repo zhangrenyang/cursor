@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 使用指南 cursor</title>
+    <meta name="description" content="API（应用程序接口）是一组预定义的函数和规则，允许开发者访问和使用 Cursor 编辑器的功能。通过 API，你可以扩展和自定义编辑器的功能。">
+    <link rel="stylesheet" type="text/css" href="../css/main.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/tocbot.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/media.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/copy.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/demo-preview.css?v=1.34.1">
+    <link rel="icon" href="../cursor.webp" type="image/x-icon">
+    <script src="../js/copy.js?v=1.34.1"></script>
+    <script src="../js/dark-mode.js?v=1.34.1"></script>
+    <script src="../js/markdown-style.js?v=1.34.1"></script>
+  </head>
+  <body id="idoctotop"><a href="#idoctotop" class="gototop">top</a>
+    <header class="header">
+      <article class="inner warpper"><a class="logo" href="../index.html"><img alt="cursor logo" src="../cursor.webp">
+<span class="title">cursor</span></a>
+        <div class="content">
+          <ul class="menu">
+            <li><a href="../index.html" target="" class="">Home</a></li>
+            <li><a href="../about.html" target="" class="">About</a></li>
+          </ul><a href="https://github.com/zhangrenyang/cursor" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg></a>
+          <dark-mode permanent=""></dark-mode>
+        </div>
+      </article>
+    </header>
+    <div class="warpper-content warpper">
+      <markdown-style theme-auto-switch-disabled="">
+        <h1 id="api-使用指南"><a aria-hidden="true" tabindex="-1" href="#api-使用指南" class="anchor"><span class="icon icon-link"></span></a>API 使用指南</h1>
+        <h2 id="基础概念"><a aria-hidden="true" tabindex="-1" href="#基础概念" class="anchor"><span class="icon icon-link"></span></a>基础概念</h2>
+        <h3 id="1-什么是-api"><a aria-hidden="true" tabindex="-1" href="#1-什么是-api" class="anchor"><span class="icon icon-link"></span></a>1. 什么是 API？</h3>
+        <p>API（应用程序接口）是一组预定义的函数和规则，允许开发者访问和使用 Cursor 编辑器的功能。通过 API，你可以扩展和自定义编辑器的功能。</p>
+        <h3 id="2-api-类型"><a aria-hidden="true" tabindex="-1" href="#2-api-类型" class="anchor"><span class="icon icon-link"></span></a>2. API 类型</h3>
+        <ul>
+          <li><strong>编辑器 API</strong>：操作文本和编辑器界面</li>
+          <li><strong>工作区 API</strong>：管理文件和工作区</li>
+          <li><strong>语言服务 API</strong>：提供语言相关功能</li>
+          <li><strong>调试 API</strong>：控制调试功能</li>
+        </ul>
+        <h2 id="编辑器-api"><a aria-hidden="true" tabindex="-1" href="#编辑器-api" class="anchor"><span class="icon icon-link"></span></a>编辑器 API</h2>
+        <h3 id="1-文本操作"><a aria-hidden="true" tabindex="-1" href="#1-文本操作" class="anchor"><span class="icon icon-link"></span></a>1. 文本操作</h3>
+        <ul>
+          <li>
+            <p><strong>基本操作</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 获取当前文档</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">const</span> editor <span class="token operator">=</span> window<span class="token punctuation">.</span>activeTextEditor<span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment">// 插入文本</span>
+</span><span class="code-line line-number" line="5">editor<span class="token punctuation">.</span><span class="token function">edit</span><span class="token punctuation">(</span>editBuilder <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="6">  editBuilder<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>position<span class="token punctuation">,</span> <span class="token string">'Hello World'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="7"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9"><span class="token comment">// 替换文本</span>
+</span><span class="code-line line-number" line="10">editor<span class="token punctuation">.</span><span class="token function">edit</span><span class="token punctuation">(</span>editBuilder <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="11">  editBuilder<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>range<span class="token punctuation">,</span> <span class="token string">'New Text'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="12"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 获取当前文档
+const editor = window.activeTextEditor;
+
+// 插入文本
+editor.edit(editBuilder => {
+  editBuilder.insert(position, &#x27;Hello World&#x27;);
+});
+
+// 替换文本
+editor.edit(editBuilder => {
+  editBuilder.replace(range, &#x27;New Text&#x27;);
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>选择操作</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 获取选中文本</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">const</span> selection <span class="token operator">=</span> editor<span class="token punctuation">.</span>selection<span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="3"><span class="token keyword">const</span> text <span class="token operator">=</span> editor<span class="token punctuation">.</span>document<span class="token punctuation">.</span><span class="token function">getText</span><span class="token punctuation">(</span>selection<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5"><span class="token comment">// 修改选区</span>
+</span><span class="code-line line-number" line="6">editor<span class="token punctuation">.</span>selection <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Selection</span><span class="token punctuation">(</span>
+</span><span class="code-line line-number" line="7">  <span class="token keyword">new</span> <span class="token class-name">Position</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="8">  <span class="token keyword">new</span> <span class="token class-name">Position</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="9"><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 获取选中文本
+const selection = editor.selection;
+const text = editor.document.getText(selection);
+
+// 修改选区
+editor.selection = new Selection(
+  new Position(0, 0),
+  new Position(1, 0)
+);
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-装饰器"><a aria-hidden="true" tabindex="-1" href="#2-装饰器" class="anchor"><span class="icon icon-link"></span></a>2. 装饰器</h3>
+        <ul>
+          <li>
+            <p><strong>文本装饰</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 创建装饰类型</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">const</span> decorationType <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">createTextEditorDecorationType</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  backgroundColor<span class="token operator">:</span> <span class="token string">'rgba(255,0,0,0.3)'</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">  border<span class="token operator">:</span> <span class="token string">'1px solid red'</span>
+</span><span class="code-line line-number" line="5"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token comment">// 应用装饰</span>
+</span><span class="code-line line-number" line="8"><span class="token keyword">const</span> ranges <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">Range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="9">editor<span class="token punctuation">.</span><span class="token function">setDecorations</span><span class="token punctuation">(</span>decorationType<span class="token punctuation">,</span> ranges<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 创建装饰类型
+const decorationType = window.createTextEditorDecorationType({
+  backgroundColor: &#x27;rgba(255,0,0,0.3)&#x27;,
+  border: &#x27;1px solid red&#x27;
+});
+
+// 应用装饰
+const ranges = [new Range(0, 0, 0, 10)];
+editor.setDecorations(decorationType, ranges);
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>行号装饰</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 创建行号装饰</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">const</span> decoration <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  range<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">  options<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="5">    isWholeLine<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="6">    gutterIconPath<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'icon.svg'</span><span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="7">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="8"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 创建行号装饰
+const decoration = {
+  range: new Range(0, 0, 0, 0),
+  options: {
+    isWholeLine: true,
+    gutterIconPath: path.join(__dirname, &#x27;icon.svg&#x27;)
+  }
+};
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="工作区-api"><a aria-hidden="true" tabindex="-1" href="#工作区-api" class="anchor"><span class="icon icon-link"></span></a>工作区 API</h2>
+        <h3 id="1-文件操作"><a aria-hidden="true" tabindex="-1" href="#1-文件操作" class="anchor"><span class="icon icon-link"></span></a>1. 文件操作</h3>
+        <ul>
+          <li>
+            <p><strong>读写文件</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 读取文件</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">const</span> content <span class="token operator">=</span> <span class="token keyword">await</span> workspace<span class="token punctuation">.</span>fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>uri<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment">// 写入文件</span>
+</span><span class="code-line line-number" line="5"><span class="token keyword">await</span> workspace<span class="token punctuation">.</span>fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span>uri<span class="token punctuation">,</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">'content'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token comment">// 创建文件</span>
+</span><span class="code-line line-number" line="8"><span class="token keyword">await</span> workspace<span class="token punctuation">.</span>fs<span class="token punctuation">.</span><span class="token function">createDirectory</span><span class="token punctuation">(</span>uri<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 读取文件
+const content = await workspace.fs.readFile(uri);
+
+// 写入文件
+await workspace.fs.writeFile(uri, Buffer.from(&#x27;content&#x27;));
+
+// 创建文件
+await workspace.fs.createDirectory(uri);
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>文件监听</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 监听文件变化</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">const</span> watcher <span class="token operator">=</span> workspace<span class="token punctuation">.</span><span class="token function">createFileSystemWatcher</span><span class="token punctuation">(</span><span class="token string">'**/*.ts'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="3">watcher<span class="token punctuation">.</span><span class="token function">onDidChange</span><span class="token punctuation">(</span>uri <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'File changed:'</span><span class="token punctuation">,</span> uri<span class="token punctuation">.</span>fsPath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="5"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 监听文件变化
+const watcher = workspace.createFileSystemWatcher(&#x27;**/*.ts&#x27;);
+watcher.onDidChange(uri => {
+  console.log(&#x27;File changed:&#x27;, uri.fsPath);
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-配置管理"><a aria-hidden="true" tabindex="-1" href="#2-配置管理" class="anchor"><span class="icon icon-link"></span></a>2. 配置管理</h3>
+        <ul>
+          <li>
+            <p><strong>读取配置</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 获取配置</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">const</span> config <span class="token operator">=</span> workspace<span class="token punctuation">.</span><span class="token function">getConfiguration</span><span class="token punctuation">(</span><span class="token string">'myExtension'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="3"><span class="token keyword">const</span> value <span class="token operator">=</span> config<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'setting'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5"><span class="token comment">// 更新配置</span>
+</span><span class="code-line line-number" line="6"><span class="token keyword">await</span> config<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token string">'setting'</span><span class="token punctuation">,</span> newValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 获取配置
+const config = workspace.getConfiguration(&#x27;myExtension&#x27;);
+const value = config.get(&#x27;setting&#x27;);
+
+// 更新配置
+await config.update(&#x27;setting&#x27;, newValue);
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>工作区设置</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 获取工作区设置</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">const</span> workspaceConfig <span class="token operator">=</span> workspace<span class="token punctuation">.</span><span class="token function">getConfiguration</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment">// 更新工作区设置</span>
+</span><span class="code-line line-number" line="5"><span class="token keyword">await</span> workspaceConfig<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token string">'editor.fontSize'</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> ConfigurationTarget<span class="token punctuation">.</span>Workspace<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 获取工作区设置
+const workspaceConfig = workspace.getConfiguration(&#x27;&#x27;, null);
+
+// 更新工作区设置
+await workspaceConfig.update(&#x27;editor.fontSize&#x27;, 14, ConfigurationTarget.Workspace);
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="语言服务-api"><a aria-hidden="true" tabindex="-1" href="#语言服务-api" class="anchor"><span class="icon icon-link"></span></a>语言服务 API</h2>
+        <h3 id="1-语言特性"><a aria-hidden="true" tabindex="-1" href="#1-语言特性" class="anchor"><span class="icon icon-link"></span></a>1. 语言特性</h3>
+        <ul>
+          <li>
+            <p><strong>代码补全</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 注册补全提供者</span>
+</span><span class="code-line line-number" line="2">languages<span class="token punctuation">.</span><span class="token function">registerCompletionItemProvider</span><span class="token punctuation">(</span><span class="token string">'javascript'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token function">provideCompletionItems</span><span class="token punctuation">(</span>document<span class="token punctuation">,</span> position<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">    <span class="token keyword">return</span> <span class="token punctuation">[</span>
+</span><span class="code-line line-number" line="5">      <span class="token keyword">new</span> <span class="token class-name">CompletionItem</span><span class="token punctuation">(</span><span class="token string">'console.log'</span><span class="token punctuation">,</span> CompletionItemKind<span class="token punctuation">.</span>Snippet<span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="6">      <span class="token keyword">new</span> <span class="token class-name">CompletionItem</span><span class="token punctuation">(</span><span class="token string">'function'</span><span class="token punctuation">,</span> CompletionItemKind<span class="token punctuation">.</span>Keyword<span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="7">    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="8">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="9"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 注册补全提供者
+languages.registerCompletionItemProvider(&#x27;javascript&#x27;, {
+  provideCompletionItems(document, position) {
+    return [
+      new CompletionItem(&#x27;console.log&#x27;, CompletionItemKind.Snippet),
+      new CompletionItem(&#x27;function&#x27;, CompletionItemKind.Keyword)
+    ];
+  }
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>代码诊断</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 创建诊断集合</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">const</span> diagnostics <span class="token operator">=</span> languages<span class="token punctuation">.</span><span class="token function">createDiagnosticCollection</span><span class="token punctuation">(</span><span class="token string">'myExtension'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment">// 添加诊断信息</span>
+</span><span class="code-line line-number" line="5">diagnostics<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>uri<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="6">  range<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="7">  message<span class="token operator">:</span> <span class="token string">'发现问题'</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="8">  severity<span class="token operator">:</span> DiagnosticSeverity<span class="token punctuation">.</span>Error
+</span><span class="code-line line-number" line="9"><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 创建诊断集合
+const diagnostics = languages.createDiagnosticCollection(&#x27;myExtension&#x27;);
+
+// 添加诊断信息
+diagnostics.set(uri, [{
+  range: new Range(0, 0, 0, 10),
+  message: &#x27;发现问题&#x27;,
+  severity: DiagnosticSeverity.Error
+}]);
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-符号服务"><a aria-hidden="true" tabindex="-1" href="#2-符号服务" class="anchor"><span class="icon icon-link"></span></a>2. 符号服务</h3>
+        <ul>
+          <li>
+            <p><strong>文档符号</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 注册文档符号提供者</span>
+</span><span class="code-line line-number" line="2">languages<span class="token punctuation">.</span><span class="token function">registerDocumentSymbolProvider</span><span class="token punctuation">(</span><span class="token string">'javascript'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token function">provideDocumentSymbols</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">    <span class="token keyword">return</span> <span class="token punctuation">[</span>
+</span><span class="code-line line-number" line="5">      <span class="token keyword">new</span> <span class="token class-name">DocumentSymbol</span><span class="token punctuation">(</span>
+</span><span class="code-line line-number" line="6">        <span class="token string">'className'</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="7">        <span class="token string">'Class description'</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="8">        SymbolKind<span class="token punctuation">.</span>Class<span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="9">        <span class="token keyword">new</span> <span class="token class-name">Range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="10">        <span class="token keyword">new</span> <span class="token class-name">Range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="11">      <span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="12">    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="13">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="14"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 注册文档符号提供者
+languages.registerDocumentSymbolProvider(&#x27;javascript&#x27;, {
+  provideDocumentSymbols(document) {
+    return [
+      new DocumentSymbol(
+        &#x27;className&#x27;,
+        &#x27;Class description&#x27;,
+        SymbolKind.Class,
+        new Range(0, 0, 10, 0),
+        new Range(0, 0, 0, 10)
+      )
+    ];
+  }
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>工作区符号</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 注册工作区符号提供者</span>
+</span><span class="code-line line-number" line="2">languages<span class="token punctuation">.</span><span class="token function">registerWorkspaceSymbolProvider</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token function">provideWorkspaceSymbols</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">    <span class="token keyword">return</span> <span class="token punctuation">[</span>
+</span><span class="code-line line-number" line="5">      <span class="token keyword">new</span> <span class="token class-name">SymbolInformation</span><span class="token punctuation">(</span>
+</span><span class="code-line line-number" line="6">        <span class="token string">'symbolName'</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="7">        SymbolKind<span class="token punctuation">.</span><span class="token builtin">Function</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="8">        <span class="token keyword">new</span> <span class="token class-name">Location</span><span class="token punctuation">(</span>uri<span class="token punctuation">,</span> position<span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="9">      <span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="10">    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="11">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="12"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 注册工作区符号提供者
+languages.registerWorkspaceSymbolProvider({
+  provideWorkspaceSymbols(query) {
+    return [
+      new SymbolInformation(
+        &#x27;symbolName&#x27;,
+        SymbolKind.Function,
+        new Location(uri, position)
+      )
+    ];
+  }
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="调试-api"><a aria-hidden="true" tabindex="-1" href="#调试-api" class="anchor"><span class="icon icon-link"></span></a>调试 API</h2>
+        <h3 id="1-调试器集成"><a aria-hidden="true" tabindex="-1" href="#1-调试器集成" class="anchor"><span class="icon icon-link"></span></a>1. 调试器集成</h3>
+        <ul>
+          <li>
+            <p><strong>启动调试</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 启动调试会话</span>
+</span><span class="code-line line-number" line="2">debug<span class="token punctuation">.</span><span class="token function">startDebugging</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  type<span class="token operator">:</span> <span class="token string">'node'</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">  request<span class="token operator">:</span> <span class="token string">'launch'</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="5">  name<span class="token operator">:</span> <span class="token string">'Debug Program'</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="6">  program<span class="token operator">:</span> <span class="token string">'${file}'</span>
+</span><span class="code-line line-number" line="7"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 启动调试会话
+debug.startDebugging(undefined, {
+  type: &#x27;node&#x27;,
+  request: &#x27;launch&#x27;,
+  name: &#x27;Debug Program&#x27;,
+  program: &#x27;${file}&#x27;
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>调试控制</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 添加断点</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">const</span> breakpoint <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SourceBreakpoint</span><span class="token punctuation">(</span>
+</span><span class="code-line line-number" line="3">  <span class="token keyword">new</span> <span class="token class-name">Location</span><span class="token punctuation">(</span>uri<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Position</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="4"><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="5">debug<span class="token punctuation">.</span><span class="token function">addBreakpoints</span><span class="token punctuation">(</span><span class="token punctuation">[</span>breakpoint<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token comment">// 控制调试</span>
+</span><span class="code-line line-number" line="8">debug<span class="token punctuation">.</span>activeDebugSession<span class="token operator">?.</span><span class="token function">customRequest</span><span class="token punctuation">(</span><span class="token string">'continue'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 添加断点
+const breakpoint = new SourceBreakpoint(
+  new Location(uri, new Position(10, 0))
+);
+debug.addBreakpoints([breakpoint]);
+
+// 控制调试
+debug.activeDebugSession?.customRequest(&#x27;continue&#x27;);
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-调试适配器"><a aria-hidden="true" tabindex="-1" href="#2-调试适配器" class="anchor"><span class="icon icon-link"></span></a>2. 调试适配器</h3>
+        <ul>
+          <li>
+            <p><strong>创建适配器</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 注册调试适配器</span>
+</span><span class="code-line line-number" line="2">debug<span class="token punctuation">.</span><span class="token function">registerDebugAdapterDescriptorFactory</span><span class="token punctuation">(</span><span class="token string">'myDebugger'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token function">createDebugAdapterDescriptor</span><span class="token punctuation">(</span>session<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">DebugAdapterExecutable</span><span class="token punctuation">(</span><span class="token string">'path/to/adapter'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="5">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="6"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 注册调试适配器
+debug.registerDebugAdapterDescriptorFactory(&#x27;myDebugger&#x27;, {
+  createDebugAdapterDescriptor(session) {
+    return new DebugAdapterExecutable(&#x27;path/to/adapter&#x27;);
+  }
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>处理事件</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 监听调试事件</span>
+</span><span class="code-line line-number" line="2">debug<span class="token punctuation">.</span><span class="token function">onDidStartDebugSession</span><span class="token punctuation">(</span>session <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Debug session started'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="4"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6">debug<span class="token punctuation">.</span><span class="token function">onDidTerminateDebugSession</span><span class="token punctuation">(</span>session <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="7">  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Debug session ended'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="8"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 监听调试事件
+debug.onDidStartDebugSession(session => {
+  console.log(&#x27;Debug session started&#x27;);
+});
+
+debug.onDidTerminateDebugSession(session => {
+  console.log(&#x27;Debug session ended&#x27;);
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="最佳实践"><a aria-hidden="true" tabindex="-1" href="#最佳实践" class="anchor"><span class="icon icon-link"></span></a>最佳实践</h2>
+        <h3 id="1-错误处理"><a aria-hidden="true" tabindex="-1" href="#1-错误处理" class="anchor"><span class="icon icon-link"></span></a>1. 错误处理</h3>
+        <ul>
+          <li>
+            <p><strong>异常捕获</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token keyword">try</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token keyword">await</span> workspace<span class="token punctuation">.</span>fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span>uri<span class="token punctuation">,</span> content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="3"><span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">  window<span class="token punctuation">.</span><span class="token function">showErrorMessage</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">写入失败: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>error<span class="token punctuation">.</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="5"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="try {
+  await workspace.fs.writeFile(uri, content);
+} catch (error) {
+  window.showErrorMessage(&#x60;写入失败: ${error.message}&#x60;);
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>优雅降级</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 检查API可用性</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">if</span> <span class="token punctuation">(</span>workspace<span class="token punctuation">.</span>workspaceFolders<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token comment">// 使用工作区功能</span>
+</span><span class="code-line line-number" line="4"><span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="5">  <span class="token comment">// 降级处理</span>
+</span><span class="code-line line-number" line="6"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 检查API可用性
+if (workspace.workspaceFolders) {
+  // 使用工作区功能
+} else {
+  // 降级处理
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-性能优化"><a aria-hidden="true" tabindex="-1" href="#2-性能优化" class="anchor"><span class="icon icon-link"></span></a>2. 性能优化</h3>
+        <ul>
+          <li>
+            <p><strong>资源释放</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 使用 dispose 模式</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">const</span> disposable <span class="token operator">=</span> workspace<span class="token punctuation">.</span><span class="token function">onDidChangeTextDocument</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token comment">// 处理文档变化</span>
+</span><span class="code-line line-number" line="4"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6"><span class="token comment">// 注册清理</span>
+</span><span class="code-line line-number" line="7">context<span class="token punctuation">.</span>subscriptions<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>disposable<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 使用 dispose 模式
+const disposable = workspace.onDidChangeTextDocument(() => {
+  // 处理文档变化
+});
+
+// 注册清理
+context.subscriptions.push(disposable);
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>延迟加载</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 按需激活功能</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">let</span> provider<span class="token operator">:</span> CompletionItemProvider<span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4">workspace<span class="token punctuation">.</span><span class="token function">onDidOpenTextDocument</span><span class="token punctuation">(</span>doc <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="5">  <span class="token keyword">if</span> <span class="token punctuation">(</span>doc<span class="token punctuation">.</span>languageId <span class="token operator">===</span> <span class="token string">'javascript'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="6">    provider <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyCompletionProvider</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="7">    <span class="token comment">// 注册提供者</span>
+</span><span class="code-line line-number" line="8">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="9"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 按需激活功能
+let provider: CompletionItemProvider;
+
+workspace.onDidOpenTextDocument(doc => {
+  if (doc.languageId === &#x27;javascript&#x27;) {
+    provider = new MyCompletionProvider();
+    // 注册提供者
+  }
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="小结"><a aria-hidden="true" tabindex="-1" href="#小结" class="anchor"><span class="icon icon-link"></span></a>小结</h2>
+        <p>API 使用需要注意以下几点：</p>
+        <ol>
+          <li>遵循最佳实践</li>
+          <li>合理处理错误</li>
+          <li>注意性能影响</li>
+          <li>及时释放资源</li>
+        </ol>
+        <p>记住，好的 API 使用可以提升扩展的质量和可靠性。在开发时要充分测试，确保代码的健壮性。</p>
+        <section class="article-footer"><a href="https://github.com/zhangrenyang/cursor/blob/master/src\6.扩展开发\6.1.API使用指南.md" class="edit-button" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+<span>Edit this page on GitHub</span>
+</a><span class="atime">2025/02/01</span></section>
+      </markdown-style>
+      <nav class="tocs">
+        <aside class="inner toc">
+          <ol class="tocs-list">
+            <li><a href="#基础概念" class="tocs-link">基础概念</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-什么是-api" class="tocs-link">1. 什么是 API？</a></li>
+                <li><a href="#2-api-类型" class="tocs-link">2. API 类型</a></li>
+              </ol>
+            </li>
+            <li><a href="#编辑器-api" class="tocs-link">编辑器 API</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-文本操作" class="tocs-link">1. 文本操作</a></li>
+                <li><a href="#2-装饰器" class="tocs-link">2. 装饰器</a></li>
+              </ol>
+            </li>
+            <li><a href="#工作区-api" class="tocs-link">工作区 API</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-文件操作" class="tocs-link">1. 文件操作</a></li>
+                <li><a href="#2-配置管理" class="tocs-link">2. 配置管理</a></li>
+              </ol>
+            </li>
+            <li><a href="#语言服务-api" class="tocs-link">语言服务 API</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-语言特性" class="tocs-link">1. 语言特性</a></li>
+                <li><a href="#2-符号服务" class="tocs-link">2. 符号服务</a></li>
+              </ol>
+            </li>
+            <li><a href="#调试-api" class="tocs-link">调试 API</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-调试器集成" class="tocs-link">1. 调试器集成</a></li>
+                <li><a href="#2-调试适配器" class="tocs-link">2. 调试适配器</a></li>
+              </ol>
+            </li>
+            <li><a href="#最佳实践" class="tocs-link">最佳实践</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-错误处理" class="tocs-link">1. 错误处理</a></li>
+                <li><a href="#2-性能优化" class="tocs-link">2. 性能优化</a></li>
+              </ol>
+            </li>
+            <li><a href="#小结" class="tocs-link">小结</a></li>
+          </ol>
+        </aside>
+      </nav>
+    </div>
+    <script src="../js/demo-preview.js?v=1.34.1"></script>
+    <div class="footer warpper">Released under the MIT License. Copyright © 2022 Kenny Wong<br>Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a></div>
+    <script src="../js/tocbot.js?v=1.34.1"></script>
+  </body>
+</html>

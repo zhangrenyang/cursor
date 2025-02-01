@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义 AI 提示词 cursor</title>
+    <meta name="description" content="提示词（Prompt）是指导 AI 完成特定任务的指令文本。好的提示词能帮助 AI 更准确地理解你的需求，生成更符合预期的结果。">
+    <link rel="stylesheet" type="text/css" href="../css/main.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/tocbot.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/media.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/copy.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/demo-preview.css?v=1.34.1">
+    <link rel="icon" href="../cursor.webp" type="image/x-icon">
+    <script src="../js/copy.js?v=1.34.1"></script>
+    <script src="../js/dark-mode.js?v=1.34.1"></script>
+    <script src="../js/markdown-style.js?v=1.34.1"></script>
+  </head>
+  <body id="idoctotop"><a href="#idoctotop" class="gototop">top</a>
+    <header class="header">
+      <article class="inner warpper"><a class="logo" href="../index.html"><img alt="cursor logo" src="../cursor.webp">
+<span class="title">cursor</span></a>
+        <div class="content">
+          <ul class="menu">
+            <li><a href="../index.html" target="" class="">Home</a></li>
+            <li><a href="../about.html" target="" class="">About</a></li>
+          </ul><a href="https://github.com/zhangrenyang/cursor" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg></a>
+          <dark-mode permanent=""></dark-mode>
+        </div>
+      </article>
+    </header>
+    <div class="warpper-content warpper">
+      <markdown-style theme-auto-switch-disabled="">
+        <h1 id="自定义-ai-提示词"><a aria-hidden="true" tabindex="-1" href="#自定义-ai-提示词" class="anchor"><span class="icon icon-link"></span></a>自定义 AI 提示词</h1>
+        <h2 id="基础概念"><a aria-hidden="true" tabindex="-1" href="#基础概念" class="anchor"><span class="icon icon-link"></span></a>基础概念</h2>
+        <h3 id="1-什么是提示词"><a aria-hidden="true" tabindex="-1" href="#1-什么是提示词" class="anchor"><span class="icon icon-link"></span></a>1. 什么是提示词？</h3>
+        <p>提示词（Prompt）是指导 AI 完成特定任务的指令文本。好的提示词能帮助 AI 更准确地理解你的需求，生成更符合预期的结果。</p>
+        <h3 id="2-为什么要自定义"><a aria-hidden="true" tabindex="-1" href="#2-为什么要自定义" class="anchor"><span class="icon icon-link"></span></a>2. 为什么要自定义？</h3>
+        <ul>
+          <li><strong>提高精确度</strong>：针对特定需求定制</li>
+          <li><strong>提升效率</strong>：减少重复描述</li>
+          <li><strong>保持一致性</strong>：统一输出格式</li>
+          <li><strong>适应场景</strong>：满足特定开发环境</li>
+        </ul>
+        <h2 id="提示词结构"><a aria-hidden="true" tabindex="-1" href="#提示词结构" class="anchor"><span class="icon icon-link"></span></a>提示词结构</h2>
+        <h3 id="1-基本组成"><a aria-hidden="true" tabindex="-1" href="#1-基本组成" class="anchor"><span class="icon icon-link"></span></a>1. 基本组成</h3>
+        <pre><code class="code-highlight"><span class="code-line line-number" line="1">[角色/背景] + [任务描述] + [输出要求] + [示例/约束]
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3">示例：
+</span><span class="code-line line-number" line="4">作为一个代码审查专家，请检查以下代码的安全性问题。
+</span><span class="code-line line-number" line="5">输出格式要求：
+</span><span class="code-line line-number" line="6">1. 问题描述
+</span><span class="code-line line-number" line="7">2. 风险等级
+</span><span class="code-line line-number" line="8">3. 修复建议
+</span></code><input type="hidden" value="[角色/背景] + [任务描述] + [输出要求] + [示例/约束]
+
+示例：
+作为一个代码审查专家，请检查以下代码的安全性问题。
+输出格式要求：
+1. 问题描述
+2. 风险等级
+3. 修复建议
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h3 id="2-关键要素"><a aria-hidden="true" tabindex="-1" href="#2-关键要素" class="anchor"><span class="icon icon-link"></span></a>2. 关键要素</h3>
+        <ul>
+          <li>
+            <p><strong>明确角色</strong>：</p>
+            <ul>
+              <li>代码审查员</li>
+              <li>性能优化专家</li>
+              <li>安全顾问</li>
+              <li>文档编写者</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>具体任务</strong>：</p>
+            <ul>
+              <li>代码检查</li>
+              <li>性能分析</li>
+              <li>重构建议</li>
+              <li>注释生成</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="编写技巧"><a aria-hidden="true" tabindex="-1" href="#编写技巧" class="anchor"><span class="icon icon-link"></span></a>编写技巧</h2>
+        <h3 id="1-基本原则"><a aria-hidden="true" tabindex="-1" href="#1-基本原则" class="anchor"><span class="icon icon-link"></span></a>1. 基本原则</h3>
+        <ol>
+          <li>
+            <p><strong>清晰明确</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">// 好的示例：
+</span><span class="code-line line-number" line="2">"分析这段代码的时间复杂度，并提供优化建议"
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4">// 不好的示例：
+</span><span class="code-line line-number" line="5">"这代码怎么样？"
+</span></code><input type="hidden" value="// 好的示例：
+&#x22;分析这段代码的时间复杂度，并提供优化建议&#x22;
+
+// 不好的示例：
+&#x22;这代码怎么样？&#x22;
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>结构化输出</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">请按以下格式输出：
+</span><span class="code-line line-number" line="2">1. 分析结果：
+</span><span class="code-line line-number" line="3">2. 存在问题：
+</span><span class="code-line line-number" line="4">3. 改进建议：
+</span></code><input type="hidden" value="请按以下格式输出：
+1. 分析结果：
+2. 存在问题：
+3. 改进建议：
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ol>
+        <h3 id="2-高级技巧"><a aria-hidden="true" tabindex="-1" href="#2-高级技巧" class="anchor"><span class="icon icon-link"></span></a>2. 高级技巧</h3>
+        <ul>
+          <li>
+            <p><strong>上下文提供</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">项目背景：Node.js 后端服务
+</span><span class="code-line line-number" line="2">开发环境：TypeScript + Express
+</span><span class="code-line line-number" line="3">性能要求：响应时间 &#x3C; 100ms
+</span></code><input type="hidden" value="项目背景：Node.js 后端服务
+开发环境：TypeScript + Express
+性能要求：响应时间 < 100ms
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>约束条件</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">要求：
+</span><span class="code-line line-number" line="2">- 使用 ES6+ 语法
+</span><span class="code-line line-number" line="3">- 遵循 TypeScript 类型规范
+</span><span class="code-line line-number" line="4">- 考虑内存使用效率
+</span></code><input type="hidden" value="要求：
+- 使用 ES6+ 语法
+- 遵循 TypeScript 类型规范
+- 考虑内存使用效率
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="常用模板"><a aria-hidden="true" tabindex="-1" href="#常用模板" class="anchor"><span class="icon icon-link"></span></a>常用模板</h2>
+        <h3 id="1-代码审查"><a aria-hidden="true" tabindex="-1" href="#1-代码审查" class="anchor"><span class="icon icon-link"></span></a>1. 代码审查</h3>
+        <pre><code class="code-highlight"><span class="code-line line-number" line="1">作为高级开发工程师，请审查以下代码：
+</span><span class="code-line line-number" line="2">[代码块]
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4">请从以下方面进行分析：
+</span><span class="code-line line-number" line="5">1. 代码质量
+</span><span class="code-line line-number" line="6">2. 性能问题
+</span><span class="code-line line-number" line="7">3. 安全隐患
+</span><span class="code-line line-number" line="8">4. 可维护性
+</span><span class="code-line line-number" line="9">5. 改进建议
+</span></code><input type="hidden" value="作为高级开发工程师，请审查以下代码：
+[代码块]
+
+请从以下方面进行分析：
+1. 代码质量
+2. 性能问题
+3. 安全隐患
+4. 可维护性
+5. 改进建议
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h3 id="2-性能优化"><a aria-hidden="true" tabindex="-1" href="#2-性能优化" class="anchor"><span class="icon icon-link"></span></a>2. 性能优化</h3>
+        <pre><code class="code-highlight"><span class="code-line line-number" line="1">作为性能优化专家，请分析以下代码的性能瓶颈：
+</span><span class="code-line line-number" line="2">[代码块]
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4">输出要求：
+</span><span class="code-line line-number" line="5">1. 性能分析报告
+</span><span class="code-line line-number" line="6">2. 瓶颈定位
+</span><span class="code-line line-number" line="7">3. 优化方案
+</span><span class="code-line line-number" line="8">4. 预期提升效果
+</span></code><input type="hidden" value="作为性能优化专家，请分析以下代码的性能瓶颈：
+[代码块]
+
+输出要求：
+1. 性能分析报告
+2. 瓶颈定位
+3. 优化方案
+4. 预期提升效果
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h2 id="实际应用"><a aria-hidden="true" tabindex="-1" href="#实际应用" class="anchor"><span class="icon icon-link"></span></a>实际应用</h2>
+        <h3 id="1-开发场景"><a aria-hidden="true" tabindex="-1" href="#1-开发场景" class="anchor"><span class="icon icon-link"></span></a>1. 开发场景</h3>
+        <ul>
+          <li>
+            <p><strong>代码生成</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">生成一个 TypeScript 类，要求：
+</span><span class="code-line line-number" line="2">1. 实现以下接口：[接口定义]
+</span><span class="code-line line-number" line="3">2. 包含错误处理
+</span><span class="code-line line-number" line="4">3. 添加单元测试
+</span><span class="code-line line-number" line="5">4. 包含 JSDoc 注释
+</span></code><input type="hidden" value="生成一个 TypeScript 类，要求：
+1. 实现以下接口：[接口定义]
+2. 包含错误处理
+3. 添加单元测试
+4. 包含 JSDoc 注释
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>问题诊断</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">诊断以下代码的内存泄漏问题：
+</span><span class="code-line line-number" line="2">1. 分析可能的泄漏点
+</span><span class="code-line line-number" line="3">2. 提供监控方案
+</span><span class="code-line line-number" line="4">3. 给出修复建议
+</span></code><input type="hidden" value="诊断以下代码的内存泄漏问题：
+1. 分析可能的泄漏点
+2. 提供监控方案
+3. 给出修复建议
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-团队协作"><a aria-hidden="true" tabindex="-1" href="#2-团队协作" class="anchor"><span class="icon icon-link"></span></a>2. 团队协作</h3>
+        <ul>
+          <li>
+            <p><strong>代码规范</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">检查代码是否符合团队规范：
+</span><span class="code-line line-number" line="2">1. 命名规范
+</span><span class="code-line line-number" line="3">2. 注释要求
+</span><span class="code-line line-number" line="4">3. 代码格式
+</span><span class="code-line line-number" line="5">4. 最佳实践
+</span></code><input type="hidden" value="检查代码是否符合团队规范：
+1. 命名规范
+2. 注释要求
+3. 代码格式
+4. 最佳实践
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>知识共享</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">生成技术文档，包含：
+</span><span class="code-line line-number" line="2">1. 功能说明
+</span><span class="code-line line-number" line="3">2. 使用示例
+</span><span class="code-line line-number" line="4">3. 注意事项
+</span><span class="code-line line-number" line="5">4. 常见问题
+</span></code><input type="hidden" value="生成技术文档，包含：
+1. 功能说明
+2. 使用示例
+3. 注意事项
+4. 常见问题
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="优化建议"><a aria-hidden="true" tabindex="-1" href="#优化建议" class="anchor"><span class="icon icon-link"></span></a>优化建议</h2>
+        <h3 id="1-提示词改进"><a aria-hidden="true" tabindex="-1" href="#1-提示词改进" class="anchor"><span class="icon icon-link"></span></a>1. 提示词改进</h3>
+        <ul>
+          <li>
+            <p><strong>迭代优化</strong>：</p>
+            <ol>
+              <li>记录使用效果</li>
+              <li>标注问题点</li>
+              <li>持续调整改进</li>
+              <li>收集团队反馈</li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>场景适配</strong>：</p>
+            <ul>
+              <li>根据项目调整</li>
+              <li>考虑团队习惯</li>
+              <li>适应开发流程</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-最佳实践"><a aria-hidden="true" tabindex="-1" href="#2-最佳实践" class="anchor"><span class="icon icon-link"></span></a>2. 最佳实践</h3>
+        <ol>
+          <li>
+            <p><strong>模板管理</strong>：</p>
+            <ul>
+              <li>建立模板库</li>
+              <li>分类整理</li>
+              <li>版本控制</li>
+              <li>定期更新</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>团队共享</strong>：</p>
+            <ul>
+              <li>分享有效模板</li>
+              <li>交流使用经验</li>
+              <li>统一使用规范</li>
+            </ul>
+          </li>
+        </ol>
+        <h2 id="常见问题"><a aria-hidden="true" tabindex="-1" href="#常见问题" class="anchor"><span class="icon icon-link"></span></a>常见问题</h2>
+        <h3 id="1-输出不准确"><a aria-hidden="true" tabindex="-1" href="#1-输出不准确" class="anchor"><span class="icon icon-link"></span></a>1. 输出不准确</h3>
+        <ul>
+          <li>
+            <p><strong>问题原因</strong>：</p>
+            <ul>
+              <li>提示词不明确</li>
+              <li>缺少关键信息</li>
+              <li>约束条件不足</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>解决方案</strong>：</p>
+            <ul>
+              <li>添加具体示例</li>
+              <li>明确输出格式</li>
+              <li>增加约束条件</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-使用效率"><a aria-hidden="true" tabindex="-1" href="#2-使用效率" class="anchor"><span class="icon icon-link"></span></a>2. 使用效率</h3>
+        <ul>
+          <li>
+            <p><strong>常见问题</strong>：</p>
+            <ul>
+              <li>模板过于复杂</li>
+              <li>使用不够灵活</li>
+              <li>维护成本高</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>改进方法</strong>：</p>
+            <ul>
+              <li>简化模板结构</li>
+              <li>增加可选项</li>
+              <li>模块化设计</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="小结"><a aria-hidden="true" tabindex="-1" href="#小结" class="anchor"><span class="icon icon-link"></span></a>小结</h2>
+        <p>自定义 AI 提示词是提高开发效率的重要工具。建议：</p>
+        <ol>
+          <li>建立个人/团队提示词库</li>
+          <li>持续优化和改进</li>
+          <li>结合实际需求调整</li>
+          <li>保持简单实用原则</li>
+        </ol>
+        <p>记住，好的提示词应该像好的代码一样：清晰、有效、易于维护。</p>
+        <section class="article-footer"><a href="https://github.com/zhangrenyang/cursor/blob/master/src\3.AI辅助编程\3.5.自定义AI提示词.md" class="edit-button" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+<span>Edit this page on GitHub</span>
+</a><span class="atime">2025/02/01</span></section>
+      </markdown-style>
+      <nav class="tocs">
+        <aside class="inner toc">
+          <ol class="tocs-list">
+            <li><a href="#基础概念" class="tocs-link">基础概念</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-什么是提示词" class="tocs-link">1. 什么是提示词？</a></li>
+                <li><a href="#2-为什么要自定义" class="tocs-link">2. 为什么要自定义？</a></li>
+              </ol>
+            </li>
+            <li><a href="#提示词结构" class="tocs-link">提示词结构</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-基本组成" class="tocs-link">1. 基本组成</a></li>
+                <li><a href="#2-关键要素" class="tocs-link">2. 关键要素</a></li>
+              </ol>
+            </li>
+            <li><a href="#编写技巧" class="tocs-link">编写技巧</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-基本原则" class="tocs-link">1. 基本原则</a></li>
+                <li><a href="#2-高级技巧" class="tocs-link">2. 高级技巧</a></li>
+              </ol>
+            </li>
+            <li><a href="#常用模板" class="tocs-link">常用模板</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-代码审查" class="tocs-link">1. 代码审查</a></li>
+                <li><a href="#2-性能优化" class="tocs-link">2. 性能优化</a></li>
+              </ol>
+            </li>
+            <li><a href="#实际应用" class="tocs-link">实际应用</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-开发场景" class="tocs-link">1. 开发场景</a></li>
+                <li><a href="#2-团队协作" class="tocs-link">2. 团队协作</a></li>
+              </ol>
+            </li>
+            <li><a href="#优化建议" class="tocs-link">优化建议</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-提示词改进" class="tocs-link">1. 提示词改进</a></li>
+                <li><a href="#2-最佳实践" class="tocs-link">2. 最佳实践</a></li>
+              </ol>
+            </li>
+            <li><a href="#常见问题" class="tocs-link">常见问题</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-输出不准确" class="tocs-link">1. 输出不准确</a></li>
+                <li><a href="#2-使用效率" class="tocs-link">2. 使用效率</a></li>
+              </ol>
+            </li>
+            <li><a href="#小结" class="tocs-link">小结</a></li>
+          </ol>
+        </aside>
+      </nav>
+    </div>
+    <script src="../js/demo-preview.js?v=1.34.1"></script>
+    <div class="footer warpper">Released under the MIT License. Copyright © 2022 Kenny Wong<br>Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a></div>
+    <script src="../js/tocbot.js?v=1.34.1"></script>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代码编辑基础 cursor</title>
+    <meta name="description" content="良好的代码编辑习惯能显著提升开发效率。建议：">
+    <link rel="stylesheet" type="text/css" href="../css/main.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/tocbot.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/media.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/copy.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/demo-preview.css?v=1.34.1">
+    <link rel="icon" href="../cursor.webp" type="image/x-icon">
+    <script src="../js/copy.js?v=1.34.1"></script>
+    <script src="../js/dark-mode.js?v=1.34.1"></script>
+    <script src="../js/markdown-style.js?v=1.34.1"></script>
+  </head>
+  <body id="idoctotop"><a href="#idoctotop" class="gototop">top</a>
+    <header class="header">
+      <article class="inner warpper"><a class="logo" href="../index.html"><img alt="cursor logo" src="../cursor.webp">
+<span class="title">cursor</span></a>
+        <div class="content">
+          <ul class="menu">
+            <li><a href="../index.html" target="" class="">Home</a></li>
+            <li><a href="../about.html" target="" class="">About</a></li>
+          </ul><a href="https://github.com/zhangrenyang/cursor" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg></a>
+          <dark-mode permanent=""></dark-mode>
+        </div>
+      </article>
+    </header>
+    <div class="warpper-content warpper">
+      <markdown-style theme-auto-switch-disabled="">
+        <h1 id="代码编辑基础"><a aria-hidden="true" tabindex="-1" href="#代码编辑基础" class="anchor"><span class="icon icon-link"></span></a>代码编辑基础</h1>
+        <h2 id="基本编辑功能"><a aria-hidden="true" tabindex="-1" href="#基本编辑功能" class="anchor"><span class="icon icon-link"></span></a>基本编辑功能</h2>
+        <h3 id="1-文本选择"><a aria-hidden="true" tabindex="-1" href="#1-文本选择" class="anchor"><span class="icon icon-link"></span></a>1. 文本选择</h3>
+        <ul>
+          <li><strong>单词选择</strong>：双击选中单词</li>
+          <li><strong>行选择</strong>：三击选中整行</li>
+          <li><strong>多光标选择</strong>：
+            <ul>
+              <li><code>Alt + 点击</code>：添加多个光标</li>
+              <li><code>Ctrl + Alt + ↑/↓</code>：向上/下添加光标</li>
+              <li><code>Ctrl + D</code>：选中下一个相同文本</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-文本编辑"><a aria-hidden="true" tabindex="-1" href="#2-文本编辑" class="anchor"><span class="icon icon-link"></span></a>2. 文本编辑</h3>
+        <ul>
+          <li>
+            <p><strong>快速移动</strong>：</p>
+            <ul>
+              <li><code>Home/End</code>：移动到行首/行尾</li>
+              <li><code>Ctrl + Home/End</code>：移动到文件开头/结尾</li>
+              <li><code>Ctrl + ←/→</code>：按单词移动光标</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>批量编辑</strong>：</p>
+            <ul>
+              <li><code>Ctrl + H</code>：查找替换</li>
+              <li><code>Alt + 拖动</code>：块选择</li>
+              <li><code>Shift + Alt + 拖动</code>：列选择</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="智能编辑特性"><a aria-hidden="true" tabindex="-1" href="#智能编辑特性" class="anchor"><span class="icon icon-link"></span></a>智能编辑特性</h2>
+        <h3 id="1-自动完成"><a aria-hidden="true" tabindex="-1" href="#1-自动完成" class="anchor"><span class="icon icon-link"></span></a>1. 自动完成</h3>
+        <ul>
+          <li>
+            <p><strong>代码补全</strong>：</p>
+            <ul>
+              <li>输入时自动显示建议</li>
+              <li><code>Tab</code> 或 <code>Enter</code> 接受建议</li>
+              <li><code>↑/↓</code> 切换建议项</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>括号匹配</strong>：</p>
+            <ul>
+              <li>自动补全括号对</li>
+              <li>自动高亮匹配的括号</li>
+              <li>智能缩进对齐</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-代码格式化"><a aria-hidden="true" tabindex="-1" href="#2-代码格式化" class="anchor"><span class="icon icon-link"></span></a>2. 代码格式化</h3>
+        <ul>
+          <li>
+            <p><strong>自动格式化</strong>：</p>
+            <ul>
+              <li><code>Shift + Alt + F</code>：格式化整个文件</li>
+              <li><code>Ctrl + K Ctrl + F</code>：格式化选中代码</li>
+              <li>保存时自动格式化（可配置）</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>缩进调整</strong>：</p>
+            <ul>
+              <li><code>Tab</code>：增加缩进</li>
+              <li><code>Shift + Tab</code>：减少缩进</li>
+              <li>支持选中多行同时缩进</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="代码导航"><a aria-hidden="true" tabindex="-1" href="#代码导航" class="anchor"><span class="icon icon-link"></span></a>代码导航</h2>
+        <h3 id="1-文件内导航"><a aria-hidden="true" tabindex="-1" href="#1-文件内导航" class="anchor"><span class="icon icon-link"></span></a>1. 文件内导航</h3>
+        <ul>
+          <li>
+            <p><strong>大纲视图</strong>：</p>
+            <ul>
+              <li>显示文件结构</li>
+              <li>快速跳转到函数/类定义</li>
+              <li>支持折叠/展开代码块</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>搜索跳转</strong>：</p>
+            <ul>
+              <li><code>Ctrl + F</code>：当前文件搜索</li>
+              <li><code>F3</code>：查找下一个</li>
+              <li><code>Shift + F3</code>：查找上一个</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-智能跳转"><a aria-hidden="true" tabindex="-1" href="#2-智能跳转" class="anchor"><span class="icon icon-link"></span></a>2. 智能跳转</h3>
+        <ul>
+          <li>
+            <p><strong>定义跳转</strong>：</p>
+            <ul>
+              <li><code>F12</code>：跳转到定义</li>
+              <li><code>Alt + F12</code>：预览定义</li>
+              <li><code>Shift + F12</code>：查看所有引用</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>文件跳转</strong>：</p>
+            <ul>
+              <li><code>Ctrl + P</code>：快速打开文件</li>
+              <li><code>Alt + ←/→</code>：在历史位置间跳转</li>
+              <li><code>Ctrl + Tab</code>：切换打开的文件</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="编辑辅助功能"><a aria-hidden="true" tabindex="-1" href="#编辑辅助功能" class="anchor"><span class="icon icon-link"></span></a>编辑辅助功能</h2>
+        <h3 id="1-代码片段"><a aria-hidden="true" tabindex="-1" href="#1-代码片段" class="anchor"><span class="icon icon-link"></span></a>1. 代码片段</h3>
+        <ul>
+          <li>
+            <p><strong>使用代码片段</strong>：</p>
+            <ul>
+              <li>输入片段前缀触发</li>
+              <li><code>Tab</code> 在占位符间切换</li>
+              <li>支持自定义变量</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>创建代码片段</strong>：</p>
+            <ol>
+              <li>打开用户代码片段设置</li>
+              <li>选择语言</li>
+              <li>定义触发词和内容</li>
+              <li>设置占位符和变量</li>
+            </ol>
+          </li>
+        </ul>
+        <h3 id="2-注释处理"><a aria-hidden="true" tabindex="-1" href="#2-注释处理" class="anchor"><span class="icon icon-link"></span></a>2. 注释处理</h3>
+        <ul>
+          <li><strong>行注释</strong>：<code>Ctrl + /</code></li>
+          <li><strong>块注释</strong>：<code>Shift + Alt + A</code></li>
+          <li><strong>文档注释</strong>：
+            <ul>
+              <li>输入 <code>/**</code> 后按 <code>Enter</code></li>
+              <li>自动生成函数文档注释</li>
+              <li>支持多种注释格式</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="实用技巧"><a aria-hidden="true" tabindex="-1" href="#实用技巧" class="anchor"><span class="icon icon-link"></span></a>实用技巧</h2>
+        <h3 id="1-提高效率的编辑技巧"><a aria-hidden="true" tabindex="-1" href="#1-提高效率的编辑技巧" class="anchor"><span class="icon icon-link"></span></a>1. 提高效率的编辑技巧</h3>
+        <ul>
+          <li><strong>快速复制行</strong>：<code>Shift + Alt + ↑/↓</code></li>
+          <li><strong>快速移动行</strong>：<code>Alt + ↑/↓</code></li>
+          <li><strong>快速删除</strong>：
+            <ul>
+              <li><code>Ctrl + Backspace</code>：删除单词</li>
+              <li><code>Ctrl + Shift + K</code>：删除整行</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-代码整理技巧"><a aria-hidden="true" tabindex="-1" href="#2-代码整理技巧" class="anchor"><span class="icon icon-link"></span></a>2. 代码整理技巧</h3>
+        <ul>
+          <li>
+            <p><strong>重构操作</strong>：</p>
+            <ul>
+              <li>提取方法</li>
+              <li>重命名变量</li>
+              <li>移动代码块</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>代码组织</strong>：</p>
+            <ul>
+              <li>使用区域折叠</li>
+              <li>保持相关代码集中</li>
+              <li>适当添加空行分隔</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="最佳实践"><a aria-hidden="true" tabindex="-1" href="#最佳实践" class="anchor"><span class="icon icon-link"></span></a>最佳实践</h2>
+        <ol>
+          <li>
+            <p><strong>保持代码整洁</strong>：</p>
+            <ul>
+              <li>定期格式化代码</li>
+              <li>删除未使用的导入</li>
+              <li>保持一致的缩进风格</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>善用自动化</strong>：</p>
+            <ul>
+              <li>配置自动保存</li>
+              <li>启用自动格式化</li>
+              <li>使用代码片段</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>提高编辑效率</strong>：</p>
+            <ul>
+              <li>熟练使用快捷键</li>
+              <li>善用多光标编辑</li>
+              <li>掌握代码导航</li>
+            </ul>
+          </li>
+        </ol>
+        <h2 id="小结"><a aria-hidden="true" tabindex="-1" href="#小结" class="anchor"><span class="icon icon-link"></span></a>小结</h2>
+        <p>良好的代码编辑习惯能显著提升开发效率。建议：</p>
+        <ol>
+          <li>循序渐进地学习和使用各项功能</li>
+          <li>培养使用快捷键的习惯</li>
+          <li>根据个人习惯定制编辑器配置</li>
+          <li>持续优化自己的编码工作流程</li>
+        </ol>
+        <section class="article-footer"><a href="https://github.com/zhangrenyang/cursor/blob/master/src\2.核心功能\2.1.代码编辑基础.md" class="edit-button" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+<span>Edit this page on GitHub</span>
+</a><span class="atime">2025/02/01</span></section>
+      </markdown-style>
+      <nav class="tocs">
+        <aside class="inner toc">
+          <ol class="tocs-list">
+            <li><a href="#基本编辑功能" class="tocs-link">基本编辑功能</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-文本选择" class="tocs-link">1. 文本选择</a></li>
+                <li><a href="#2-文本编辑" class="tocs-link">2. 文本编辑</a></li>
+              </ol>
+            </li>
+            <li><a href="#智能编辑特性" class="tocs-link">智能编辑特性</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-自动完成" class="tocs-link">1. 自动完成</a></li>
+                <li><a href="#2-代码格式化" class="tocs-link">2. 代码格式化</a></li>
+              </ol>
+            </li>
+            <li><a href="#代码导航" class="tocs-link">代码导航</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-文件内导航" class="tocs-link">1. 文件内导航</a></li>
+                <li><a href="#2-智能跳转" class="tocs-link">2. 智能跳转</a></li>
+              </ol>
+            </li>
+            <li><a href="#编辑辅助功能" class="tocs-link">编辑辅助功能</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-代码片段" class="tocs-link">1. 代码片段</a></li>
+                <li><a href="#2-注释处理" class="tocs-link">2. 注释处理</a></li>
+              </ol>
+            </li>
+            <li><a href="#实用技巧" class="tocs-link">实用技巧</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-提高效率的编辑技巧" class="tocs-link">1. 提高效率的编辑技巧</a></li>
+                <li><a href="#2-代码整理技巧" class="tocs-link">2. 代码整理技巧</a></li>
+              </ol>
+            </li>
+            <li><a href="#最佳实践" class="tocs-link">最佳实践</a></li>
+            <li><a href="#小结" class="tocs-link">小结</a></li>
+          </ol>
+        </aside>
+      </nav>
+    </div>
+    <script src="../js/demo-preview.js?v=1.34.1"></script>
+    <div class="footer warpper">Released under the MIT License. Copyright © 2022 Kenny Wong<br>Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a></div>
+    <script src="../js/tocbot.js?v=1.34.1"></script>
+  </body>
+</html>

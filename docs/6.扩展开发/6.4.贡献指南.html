@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贡献指南 cursor</title>
+    <meta name="description" content="贡献是指参与 Cursor 项目开发的过程，包括提交代码、修复 Bug、改进文档、提出建议等。通过贡献，你可以帮助改进 Cursor，使其变得更好。">
+    <link rel="stylesheet" type="text/css" href="../css/main.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/tocbot.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/media.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/copy.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/demo-preview.css?v=1.34.1">
+    <link rel="icon" href="../cursor.webp" type="image/x-icon">
+    <script src="../js/copy.js?v=1.34.1"></script>
+    <script src="../js/dark-mode.js?v=1.34.1"></script>
+    <script src="../js/markdown-style.js?v=1.34.1"></script>
+  </head>
+  <body id="idoctotop"><a href="#idoctotop" class="gototop">top</a>
+    <header class="header">
+      <article class="inner warpper"><a class="logo" href="../index.html"><img alt="cursor logo" src="../cursor.webp">
+<span class="title">cursor</span></a>
+        <div class="content">
+          <ul class="menu">
+            <li><a href="../index.html" target="" class="">Home</a></li>
+            <li><a href="../about.html" target="" class="">About</a></li>
+          </ul><a href="https://github.com/zhangrenyang/cursor" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg></a>
+          <dark-mode permanent=""></dark-mode>
+        </div>
+      </article>
+    </header>
+    <div class="warpper-content warpper">
+      <markdown-style theme-auto-switch-disabled="">
+        <h1 id="贡献指南"><a aria-hidden="true" tabindex="-1" href="#贡献指南" class="anchor"><span class="icon icon-link"></span></a>贡献指南</h1>
+        <h2 id="基础概念"><a aria-hidden="true" tabindex="-1" href="#基础概念" class="anchor"><span class="icon icon-link"></span></a>基础概念</h2>
+        <h3 id="1-什么是贡献"><a aria-hidden="true" tabindex="-1" href="#1-什么是贡献" class="anchor"><span class="icon icon-link"></span></a>1. 什么是贡献？</h3>
+        <p>贡献是指参与 Cursor 项目开发的过程，包括提交代码、修复 Bug、改进文档、提出建议等。通过贡献，你可以帮助改进 Cursor，使其变得更好。</p>
+        <h3 id="2-贡献类型"><a aria-hidden="true" tabindex="-1" href="#2-贡献类型" class="anchor"><span class="icon icon-link"></span></a>2. 贡献类型</h3>
+        <ul>
+          <li><strong>代码贡献</strong>：提交新功能或修复</li>
+          <li><strong>文档贡献</strong>：完善项目文档</li>
+          <li><strong>问题反馈</strong>：报告 Bug 和建议</li>
+          <li><strong>测试验证</strong>：测试新功能</li>
+        </ul>
+        <h2 id="准备工作"><a aria-hidden="true" tabindex="-1" href="#准备工作" class="anchor"><span class="icon icon-link"></span></a>准备工作</h2>
+        <h3 id="1-环境配置"><a aria-hidden="true" tabindex="-1" href="#1-环境配置" class="anchor"><span class="icon icon-link"></span></a>1. 环境配置</h3>
+        <ul>
+          <li>
+            <p><strong>基础要求</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 必要工具</span>
+</span><span class="code-line line-number" line="2">- Git
+</span><span class="code-line line-number" line="3">- Node.js <span class="token punctuation">(</span><span class="token operator">>=</span> <span class="token number">14</span>.x<span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="4">- <span class="token function">npm</span> 或 <span class="token function">yarn</span>
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6"><span class="token comment"># 开发工具</span>
+</span><span class="code-line line-number" line="7">- Cursor 编辑器
+</span><span class="code-line line-number" line="8">- 调试工具
+</span></code><input type="hidden" value="# 必要工具
+- Git
+- Node.js (>= 14.x)
+- npm 或 yarn
+
+# 开发工具
+- Cursor 编辑器
+- 调试工具
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>项目设置</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 克隆项目</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> clone https://github.com/cursor/cursor
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 安装依赖</span>
+</span><span class="code-line line-number" line="5"><span class="token function">npm</span> <span class="token function">install</span>
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token comment"># 编译项目</span>
+</span><span class="code-line line-number" line="8"><span class="token function">npm</span> run compile
+</span></code><input type="hidden" value="# 克隆项目
+git clone https://github.com/cursor/cursor
+
+# 安装依赖
+npm install
+
+# 编译项目
+npm run compile
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-开发规范"><a aria-hidden="true" tabindex="-1" href="#2-开发规范" class="anchor"><span class="icon icon-link"></span></a>2. 开发规范</h3>
+        <ul>
+          <li>
+            <p><strong>代码风格</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 好的实践</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">function</span> <span class="token function">calculateTotal</span><span class="token punctuation">(</span>items<span class="token operator">:</span> Item<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token keyword">return</span> items<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>sum<span class="token punctuation">,</span> item<span class="token punctuation">)</span> <span class="token operator">=></span> sum <span class="token operator">+</span> item<span class="token punctuation">.</span>price<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="4"><span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6"><span class="token comment">// 避免的写法</span>
+</span><span class="code-line line-number" line="7"><span class="token keyword">function</span> <span class="token function">calc</span><span class="token punctuation">(</span>x<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">any</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="8">  <span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="9">  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&#x3C;</span> x<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> s <span class="token operator">+=</span> x<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>p<span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="10">  <span class="token keyword">return</span> s<span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="11"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 好的实践
+function calculateTotal(items: Item[]): number {
+  return items.reduce((sum, item) => sum + item.price, 0);
+}
+
+// 避免的写法
+function calc(x: any): any {
+  let s = 0;
+  for(let i = 0; i < x.length; i++) s += x[i].p;
+  return s;
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>提交规范</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 提交格式</span>
+</span><span class="code-line line-number" line="2">type<span class="token punctuation">(</span>scope<span class="token punctuation">)</span>: message
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 示例</span>
+</span><span class="code-line line-number" line="5">feat<span class="token punctuation">(</span>editor<span class="token punctuation">)</span>: <span class="token function">add</span> auto-completion feature
+</span><span class="code-line line-number" line="6">fix<span class="token punctuation">(</span>debug<span class="token punctuation">)</span>: resolve launch configuration issue
+</span></code><input type="hidden" value="# 提交格式
+type(scope): message
+
+# 示例
+feat(editor): add auto-completion feature
+fix(debug): resolve launch configuration issue
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="贡献流程"><a aria-hidden="true" tabindex="-1" href="#贡献流程" class="anchor"><span class="icon icon-link"></span></a>贡献流程</h2>
+        <h3 id="1-问题处理"><a aria-hidden="true" tabindex="-1" href="#1-问题处理" class="anchor"><span class="icon icon-link"></span></a>1. 问题处理</h3>
+        <ul>
+          <li>
+            <p><strong>提交问题</strong>：</p>
+            <pre class="language-markdown"><code class="language-markdown code-highlight"><span class="code-line line-number" line="1"><span class="token title important"><span class="token punctuation">##</span> 问题描述</span>
+</span><span class="code-line line-number" line="2">[清晰描述问题]
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token title important"><span class="token punctuation">##</span> 复现步骤</span>
+</span><span class="code-line line-number" line="5"><span class="token list punctuation">1.</span> [步骤1]
+</span><span class="code-line line-number" line="6"><span class="token list punctuation">2.</span> [步骤2]
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8"><span class="token title important"><span class="token punctuation">##</span> 期望行为</span>
+</span><span class="code-line line-number" line="9">[期望看到的结果]
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11"><span class="token title important"><span class="token punctuation">##</span> 实际行为</span>
+</span><span class="code-line line-number" line="12">[实际发生的情况]
+</span><span class="code-line line-number" line="13">
+</span><span class="code-line line-number" line="14"><span class="token title important"><span class="token punctuation">##</span> 环境信息</span>
+</span><span class="code-line line-number" line="15"><span class="token list punctuation">-</span> Cursor 版本：
+</span><span class="code-line line-number" line="16"><span class="token list punctuation">-</span> 操作系统：
+</span><span class="code-line line-number" line="17"><span class="token list punctuation">-</span> 相关配置：
+</span></code><input type="hidden" value="## 问题描述
+[清晰描述问题]
+
+## 复现步骤
+1. [步骤1]
+2. [步骤2]
+
+## 期望行为
+[期望看到的结果]
+
+## 实际行为
+[实际发生的情况]
+
+## 环境信息
+- Cursor 版本：
+- 操作系统：
+- 相关配置：
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>解决问题</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 1. 创建问题分支</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> fix/issue-123
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 2. 开发修复</span>
+</span><span class="code-line line-number" line="5"><span class="token comment"># 3. 测试验证</span>
+</span><span class="code-line line-number" line="6"><span class="token comment"># 4. 提交代码</span>
+</span><span class="code-line line-number" line="7"><span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"fix(component): resolve issue #123"</span>
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9"><span class="token comment"># 5. 创建合并请求</span>
+</span></code><input type="hidden" value="# 1. 创建问题分支
+git checkout -b fix/issue-123
+
+# 2. 开发修复
+# 3. 测试验证
+# 4. 提交代码
+git commit -m &#x22;fix(component): resolve issue #123&#x22;
+
+# 5. 创建合并请求
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-功能开发"><a aria-hidden="true" tabindex="-1" href="#2-功能开发" class="anchor"><span class="icon icon-link"></span></a>2. 功能开发</h3>
+        <ul>
+          <li>
+            <p><strong>功能提案</strong>：</p>
+            <pre class="language-markdown"><code class="language-markdown code-highlight"><span class="code-line line-number" line="1"><span class="token title important"><span class="token punctuation">##</span> 功能描述</span>
+</span><span class="code-line line-number" line="2">[描述新功能]
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token title important"><span class="token punctuation">##</span> 使用场景</span>
+</span><span class="code-line line-number" line="5">[说明使用场景]
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token title important"><span class="token punctuation">##</span> 实现方案</span>
+</span><span class="code-line line-number" line="8">[提供实现思路]
+</span><span class="code-line line-number" line="9">
+</span><span class="code-line line-number" line="10"><span class="token title important"><span class="token punctuation">##</span> 影响范围</span>
+</span><span class="code-line line-number" line="11">[分析可能的影响]
+</span></code><input type="hidden" value="## 功能描述
+[描述新功能]
+
+## 使用场景
+[说明使用场景]
+
+## 实现方案
+[提供实现思路]
+
+## 影响范围
+[分析可能的影响]
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>开发流程</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 1. 创建功能分支</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> feature/new-feature
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 2. 开发功能</span>
+</span><span class="code-line line-number" line="5"><span class="token comment"># 3. 编写测试</span>
+</span><span class="code-line line-number" line="6"><span class="token comment"># 4. 提交代码</span>
+</span><span class="code-line line-number" line="7"><span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"feat(module): add new feature"</span>
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9"><span class="token comment"># 5. 更新文档</span>
+</span></code><input type="hidden" value="# 1. 创建功能分支
+git checkout -b feature/new-feature
+
+# 2. 开发功能
+# 3. 编写测试
+# 4. 提交代码
+git commit -m &#x22;feat(module): add new feature&#x22;
+
+# 5. 更新文档
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="代码审查"><a aria-hidden="true" tabindex="-1" href="#代码审查" class="anchor"><span class="icon icon-link"></span></a>代码审查</h2>
+        <h3 id="1-提交审查"><a aria-hidden="true" tabindex="-1" href="#1-提交审查" class="anchor"><span class="icon icon-link"></span></a>1. 提交审查</h3>
+        <ul>
+          <li>
+            <p><strong>审查清单</strong>：</p>
+            <pre class="language-markdown"><code class="language-markdown code-highlight"><span class="code-line line-number" line="1"><span class="token title important"><span class="token punctuation">##</span> 代码审查要点</span>
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3"><span class="token list punctuation">-</span> [ ] 代码风格符合规范
+</span><span class="code-line line-number" line="4"><span class="token list punctuation">-</span> [ ] 测试覆盖充分
+</span><span class="code-line line-number" line="5"><span class="token list punctuation">-</span> [ ] 文档更新完整
+</span><span class="code-line line-number" line="6"><span class="token list punctuation">-</span> [ ] 性能影响可接受
+</span><span class="code-line line-number" line="7"><span class="token list punctuation">-</span> [ ] 向后兼容性
+</span></code><input type="hidden" value="## 代码审查要点
+
+- [ ] 代码风格符合规范
+- [ ] 测试覆盖充分
+- [ ] 文档更新完整
+- [ ] 性能影响可接受
+- [ ] 向后兼容性
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>反馈处理</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 1. 查看反馈</span>
+</span><span class="code-line line-number" line="2"><span class="token comment"># 2. 修改代码</span>
+</span><span class="code-line line-number" line="3"><span class="token comment"># 3. 提交更新</span>
+</span><span class="code-line line-number" line="4"><span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"refactor: address review feedback"</span>
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6"><span class="token comment"># 4. 更新PR</span>
+</span><span class="code-line line-number" line="7"><span class="token function">git</span> push origin feature/new-feature
+</span></code><input type="hidden" value="# 1. 查看反馈
+# 2. 修改代码
+# 3. 提交更新
+git commit -m &#x22;refactor: address review feedback&#x22;
+
+# 4. 更新PR
+git push origin feature/new-feature
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-合并规范"><a aria-hidden="true" tabindex="-1" href="#2-合并规范" class="anchor"><span class="icon icon-link"></span></a>2. 合并规范</h3>
+        <ul>
+          <li>
+            <p><strong>合并检查</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 1. 更新主分支</span>
+</span><span class="code-line line-number" line="2"><span class="token function">git</span> checkout main
+</span><span class="code-line line-number" line="3"><span class="token function">git</span> pull origin main
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5"><span class="token comment"># 2. 变基操作</span>
+</span><span class="code-line line-number" line="6"><span class="token function">git</span> checkout feature/new-feature
+</span><span class="code-line line-number" line="7"><span class="token function">git</span> rebase main
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9"><span class="token comment"># 3. 解决冲突</span>
+</span><span class="code-line line-number" line="10"><span class="token comment"># 4. 推送更新</span>
+</span><span class="code-line line-number" line="11"><span class="token function">git</span> push <span class="token parameter variable">-f</span> origin feature/new-feature
+</span></code><input type="hidden" value="# 1. 更新主分支
+git checkout main
+git pull origin main
+
+# 2. 变基操作
+git checkout feature/new-feature
+git rebase main
+
+# 3. 解决冲突
+# 4. 推送更新
+git push -f origin feature/new-feature
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>合并确认</strong>：</p>
+            <pre class="language-markdown"><code class="language-markdown code-highlight"><span class="code-line line-number" line="1"><span class="token title important"><span class="token punctuation">##</span> 合并检查项</span>
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3"><span class="token list punctuation">-</span> [ ] CI 测试通过
+</span><span class="code-line line-number" line="4"><span class="token list punctuation">-</span> [ ] 代码审查通过
+</span><span class="code-line line-number" line="5"><span class="token list punctuation">-</span> [ ] 文档更新完成
+</span><span class="code-line line-number" line="6"><span class="token list punctuation">-</span> [ ] 更新日志添加
+</span></code><input type="hidden" value="## 合并检查项
+
+- [ ] CI 测试通过
+- [ ] 代码审查通过
+- [ ] 文档更新完成
+- [ ] 更新日志添加
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="文档维护"><a aria-hidden="true" tabindex="-1" href="#文档维护" class="anchor"><span class="icon icon-link"></span></a>文档维护</h2>
+        <h3 id="1-文档更新"><a aria-hidden="true" tabindex="-1" href="#1-文档更新" class="anchor"><span class="icon icon-link"></span></a>1. 文档更新</h3>
+        <ul>
+          <li>
+            <p><strong>文档结构</strong>：</p>
+            <pre class="language-markdown"><code class="language-markdown code-highlight"><span class="code-line line-number" line="1"><span class="token title important"><span class="token punctuation">#</span> 文档标题</span>
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3"><span class="token title important"><span class="token punctuation">##</span> 功能描述</span>
+</span><span class="code-line line-number" line="4">[功能说明]
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6"><span class="token title important"><span class="token punctuation">##</span> 使用方法</span>
+</span><span class="code-line line-number" line="7">```代码示例```
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9"><span class="token title important"><span class="token punctuation">##</span> 注意事项</span>
+</span><span class="code-line line-number" line="10"><span class="token list punctuation">-</span> 注意点1
+</span><span class="code-line line-number" line="11"><span class="token list punctuation">-</span> 注意点2
+</span></code><input type="hidden" value="# 文档标题
+
+## 功能描述
+[功能说明]
+
+## 使用方法
+&#x60;&#x60;&#x60;代码示例&#x60;&#x60;&#x60;
+
+## 注意事项
+- 注意点1
+- 注意点2
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>示例编写</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 好的示例</span>
+</span><span class="code-line line-number" line="2"><span class="token comment">// 展示如何使用新功能</span>
+</span><span class="code-line line-number" line="3"><span class="token keyword">const</span> editor <span class="token operator">=</span> window<span class="token punctuation">.</span>activeTextEditor<span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="4">editor<span class="token punctuation">.</span><span class="token function">edit</span><span class="token punctuation">(</span>builder <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="5">  builder<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>position<span class="token punctuation">,</span> <span class="token string">'Hello World'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="6"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 好的示例
+// 展示如何使用新功能
+const editor = window.activeTextEditor;
+editor.edit(builder => {
+  builder.insert(position, &#x27;Hello World&#x27;);
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-文档规范"><a aria-hidden="true" tabindex="-1" href="#2-文档规范" class="anchor"><span class="icon icon-link"></span></a>2. 文档规范</h3>
+        <ul>
+          <li>
+            <p><strong>格式要求</strong>：</p>
+            <pre class="language-markdown"><code class="language-markdown code-highlight"><span class="code-line line-number" line="1"><span class="token title important"><span class="token punctuation">#</span> 文档规范</span>
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3"><span class="token list punctuation">-</span> 使用 Markdown 格式
+</span><span class="code-line line-number" line="4"><span class="token list punctuation">-</span> 包含必要的代码示例
+</span><span class="code-line line-number" line="5"><span class="token list punctuation">-</span> 说明使用场景
+</span><span class="code-line line-number" line="6"><span class="token list punctuation">-</span> 提供错误处理
+</span><span class="code-line line-number" line="7"><span class="token list punctuation">-</span> 更新修改记录
+</span></code><input type="hidden" value="# 文档规范
+
+- 使用 Markdown 格式
+- 包含必要的代码示例
+- 说明使用场景
+- 提供错误处理
+- 更新修改记录
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>维护更新</strong>：</p>
+            <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 1. 检查文档更新</span>
+</span><span class="code-line line-number" line="2"><span class="token comment"># 2. 修改文档内容</span>
+</span><span class="code-line line-number" line="3"><span class="token comment"># 3. 提交更新</span>
+</span><span class="code-line line-number" line="4"><span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"docs: update feature documentation"</span>
+</span></code><input type="hidden" value="# 1. 检查文档更新
+# 2. 修改文档内容
+# 3. 提交更新
+git commit -m &#x22;docs: update feature documentation&#x22;
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="最佳实践"><a aria-hidden="true" tabindex="-1" href="#最佳实践" class="anchor"><span class="icon icon-link"></span></a>最佳实践</h2>
+        <h3 id="1-开发建议"><a aria-hidden="true" tabindex="-1" href="#1-开发建议" class="anchor"><span class="icon icon-link"></span></a>1. 开发建议</h3>
+        <ul>
+          <li>
+            <p><strong>代码质量</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 编写可测试的代码</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Calculator</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">  <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">    <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="5">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="6"><span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8"><span class="token comment">// 单元测试</span>
+</span><span class="code-line line-number" line="9"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'Calculator'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="10">  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'add numbers correctly'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="11">    <span class="token keyword">const</span> calc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Calculator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="12">    <span class="token function">expect</span><span class="token punctuation">(</span>calc<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="13">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="14"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 编写可测试的代码
+export class Calculator {
+  add(a: number, b: number): number {
+    return a + b;
+  }
+}
+
+// 单元测试
+describe(&#x27;Calculator&#x27;, () => {
+  test(&#x27;add numbers correctly&#x27;, () => {
+    const calc = new Calculator();
+    expect(calc.add(1, 2)).toBe(3);
+  });
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>性能考虑</strong>：</p>
+            <pre class="language-typescript"><code class="language-typescript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 优化性能</span>
+</span><span class="code-line line-number" line="2"><span class="token comment">// 使用缓存</span>
+</span><span class="code-line line-number" line="3"><span class="token keyword">const</span> cache <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map<span class="token operator">&#x3C;</span><span class="token builtin">string</span><span class="token punctuation">,</span> Result<span class="token operator">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5"><span class="token keyword">function</span> <span class="token function">getResult</span><span class="token punctuation">(</span>key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> Result <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="6">  <span class="token keyword">if</span> <span class="token punctuation">(</span>cache<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="7">    <span class="token keyword">return</span> cache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token operator">!</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="8">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="9">  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">computeResult</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="10">  cache<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="11">  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="12"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="// 优化性能
+// 使用缓存
+const cache = new Map<string, Result>();
+
+function getResult(key: string): Result {
+  if (cache.has(key)) {
+    return cache.get(key)!;
+  }
+  const result = computeResult(key);
+  cache.set(key, result);
+  return result;
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-协作技巧"><a aria-hidden="true" tabindex="-1" href="#2-协作技巧" class="anchor"><span class="icon icon-link"></span></a>2. 协作技巧</h3>
+        <ul>
+          <li>
+            <p><strong>沟通方式</strong>：</p>
+            <pre class="language-markdown"><code class="language-markdown code-highlight"><span class="code-line line-number" line="1"><span class="token title important"><span class="token punctuation">##</span> 有效沟通</span>
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3"><span class="token list punctuation">1.</span> 清晰描述问题/需求
+</span><span class="code-line line-number" line="4"><span class="token list punctuation">2.</span> 提供必要的上下文
+</span><span class="code-line line-number" line="5"><span class="token list punctuation">3.</span> 及时响应反馈
+</span><span class="code-line line-number" line="6"><span class="token list punctuation">4.</span> 保持礼貌友好
+</span></code><input type="hidden" value="## 有效沟通
+
+1. 清晰描述问题/需求
+2. 提供必要的上下文
+3. 及时响应反馈
+4. 保持礼貌友好
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>团队协作</strong>：</p>
+            <pre class="language-markdown"><code class="language-markdown code-highlight"><span class="code-line line-number" line="1"><span class="token title important"><span class="token punctuation">##</span> 协作要点</span>
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3"><span class="token list punctuation">1.</span> 遵循项目规范
+</span><span class="code-line line-number" line="4"><span class="token list punctuation">2.</span> 及时同步进度
+</span><span class="code-line line-number" line="5"><span class="token list punctuation">3.</span> 主动寻求帮助
+</span><span class="code-line line-number" line="6"><span class="token list punctuation">4.</span> 分享经验心得
+</span></code><input type="hidden" value="## 协作要点
+
+1. 遵循项目规范
+2. 及时同步进度
+3. 主动寻求帮助
+4. 分享经验心得
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="小结"><a aria-hidden="true" tabindex="-1" href="#小结" class="anchor"><span class="icon icon-link"></span></a>小结</h2>
+        <p>贡献开源项目需要注意：</p>
+        <ol>
+          <li>遵循项目规范</li>
+          <li>保持良好沟通</li>
+          <li>注重代码质量</li>
+          <li>完善文档更新</li>
+        </ol>
+        <p>记住，好的贡献不仅仅是代码，还包括文档、测试和反馈。持续改进，共同维护好项目。</p>
+        <section class="article-footer"><a href="https://github.com/zhangrenyang/cursor/blob/master/src\6.扩展开发\6.4.贡献指南.md" class="edit-button" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+<span>Edit this page on GitHub</span>
+</a><span class="atime">2025/02/01</span></section>
+      </markdown-style>
+      <nav class="tocs">
+        <aside class="inner toc">
+          <ol class="tocs-list">
+            <li><a href="#基础概念" class="tocs-link">基础概念</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-什么是贡献" class="tocs-link">1. 什么是贡献？</a></li>
+                <li><a href="#2-贡献类型" class="tocs-link">2. 贡献类型</a></li>
+              </ol>
+            </li>
+            <li><a href="#准备工作" class="tocs-link">准备工作</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-环境配置" class="tocs-link">1. 环境配置</a></li>
+                <li><a href="#2-开发规范" class="tocs-link">2. 开发规范</a></li>
+              </ol>
+            </li>
+            <li><a href="#贡献流程" class="tocs-link">贡献流程</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-问题处理" class="tocs-link">1. 问题处理</a></li>
+                <li><a href="#2-功能开发" class="tocs-link">2. 功能开发</a></li>
+              </ol>
+            </li>
+            <li><a href="#代码审查" class="tocs-link">代码审查</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-提交审查" class="tocs-link">1. 提交审查</a></li>
+                <li><a href="#2-合并规范" class="tocs-link">2. 合并规范</a></li>
+              </ol>
+            </li>
+            <li><a href="#文档维护" class="tocs-link">文档维护</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-文档更新" class="tocs-link">1. 文档更新</a></li>
+                <li><a href="#2-文档规范" class="tocs-link">2. 文档规范</a></li>
+              </ol>
+            </li>
+            <li><a href="#最佳实践" class="tocs-link">最佳实践</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-开发建议" class="tocs-link">1. 开发建议</a></li>
+                <li><a href="#2-协作技巧" class="tocs-link">2. 协作技巧</a></li>
+              </ol>
+            </li>
+            <li><a href="#小结" class="tocs-link">小结</a></li>
+          </ol>
+        </aside>
+      </nav>
+    </div>
+    <script src="../js/demo-preview.js?v=1.34.1"></script>
+    <div class="footer warpper">Released under the MIT License. Copyright © 2022 Kenny Wong<br>Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a></div>
+    <script src="../js/tocbot.js?v=1.34.1"></script>
+  </body>
+</html>

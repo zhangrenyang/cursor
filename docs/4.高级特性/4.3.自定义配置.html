@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义配置 cursor</title>
+    <meta name="description" content="自定义配置允许你根据个人习惯和项目需求来调整 Cursor 的各项设置，包括编辑器行为、界面外观、快捷键等。通过配置，你可以打造一个最适合自己的开发环境。">
+    <link rel="stylesheet" type="text/css" href="../css/main.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/tocbot.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/media.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/copy.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/demo-preview.css?v=1.34.1">
+    <link rel="icon" href="../cursor.webp" type="image/x-icon">
+    <script src="../js/copy.js?v=1.34.1"></script>
+    <script src="../js/dark-mode.js?v=1.34.1"></script>
+    <script src="../js/markdown-style.js?v=1.34.1"></script>
+  </head>
+  <body id="idoctotop"><a href="#idoctotop" class="gototop">top</a>
+    <header class="header">
+      <article class="inner warpper"><a class="logo" href="../index.html"><img alt="cursor logo" src="../cursor.webp">
+<span class="title">cursor</span></a>
+        <div class="content">
+          <ul class="menu">
+            <li><a href="../index.html" target="" class="">Home</a></li>
+            <li><a href="../about.html" target="" class="">About</a></li>
+          </ul><a href="https://github.com/zhangrenyang/cursor" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg></a>
+          <dark-mode permanent=""></dark-mode>
+        </div>
+      </article>
+    </header>
+    <div class="warpper-content warpper">
+      <markdown-style theme-auto-switch-disabled="">
+        <h1 id="自定义配置"><a aria-hidden="true" tabindex="-1" href="#自定义配置" class="anchor"><span class="icon icon-link"></span></a>自定义配置</h1>
+        <h2 id="基础概念"><a aria-hidden="true" tabindex="-1" href="#基础概念" class="anchor"><span class="icon icon-link"></span></a>基础概念</h2>
+        <h3 id="1-什么是自定义配置"><a aria-hidden="true" tabindex="-1" href="#1-什么是自定义配置" class="anchor"><span class="icon icon-link"></span></a>1. 什么是自定义配置？</h3>
+        <p>自定义配置允许你根据个人习惯和项目需求来调整 Cursor 的各项设置，包括编辑器行为、界面外观、快捷键等。通过配置，你可以打造一个最适合自己的开发环境。</p>
+        <h3 id="2-配置类型"><a aria-hidden="true" tabindex="-1" href="#2-配置类型" class="anchor"><span class="icon icon-link"></span></a>2. 配置类型</h3>
+        <ul>
+          <li><strong>用户配置</strong>：个人偏好设置</li>
+          <li><strong>工作区配置</strong>：项目特定设置</li>
+          <li><strong>语言配置</strong>：特定语言设置</li>
+          <li><strong>快捷键配置</strong>：键盘映射设置</li>
+        </ul>
+        <h2 id="配置方式"><a aria-hidden="true" tabindex="-1" href="#配置方式" class="anchor"><span class="icon icon-link"></span></a>配置方式</h2>
+        <h3 id="1-界面配置"><a aria-hidden="true" tabindex="-1" href="#1-界面配置" class="anchor"><span class="icon icon-link"></span></a>1. 界面配置</h3>
+        <ul>
+          <li>
+            <p><strong>设置界面</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">1. 打开命令面板（Ctrl+Shift+P）
+</span><span class="code-line line-number" line="2">2. 输入 "Settings"
+</span><span class="code-line line-number" line="3">3. 选择 "Preferences: Open Settings"
+</span></code><input type="hidden" value="1. 打开命令面板（Ctrl+Shift+P）
+2. 输入 &#x22;Settings&#x22;
+3. 选择 &#x22;Preferences: Open Settings&#x22;
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>常用选项</strong>：</p>
+            <ul>
+              <li>字体设置</li>
+              <li>主题选择</li>
+              <li>缩进设置</li>
+              <li>自动保存</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-文件配置"><a aria-hidden="true" tabindex="-1" href="#2-文件配置" class="anchor"><span class="icon icon-link"></span></a>2. 文件配置</h3>
+        <ul>
+          <li>
+            <p><strong>配置文件位置</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1"># 用户配置
+</span><span class="code-line line-number" line="2">%APPDATA%/Cursor/User/settings.json
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"># 工作区配置
+</span><span class="code-line line-number" line="5">.vscode/settings.json
+</span></code><input type="hidden" value="# 用户配置
+%APPDATA%/Cursor/User/settings.json
+
+# 工作区配置
+.vscode/settings.json
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>基本结构</strong>：</p>
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"editor.fontSize"</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="3">  <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">  <span class="token property">"editor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"on"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="5">  <span class="token property">"files.autoSave"</span><span class="token operator">:</span> <span class="token string">"afterDelay"</span>
+</span><span class="code-line line-number" line="6"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;editor.fontSize&#x22;: 14,
+  &#x22;editor.tabSize&#x22;: 2,
+  &#x22;editor.wordWrap&#x22;: &#x22;on&#x22;,
+  &#x22;files.autoSave&#x22;: &#x22;afterDelay&#x22;
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="常用配置项"><a aria-hidden="true" tabindex="-1" href="#常用配置项" class="anchor"><span class="icon icon-link"></span></a>常用配置项</h2>
+        <h3 id="1-编辑器设置"><a aria-hidden="true" tabindex="-1" href="#1-编辑器设置" class="anchor"><span class="icon icon-link"></span></a>1. 编辑器设置</h3>
+        <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"editor"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">    <span class="token property">"fontSize"</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>                 <span class="token comment">// 字体大小</span>
+</span><span class="code-line line-number" line="4">    <span class="token property">"fontFamily"</span><span class="token operator">:</span> <span class="token string">"Fira Code"</span><span class="token punctuation">,</span>      <span class="token comment">// 字体</span>
+</span><span class="code-line line-number" line="5">    <span class="token property">"tabSize"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>                   <span class="token comment">// 缩进大小</span>
+</span><span class="code-line line-number" line="6">    <span class="token property">"wordWrap"</span><span class="token operator">:</span> <span class="token string">"on"</span><span class="token punctuation">,</span>              <span class="token comment">// 自动换行</span>
+</span><span class="code-line line-number" line="7">    <span class="token property">"minimap.enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>        <span class="token comment">// 显示缩略图</span>
+</span><span class="code-line line-number" line="8">    <span class="token property">"formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>          <span class="token comment">// 保存时格式化</span>
+</span><span class="code-line line-number" line="9">    <span class="token property">"suggestSelection"</span><span class="token operator">:</span> <span class="token string">"first"</span><span class="token punctuation">,</span>    <span class="token comment">// 自动完成选择</span>
+</span><span class="code-line line-number" line="10">    <span class="token property">"bracketPairColorization.enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span>  <span class="token comment">// 括号对着色</span>
+</span><span class="code-line line-number" line="11">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="12"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;editor&#x22;: {
+    &#x22;fontSize&#x22;: 14,                 // 字体大小
+    &#x22;fontFamily&#x22;: &#x22;Fira Code&#x22;,      // 字体
+    &#x22;tabSize&#x22;: 2,                   // 缩进大小
+    &#x22;wordWrap&#x22;: &#x22;on&#x22;,              // 自动换行
+    &#x22;minimap.enabled&#x22;: true,        // 显示缩略图
+    &#x22;formatOnSave&#x22;: true,          // 保存时格式化
+    &#x22;suggestSelection&#x22;: &#x22;first&#x22;,    // 自动完成选择
+    &#x22;bracketPairColorization.enabled&#x22;: true  // 括号对着色
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h3 id="2-文件设置"><a aria-hidden="true" tabindex="-1" href="#2-文件设置" class="anchor"><span class="icon icon-link"></span></a>2. 文件设置</h3>
+        <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"files"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">    <span class="token property">"autoSave"</span><span class="token operator">:</span> <span class="token string">"afterDelay"</span><span class="token punctuation">,</span>      <span class="token comment">// 自动保存</span>
+</span><span class="code-line line-number" line="4">    <span class="token property">"autoSaveDelay"</span><span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>         <span class="token comment">// 保存延迟(ms)</span>
+</span><span class="code-line line-number" line="5">    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">{</span>                    <span class="token comment">// 排除文件</span>
+</span><span class="code-line line-number" line="6">      <span class="token property">"node_modules"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="7">      <span class="token property">"dist"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+</span><span class="code-line line-number" line="8">    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="9">    <span class="token property">"associations"</span><span class="token operator">:</span> <span class="token punctuation">{</span>              <span class="token comment">// 文件关联</span>
+</span><span class="code-line line-number" line="10">      <span class="token property">"*.vue"</span><span class="token operator">:</span> <span class="token string">"vue"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="11">      <span class="token property">"*.jsx"</span><span class="token operator">:</span> <span class="token string">"javascriptreact"</span>
+</span><span class="code-line line-number" line="12">    <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="13">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="14"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;files&#x22;: {
+    &#x22;autoSave&#x22;: &#x22;afterDelay&#x22;,      // 自动保存
+    &#x22;autoSaveDelay&#x22;: 1000,         // 保存延迟(ms)
+    &#x22;exclude&#x22;: {                    // 排除文件
+      &#x22;node_modules&#x22;: true,
+      &#x22;dist&#x22;: true
+    },
+    &#x22;associations&#x22;: {              // 文件关联
+      &#x22;*.vue&#x22;: &#x22;vue&#x22;,
+      &#x22;*.jsx&#x22;: &#x22;javascriptreact&#x22;
+    }
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h2 id="语言特定配置"><a aria-hidden="true" tabindex="-1" href="#语言特定配置" class="anchor"><span class="icon icon-link"></span></a>语言特定配置</h2>
+        <h3 id="1-javascripttypescript"><a aria-hidden="true" tabindex="-1" href="#1-javascripttypescript" class="anchor"><span class="icon icon-link"></span></a>1. JavaScript/TypeScript</h3>
+        <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"[javascript]"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">    <span class="token property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"esbenp.prettier-vscode"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">    <span class="token property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="5">    <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">2</span>
+</span><span class="code-line line-number" line="6">  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="7">  <span class="token property">"[typescript]"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="8">    <span class="token property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"esbenp.prettier-vscode"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="9">    <span class="token property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="10">    <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">2</span>
+</span><span class="code-line line-number" line="11">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="12"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;[javascript]&#x22;: {
+    &#x22;editor.defaultFormatter&#x22;: &#x22;esbenp.prettier-vscode&#x22;,
+    &#x22;editor.formatOnSave&#x22;: true,
+    &#x22;editor.tabSize&#x22;: 2
+  },
+  &#x22;[typescript]&#x22;: {
+    &#x22;editor.defaultFormatter&#x22;: &#x22;esbenp.prettier-vscode&#x22;,
+    &#x22;editor.formatOnSave&#x22;: true,
+    &#x22;editor.tabSize&#x22;: 2
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h3 id="2-python"><a aria-hidden="true" tabindex="-1" href="#2-python" class="anchor"><span class="icon icon-link"></span></a>2. Python</h3>
+        <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"[python]"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">    <span class="token property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">    <span class="token property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"ms-python.python"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="5">    <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="6">    <span class="token property">"editor.rulers"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">80</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="7">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="8"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;[python]&#x22;: {
+    &#x22;editor.formatOnSave&#x22;: true,
+    &#x22;editor.defaultFormatter&#x22;: &#x22;ms-python.python&#x22;,
+    &#x22;editor.tabSize&#x22;: 4,
+    &#x22;editor.rulers&#x22;: [80, 100]
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h2 id="快捷键配置"><a aria-hidden="true" tabindex="-1" href="#快捷键配置" class="anchor"><span class="icon icon-link"></span></a>快捷键配置</h2>
+        <h3 id="1-自定义快捷键"><a aria-hidden="true" tabindex="-1" href="#1-自定义快捷键" class="anchor"><span class="icon icon-link"></span></a>1. 自定义快捷键</h3>
+        <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"keybindings"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+</span><span class="code-line line-number" line="3">    <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">      <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"ctrl+shift+/"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="5">      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"editor.action.blockComment"</span>
+</span><span class="code-line line-number" line="6">    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="7">    <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="8">      <span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"ctrl+r"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="9">      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"workbench.action.reloadWindow"</span>
+</span><span class="code-line line-number" line="10">    <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="11">  <span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="12"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;keybindings&#x22;: [
+    {
+      &#x22;key&#x22;: &#x22;ctrl+shift+/&#x22;,
+      &#x22;command&#x22;: &#x22;editor.action.blockComment&#x22;
+    },
+    {
+      &#x22;key&#x22;: &#x22;ctrl+r&#x22;,
+      &#x22;command&#x22;: &#x22;workbench.action.reloadWindow&#x22;
+    }
+  ]
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h3 id="2-快捷键冲突解决"><a aria-hidden="true" tabindex="-1" href="#2-快捷键冲突解决" class="anchor"><span class="icon icon-link"></span></a>2. 快捷键冲突解决</h3>
+        <ul>
+          <li>
+            <p><strong>查找冲突</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">1. 打开键盘快捷方式
+</span><span class="code-line line-number" line="2">2. 搜索特定快捷键
+</span><span class="code-line line-number" line="3">3. 查看所有绑定
+</span></code><input type="hidden" value="1. 打开键盘快捷方式
+2. 搜索特定快捷键
+3. 查看所有绑定
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>解决方法</strong>：</p>
+            <ol>
+              <li>禁用冲突快捷键</li>
+              <li>更改其中一个</li>
+              <li>使用组合键</li>
+            </ol>
+          </li>
+        </ul>
+        <h2 id="工作区配置"><a aria-hidden="true" tabindex="-1" href="#工作区配置" class="anchor"><span class="icon icon-link"></span></a>工作区配置</h2>
+        <h3 id="1-项目特定设置"><a aria-hidden="true" tabindex="-1" href="#1-项目特定设置" class="anchor"><span class="icon icon-link"></span></a>1. 项目特定设置</h3>
+        <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"folders"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+</span><span class="code-line line-number" line="3">    <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">      <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"."</span>
+</span><span class="code-line line-number" line="5">    <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="6">  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="7">  <span class="token property">"settings"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="8">    <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="9">    <span class="token property">"files.exclude"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="10">      <span class="token property">"**/.git"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="11">      <span class="token property">"**/node_modules"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+</span><span class="code-line line-number" line="12">    <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="13">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="14"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;folders&#x22;: [
+    {
+      &#x22;path&#x22;: &#x22;.&#x22;
+    }
+  ],
+  &#x22;settings&#x22;: {
+    &#x22;editor.tabSize&#x22;: 4,
+    &#x22;files.exclude&#x22;: {
+      &#x22;**/.git&#x22;: true,
+      &#x22;**/node_modules&#x22;: true
+    }
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+        <h3 id="2-团队共享"><a aria-hidden="true" tabindex="-1" href="#2-团队共享" class="anchor"><span class="icon icon-link"></span></a>2. 团队共享</h3>
+        <ul>
+          <li>
+            <p><strong>版本控制</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1"># .gitignore
+</span><span class="code-line line-number" line="2">.vscode/*
+</span><span class="code-line line-number" line="3">!.vscode/settings.json
+</span><span class="code-line line-number" line="4">!.vscode/extensions.json
+</span></code><input type="hidden" value="# .gitignore
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>推荐配置</strong>：</p>
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"recommendations"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+</span><span class="code-line line-number" line="3">    <span class="token string">"dbaeumer.vscode-eslint"</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">    <span class="token string">"esbenp.prettier-vscode"</span>
+</span><span class="code-line line-number" line="5">  <span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="6"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;recommendations&#x22;: [
+    &#x22;dbaeumer.vscode-eslint&#x22;,
+    &#x22;esbenp.prettier-vscode&#x22;
+  ]
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="最佳实践"><a aria-hidden="true" tabindex="-1" href="#最佳实践" class="anchor"><span class="icon icon-link"></span></a>最佳实践</h2>
+        <h3 id="1-配置管理"><a aria-hidden="true" tabindex="-1" href="#1-配置管理" class="anchor"><span class="icon icon-link"></span></a>1. 配置管理</h3>
+        <ul>
+          <li>
+            <p><strong>分层配置</strong>：</p>
+            <ol>
+              <li>基础用户配置</li>
+              <li>项目特定配置</li>
+              <li>语言特定配置</li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>配置同步</strong>：</p>
+            <ul>
+              <li>使用设置同步</li>
+              <li>备份配置文件</li>
+              <li>使用 Git 管理</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-性能优化"><a aria-hidden="true" tabindex="-1" href="#2-性能优化" class="anchor"><span class="icon icon-link"></span></a>2. 性能优化</h3>
+        <ul>
+          <li><strong>优化建议</strong>：
+            <pre class="language-json"><code class="language-json code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="2">  <span class="token property">"files.watcherExclude"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="3">    <span class="token property">"**/node_modules/**"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="4">    <span class="token property">"**/dist/**"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+</span><span class="code-line line-number" line="5">  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="6">  <span class="token property">"search.exclude"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="7">    <span class="token property">"**/node_modules"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="8">    <span class="token property">"**/bower_components"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+</span><span class="code-line line-number" line="9">  <span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="10"><span class="token punctuation">}</span>
+</span></code><input type="hidden" value="{
+  &#x22;files.watcherExclude&#x22;: {
+    &#x22;**/node_modules/**&#x22;: true,
+    &#x22;**/dist/**&#x22;: true
+  },
+  &#x22;search.exclude&#x22;: {
+    &#x22;**/node_modules&#x22;: true,
+    &#x22;**/bower_components&#x22;: true
+  }
+}
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="常见问题"><a aria-hidden="true" tabindex="-1" href="#常见问题" class="anchor"><span class="icon icon-link"></span></a>常见问题</h2>
+        <h3 id="1-配置不生效"><a aria-hidden="true" tabindex="-1" href="#1-配置不生效" class="anchor"><span class="icon icon-link"></span></a>1. 配置不生效</h3>
+        <ul>
+          <li>
+            <p><strong>检查步骤</strong>：</p>
+            <ol>
+              <li>确认配置文件格式</li>
+              <li>检查配置位置</li>
+              <li>重新加载窗口</li>
+            </ol>
+          </li>
+          <li>
+            <p><strong>解决方案</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">1. 使用 JSON 验证工具
+</span><span class="code-line line-number" line="2">2. 临时禁用其他配置
+</span><span class="code-line line-number" line="3">3. 重置为默认设置
+</span></code><input type="hidden" value="1. 使用 JSON 验证工具
+2. 临时禁用其他配置
+3. 重置为默认设置
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-配置冲突"><a aria-hidden="true" tabindex="-1" href="#2-配置冲突" class="anchor"><span class="icon icon-link"></span></a>2. 配置冲突</h3>
+        <ul>
+          <li>
+            <p><strong>常见原因</strong>：</p>
+            <ul>
+              <li>用户配置与工作区冲突</li>
+              <li>插件配置冲突</li>
+              <li>语言特定配置冲突</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>解决方法</strong>：</p>
+            <ol>
+              <li>检查配置优先级</li>
+              <li>明确配置范围</li>
+              <li>统一团队配置</li>
+            </ol>
+          </li>
+        </ul>
+        <h2 id="小结"><a aria-hidden="true" tabindex="-1" href="#小结" class="anchor"><span class="icon icon-link"></span></a>小结</h2>
+        <p>自定义配置是提升开发效率的关键。建议：</p>
+        <ol>
+          <li>根据需求合理配置</li>
+          <li>保持配置简洁清晰</li>
+          <li>定期更新和优化</li>
+          <li>注意配置的可移植性</li>
+        </ol>
+        <p>记住，好的配置应该是提升效率的助手，而不是开发的负担。</p>
+        <section class="article-footer"><a href="https://github.com/zhangrenyang/cursor/blob/master/src\4.高级特性\4.3.自定义配置.md" class="edit-button" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+<span>Edit this page on GitHub</span>
+</a><span class="atime">2025/02/01</span></section>
+      </markdown-style>
+      <nav class="tocs">
+        <aside class="inner toc">
+          <ol class="tocs-list">
+            <li><a href="#基础概念" class="tocs-link">基础概念</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-什么是自定义配置" class="tocs-link">1. 什么是自定义配置？</a></li>
+                <li><a href="#2-配置类型" class="tocs-link">2. 配置类型</a></li>
+              </ol>
+            </li>
+            <li><a href="#配置方式" class="tocs-link">配置方式</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-界面配置" class="tocs-link">1. 界面配置</a></li>
+                <li><a href="#2-文件配置" class="tocs-link">2. 文件配置</a></li>
+              </ol>
+            </li>
+            <li><a href="#常用配置项" class="tocs-link">常用配置项</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-编辑器设置" class="tocs-link">1. 编辑器设置</a></li>
+                <li><a href="#2-文件设置" class="tocs-link">2. 文件设置</a></li>
+              </ol>
+            </li>
+            <li><a href="#语言特定配置" class="tocs-link">语言特定配置</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-javascripttypescript" class="tocs-link">1. JavaScript/TypeScript</a></li>
+                <li><a href="#2-python" class="tocs-link">2. Python</a></li>
+              </ol>
+            </li>
+            <li><a href="#快捷键配置" class="tocs-link">快捷键配置</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-自定义快捷键" class="tocs-link">1. 自定义快捷键</a></li>
+                <li><a href="#2-快捷键冲突解决" class="tocs-link">2. 快捷键冲突解决</a></li>
+              </ol>
+            </li>
+            <li><a href="#工作区配置" class="tocs-link">工作区配置</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-项目特定设置" class="tocs-link">1. 项目特定设置</a></li>
+                <li><a href="#2-团队共享" class="tocs-link">2. 团队共享</a></li>
+              </ol>
+            </li>
+            <li><a href="#最佳实践" class="tocs-link">最佳实践</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-配置管理" class="tocs-link">1. 配置管理</a></li>
+                <li><a href="#2-性能优化" class="tocs-link">2. 性能优化</a></li>
+              </ol>
+            </li>
+            <li><a href="#常见问题" class="tocs-link">常见问题</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-配置不生效" class="tocs-link">1. 配置不生效</a></li>
+                <li><a href="#2-配置冲突" class="tocs-link">2. 配置冲突</a></li>
+              </ol>
+            </li>
+            <li><a href="#小结" class="tocs-link">小结</a></li>
+          </ol>
+        </aside>
+      </nav>
+    </div>
+    <script src="../js/demo-preview.js?v=1.34.1"></script>
+    <div class="footer warpper">Released under the MIT License. Copyright © 2022 Kenny Wong<br>Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a></div>
+    <script src="../js/tocbot.js?v=1.34.1"></script>
+  </body>
+</html>

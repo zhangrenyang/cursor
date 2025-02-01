@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 问答功能 cursor</title>
+    <meta name="description" content="AI 问答是 Cursor 提供的智能对话功能，让开发者能直接在编辑器中向 AI 提问编程相关问题，获取即时解答。这个功能就像有一个随时待命的编程助手。">
+    <link rel="stylesheet" type="text/css" href="../css/main.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/tocbot.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/media.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/copy.css?v=1.34.1">
+    <link rel="stylesheet" type="text/css" href="../css/demo-preview.css?v=1.34.1">
+    <link rel="icon" href="../cursor.webp" type="image/x-icon">
+    <script src="../js/copy.js?v=1.34.1"></script>
+    <script src="../js/dark-mode.js?v=1.34.1"></script>
+    <script src="../js/markdown-style.js?v=1.34.1"></script>
+  </head>
+  <body id="idoctotop"><a href="#idoctotop" class="gototop">top</a>
+    <header class="header">
+      <article class="inner warpper"><a class="logo" href="../index.html"><img alt="cursor logo" src="../cursor.webp">
+<span class="title">cursor</span></a>
+        <div class="content">
+          <ul class="menu">
+            <li><a href="../index.html" target="" class="">Home</a></li>
+            <li><a href="../about.html" target="" class="">About</a></li>
+          </ul><a href="https://github.com/zhangrenyang/cursor" target="_blank" rel="noopener noreferrer" title="Github" name="Github" class="github"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg></a>
+          <dark-mode permanent=""></dark-mode>
+        </div>
+      </article>
+    </header>
+    <div class="warpper-content warpper">
+      <markdown-style theme-auto-switch-disabled="">
+        <h1 id="ai-问答功能"><a aria-hidden="true" tabindex="-1" href="#ai-问答功能" class="anchor"><span class="icon icon-link"></span></a>AI 问答功能</h1>
+        <h2 id="功能概述"><a aria-hidden="true" tabindex="-1" href="#功能概述" class="anchor"><span class="icon icon-link"></span></a>功能概述</h2>
+        <h3 id="1-什么是-ai-问答"><a aria-hidden="true" tabindex="-1" href="#1-什么是-ai-问答" class="anchor"><span class="icon icon-link"></span></a>1. 什么是 AI 问答？</h3>
+        <p>AI 问答是 Cursor 提供的智能对话功能，让开发者能直接在编辑器中向 AI 提问编程相关问题，获取即时解答。这个功能就像有一个随时待命的编程助手。</p>
+        <h3 id="2-主要特点"><a aria-hidden="true" tabindex="-1" href="#2-主要特点" class="anchor"><span class="icon icon-link"></span></a>2. 主要特点</h3>
+        <ul>
+          <li><strong>即时响应</strong>：快速获取答案</li>
+          <li><strong>上下文感知</strong>：理解当前代码环境</li>
+          <li><strong>多领域支持</strong>：覆盖各类编程问题</li>
+          <li><strong>交互式对话</strong>：支持追问和澄清</li>
+        </ul>
+        <h2 id="基本使用"><a aria-hidden="true" tabindex="-1" href="#基本使用" class="anchor"><span class="icon icon-link"></span></a>基本使用</h2>
+        <h3 id="1-访问方式"><a aria-hidden="true" tabindex="-1" href="#1-访问方式" class="anchor"><span class="icon icon-link"></span></a>1. 访问方式</h3>
+        <ul>
+          <li><strong>快捷键</strong>：<code>Ctrl+Shift+P</code></li>
+          <li><strong>命令面板</strong>：输入 "Ask AI"</li>
+          <li><strong>右键菜单</strong>：选择 "Ask AI"</li>
+        </ul>
+        <h3 id="2-提问技巧"><a aria-hidden="true" tabindex="-1" href="#2-提问技巧" class="anchor"><span class="icon icon-link"></span></a>2. 提问技巧</h3>
+        <ul>
+          <li>
+            <p><strong>清晰描述</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">// 好的提问：
+</span><span class="code-line line-number" line="2">"如何优化这个循环的性能？代码如下：
+</span><span class="code-line line-number" line="3">for(let i = 0; i &#x3C; array.length; i++) {
+</span><span class="code-line line-number" line="4">  // 处理逻辑
+</span><span class="code-line line-number" line="5">}"
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7">// 不好的提问：
+</span><span class="code-line line-number" line="8">"这段代码怎么改？"
+</span></code><input type="hidden" value="// 好的提问：
+&#x22;如何优化这个循环的性能？代码如下：
+for(let i = 0; i < array.length; i++) {
+  // 处理逻辑
+}&#x22;
+
+// 不好的提问：
+&#x22;这段代码怎么改？&#x22;
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>提供上下文</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">// 好的提问：
+</span><span class="code-line line-number" line="2">"在 React 项目中，如何处理这个组件的状态更新问题？
+</span><span class="code-line line-number" line="3">代码是：[粘贴相关代码]"
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5">// 不好的提问：
+</span><span class="code-line line-number" line="6">"怎么解决状态问题？"
+</span></code><input type="hidden" value="// 好的提问：
+&#x22;在 React 项目中，如何处理这个组件的状态更新问题？
+代码是：[粘贴相关代码]&#x22;
+
+// 不好的提问：
+&#x22;怎么解决状态问题？&#x22;
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="问答类型"><a aria-hidden="true" tabindex="-1" href="#问答类型" class="anchor"><span class="icon icon-link"></span></a>问答类型</h2>
+        <h3 id="1-代码相关问题"><a aria-hidden="true" tabindex="-1" href="#1-代码相关问题" class="anchor"><span class="icon icon-link"></span></a>1. 代码相关问题</h3>
+        <ul>
+          <li>
+            <p><strong>语法解释</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 提问示例：</span>
+</span><span class="code-line line-number" line="2">"解释一下这段代码中的解构赋值：
+</span><span class="code-line line-number" line="3"><span class="token keyword">const</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> <span class="token spread operator">...</span>rest <span class="token punctuation">}</span> <span class="token operator">=</span> person<span class="token punctuation">;</span>"
+</span></code><input type="hidden" value="// 提问示例：
+&#x22;解释一下这段代码中的解构赋值：
+const { name, age, ...rest } = person;&#x22;
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>错误诊断</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 提问示例：</span>
+</span><span class="code-line line-number" line="2">"为什么这段代码会报 <span class="token known-class-name class-name">TypeError</span>？
+</span><span class="code-line line-number" line="3"><span class="token keyword">const</span> result <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token arrow operator">=></span> item<span class="token punctuation">.</span><span class="token property-access">value</span><span class="token punctuation">)</span><span class="token punctuation">;</span>"
+</span></code><input type="hidden" value="// 提问示例：
+&#x22;为什么这段代码会报 TypeError？
+const result = data.map(item => item.value);&#x22;
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-概念解答"><a aria-hidden="true" tabindex="-1" href="#2-概念解答" class="anchor"><span class="icon icon-link"></span></a>2. 概念解答</h3>
+        <ul>
+          <li>
+            <p><strong>编程概念</strong>：</p>
+            <ul>
+              <li>设计模式解释</li>
+              <li>算法原理说明</li>
+              <li>框架特性讲解</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>最佳实践</strong>：</p>
+            <ul>
+              <li>代码规范建议</li>
+              <li>架构设计指导</li>
+              <li>性能优化方案</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="高级特性"><a aria-hidden="true" tabindex="-1" href="#高级特性" class="anchor"><span class="icon icon-link"></span></a>高级特性</h2>
+        <h3 id="1-交互式对话"><a aria-hidden="true" tabindex="-1" href="#1-交互式对话" class="anchor"><span class="icon icon-link"></span></a>1. 交互式对话</h3>
+        <ul>
+          <li>
+            <p><strong>追问机制</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">用户：如何实现防抖函数？
+</span><span class="code-line line-number" line="2">AI：[提供基本实现]
+</span><span class="code-line line-number" line="3">用户：如何添加类型支持？
+</span><span class="code-line line-number" line="4">AI：[补充 TypeScript 实现]
+</span></code><input type="hidden" value="用户：如何实现防抖函数？
+AI：[提供基本实现]
+用户：如何添加类型支持？
+AI：[补充 TypeScript 实现]
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>代码生成</strong>：</p>
+            <pre class="language-javascript"><code class="language-javascript code-highlight"><span class="code-line line-number" line="1"><span class="token comment">// 要求生成测试用例</span>
+</span><span class="code-line line-number" line="2">用户：<span class="token string">"为这个函数生成单元测试："</span>
+</span><span class="code-line line-number" line="3"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="4">  <span class="token keyword control-flow">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="5"><span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token constant">AI</span>：<span class="token punctuation">[</span>生成测试代码<span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="8"><span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'add function'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="9">  <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'should correctly add two numbers'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="10">    <span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">toBe</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="11">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line line-number" line="12"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code><input type="hidden" value="// 要求生成测试用例
+用户：&#x22;为这个函数生成单元测试：&#x22;
+function add(a, b) {
+  return a + b;
+}
+
+AI：[生成测试代码]
+describe(&#x27;add function&#x27;, () => {
+  test(&#x27;should correctly add two numbers&#x27;, () => {
+    expect(add(2, 3)).toBe(5);
+  });
+});
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-智能推荐"><a aria-hidden="true" tabindex="-1" href="#2-智能推荐" class="anchor"><span class="icon icon-link"></span></a>2. 智能推荐</h3>
+        <ul>
+          <li>
+            <p><strong>相关资源</strong>：</p>
+            <ul>
+              <li>官方文档链接</li>
+              <li>社区讨论参考</li>
+              <li>学习教程推荐</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>解决方案</strong>：</p>
+            <ul>
+              <li>多种实现方式</li>
+              <li>优缺点分析</li>
+              <li>场景适用建议</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="使用技巧"><a aria-hidden="true" tabindex="-1" href="#使用技巧" class="anchor"><span class="icon icon-link"></span></a>使用技巧</h2>
+        <h3 id="1-提高回答质量"><a aria-hidden="true" tabindex="-1" href="#1-提高回答质量" class="anchor"><span class="icon icon-link"></span></a>1. 提高回答质量</h3>
+        <ol>
+          <li>
+            <p><strong>问题准备</strong>：</p>
+            <ul>
+              <li>明确问题核心</li>
+              <li>提供必要背景</li>
+              <li>说明期望结果</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>代码展示</strong>：</p>
+            <ul>
+              <li>提供最小复现代码</li>
+              <li>标注关键部分</li>
+              <li>说明运行环境</li>
+            </ul>
+          </li>
+        </ol>
+        <h3 id="2-有效互动"><a aria-hidden="true" tabindex="-1" href="#2-有效互动" class="anchor"><span class="icon icon-link"></span></a>2. 有效互动</h3>
+        <ul>
+          <li>
+            <p><strong>渐进式提问</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">1. 先问基本概念
+</span><span class="code-line line-number" line="2">2. 再问具体实现
+</span><span class="code-line line-number" line="3">3. 最后问优化方案
+</span></code><input type="hidden" value="1. 先问基本概念
+2. 再问具体实现
+3. 最后问优化方案
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>反馈改进</strong>：</p>
+            <ul>
+              <li>及时提供反馈</li>
+              <li>指出不清楚的地方</li>
+              <li>要求具体示例</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="实践应用"><a aria-hidden="true" tabindex="-1" href="#实践应用" class="anchor"><span class="icon icon-link"></span></a>实践应用</h2>
+        <h3 id="1-学习场景"><a aria-hidden="true" tabindex="-1" href="#1-学习场景" class="anchor"><span class="icon icon-link"></span></a>1. 学习场景</h3>
+        <ul>
+          <li>
+            <p><strong>概念学习</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">// 提问示例：
+</span><span class="code-line line-number" line="2">"解释一下 React 中的 useEffect 钩子，
+</span><span class="code-line line-number" line="3">最好能给出常见使用场景的例子"
+</span></code><input type="hidden" value="// 提问示例：
+&#x22;解释一下 React 中的 useEffect 钩子，
+最好能给出常见使用场景的例子&#x22;
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>问题解决</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">// 提问示例：
+</span><span class="code-line line-number" line="2">"在处理大量数据时，如何优化这个
+</span><span class="code-line line-number" line="3">渲染列表的性能？"
+</span></code><input type="hidden" value="// 提问示例：
+&#x22;在处理大量数据时，如何优化这个
+渲染列表的性能？&#x22;
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h3 id="2-开发场景"><a aria-hidden="true" tabindex="-1" href="#2-开发场景" class="anchor"><span class="icon icon-link"></span></a>2. 开发场景</h3>
+        <ul>
+          <li>
+            <p><strong>代码审查</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">// 提问示例：
+</span><span class="code-line line-number" line="2">"检查这段代码有什么潜在的安全问题：
+</span><span class="code-line line-number" line="3">app.get('/api/data', (req, res) => {
+</span><span class="code-line line-number" line="4">  const query = req.query.sql;
+</span><span class="code-line line-number" line="5">  db.run(query);
+</span><span class="code-line line-number" line="6">});"
+</span></code><input type="hidden" value="// 提问示例：
+&#x22;检查这段代码有什么潜在的安全问题：
+app.get(&#x27;/api/data&#x27;, (req, res) => {
+  const query = req.query.sql;
+  db.run(query);
+});&#x22;
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+          <li>
+            <p><strong>调试辅助</strong>：</p>
+            <pre><code class="code-highlight"><span class="code-line line-number" line="1">// 提问示例：
+</span><span class="code-line line-number" line="2">"为什么这个异步操作会导致内存泄漏？
+</span><span class="code-line line-number" line="3">如何修复？"
+</span></code><input type="hidden" value="// 提问示例：
+&#x22;为什么这个异步操作会导致内存泄漏？
+如何修复？&#x22;
+"><div onclick="copied(this)" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+          </li>
+        </ul>
+        <h2 id="常见问题"><a aria-hidden="true" tabindex="-1" href="#常见问题" class="anchor"><span class="icon icon-link"></span></a>常见问题</h2>
+        <h3 id="1-回答不准确"><a aria-hidden="true" tabindex="-1" href="#1-回答不准确" class="anchor"><span class="icon icon-link"></span></a>1. 回答不准确</h3>
+        <ul>
+          <li>
+            <p><strong>原因分析</strong>：</p>
+            <ul>
+              <li>问题描述不清</li>
+              <li>缺少关键信息</li>
+              <li>场景过于复杂</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>解决方法</strong>：</p>
+            <ul>
+              <li>细化问题描述</li>
+              <li>提供完整上下文</li>
+              <li>分步骤提问</li>
+            </ul>
+          </li>
+        </ul>
+        <h3 id="2-理解偏差"><a aria-hidden="true" tabindex="-1" href="#2-理解偏差" class="anchor"><span class="icon icon-link"></span></a>2. 理解偏差</h3>
+        <ul>
+          <li>
+            <p><strong>常见情况</strong>：</p>
+            <ul>
+              <li>术语理解不一致</li>
+              <li>场景理解有误</li>
+              <li>需求表达不清</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>改进建议</strong>：</p>
+            <ul>
+              <li>使用准确术语</li>
+              <li>提供具体示例</li>
+              <li>验证理解正确性</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 id="小结"><a aria-hidden="true" tabindex="-1" href="#小结" class="anchor"><span class="icon icon-link"></span></a>小结</h2>
+        <p>AI 问答功能是强大的编程助手。建议：</p>
+        <ol>
+          <li>学会提出好问题</li>
+          <li>善用交互式对话</li>
+          <li>验证和理解答案</li>
+          <li>持续积累经验</li>
+        </ol>
+        <p>记住，AI 是辅助工具，关键是要培养自己的问题解决能力和技术判断力。</p>
+        <section class="article-footer"><a href="https://github.com/zhangrenyang/cursor/blob/master/src\3.AI辅助编程\3.4.AI问答功能.md" class="edit-button" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+<span>Edit this page on GitHub</span>
+</a><span class="atime">2025/02/01</span></section>
+      </markdown-style>
+      <nav class="tocs">
+        <aside class="inner toc">
+          <ol class="tocs-list">
+            <li><a href="#功能概述" class="tocs-link">功能概述</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-什么是-ai-问答" class="tocs-link">1. 什么是 AI 问答？</a></li>
+                <li><a href="#2-主要特点" class="tocs-link">2. 主要特点</a></li>
+              </ol>
+            </li>
+            <li><a href="#基本使用" class="tocs-link">基本使用</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-访问方式" class="tocs-link">1. 访问方式</a></li>
+                <li><a href="#2-提问技巧" class="tocs-link">2. 提问技巧</a></li>
+              </ol>
+            </li>
+            <li><a href="#问答类型" class="tocs-link">问答类型</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-代码相关问题" class="tocs-link">1. 代码相关问题</a></li>
+                <li><a href="#2-概念解答" class="tocs-link">2. 概念解答</a></li>
+              </ol>
+            </li>
+            <li><a href="#高级特性" class="tocs-link">高级特性</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-交互式对话" class="tocs-link">1. 交互式对话</a></li>
+                <li><a href="#2-智能推荐" class="tocs-link">2. 智能推荐</a></li>
+              </ol>
+            </li>
+            <li><a href="#使用技巧" class="tocs-link">使用技巧</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-提高回答质量" class="tocs-link">1. 提高回答质量</a></li>
+                <li><a href="#2-有效互动" class="tocs-link">2. 有效互动</a></li>
+              </ol>
+            </li>
+            <li><a href="#实践应用" class="tocs-link">实践应用</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-学习场景" class="tocs-link">1. 学习场景</a></li>
+                <li><a href="#2-开发场景" class="tocs-link">2. 开发场景</a></li>
+              </ol>
+            </li>
+            <li><a href="#常见问题" class="tocs-link">常见问题</a>
+              <ol class="tocs-list is-collapsed">
+                <li><a href="#1-回答不准确" class="tocs-link">1. 回答不准确</a></li>
+                <li><a href="#2-理解偏差" class="tocs-link">2. 理解偏差</a></li>
+              </ol>
+            </li>
+            <li><a href="#小结" class="tocs-link">小结</a></li>
+          </ol>
+        </aside>
+      </nav>
+    </div>
+    <script src="../js/demo-preview.js?v=1.34.1"></script>
+    <div class="footer warpper">Released under the MIT License. Copyright © 2022 Kenny Wong<br>Generated by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a></div>
+    <script src="../js/tocbot.js?v=1.34.1"></script>
+  </body>
+</html>
